@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/eslint-module',
     '@pinia/nuxt',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image'
   ],
   eslint: {
     lintOnStart: false
@@ -19,5 +20,8 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: 'src/assets/css/tailwind.scss',
     viewer: false
+  },
+  image: {
+    format: ['webp']
   }
 })
