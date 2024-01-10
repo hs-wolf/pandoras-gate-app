@@ -20,8 +20,10 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/tailwindcss": "^6.10.4",
     "eslint": "^8.56.0",
     "nuxt": "^3.9.0",
+    "sass": "^1.69.7",
     "vue": "^3.4.6",
     "vue-router": "^4.2.5"
   }

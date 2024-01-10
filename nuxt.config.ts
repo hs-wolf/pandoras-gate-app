@@ -4,14 +4,20 @@ export default defineNuxtConfig({
     enabled: true
   },
   srcDir: 'src',
+  css: ['assets/css/main.scss'],
   modules: [
     '@nuxtjs/eslint-module',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss'
   ],
   eslint: {
     lintOnStart: false
   },
   pinia: {
-    storesDirs: ['stores/**']
+    storesDirs: ['src/stores/**']
+  },
+  tailwindcss: {
+    cssPath: 'src/assets/css/tailwind.scss',
+    viewer: false
   }
 })

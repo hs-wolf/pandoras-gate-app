@@ -4,5 +4,8 @@
     "source.organizeImports": "never"
   },
   "editor.formatOnSave": false,
-  "prettier.enable": false
+  "prettier.enable": false,
+  "files.associations": { 
+    "*.scss": "postcss" 
+  }
 }
