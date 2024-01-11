@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@formkit/auto-animate/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n'
   ],
   eslint: {
     lintOnStart: false
@@ -25,5 +26,28 @@ export default defineNuxtConfig({
   },
   image: {
     format: ['webp']
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.yaml'
+      },
+      {
+        code: 'pt',
+        iso: 'pt-BR',
+        file: 'pt.yaml'
+      }
+    ],
+    defaultLocale: 'en',
+    langDir: 'locales',
+    lazy: true,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
+    vueI18n: './i18n.config.ts'
   }
 })

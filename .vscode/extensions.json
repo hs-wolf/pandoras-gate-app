@@ -2,5 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "Vue.volar",
+    "bradlc.vscode-tailwindcss",
+    "lokalise.i18n-ally"
   ]
 }

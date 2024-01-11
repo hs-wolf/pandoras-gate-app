@@ -7,5 +7,6 @@
   "prettier.enable": false,
   "files.associations": { 
     "*.scss": "postcss" 
-  }
+  },
+  "i18n-ally.localesPaths": ["src/locales"],
 }
