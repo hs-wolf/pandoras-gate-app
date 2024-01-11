@@ -59,16 +59,53 @@
         <NuxtIcon name="sun" />
       </div>
     </div>
+    <div class="flex flex-col gap-2">
+      <p class="font-semibold">
+        Form Validation
+      </p>
+      <form class="flex flex-col items-start gap-2" @submit="onSubmit">
+        <input v-model="email" name="email" type="email" class="border border-black">
+        <span class="text-sm text-red-500">{{ errors.email }}</span>
+        <input v-model="password" name="password" type="password" class="border border-black">
+        <span class="text-sm text-red-500">{{ errors.password }}</span>
+        <button id="submit" type="submit" class="px-2 py-1 bg-gray-400">
+          Submit
+        </button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
+import { useField, useForm } from 'vee-validate'
+import { toTypedSchema } from '@vee-validate/zod'
+import * as zod from 'zod'
+
 const alertsStore = useAlertsStore()
 const { x, y } = useMouse()
 const switchLocalePath = useSwitchLocalePath()
 
 const list = ref(['Apple', 'Banana', 'Grape', 'Orange'])
 const listOrder = ref(0)
+
+const validationSchema = toTypedSchema(
+  zod.object({
+    email: zod.string().min(1, 'This is required').email({ message: 'Must be a valid email' }),
+    password: zod.string().min(1, 'This is required').min(8, { message: 'Too short' })
+  })
+)
+
+const { handleSubmit, errors } = useForm({
+  validationSchema
+})
+
+const { value: email } = useField<string>('email')
+const { value: password } = useField<string>('password')
+
+const onSubmit = handleSubmit((values) => {
+  alert(JSON.stringify(values, null, 2))
+})
 
 function organizeList () {
   list.value.sort((a, b) => {

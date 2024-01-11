@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@formkit/auto-animate/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
-    'nuxt-icons'
+    'nuxt-icons',
+    '@vee-validate/nuxt'
   ],
   eslint: {
     lintOnStart: false
