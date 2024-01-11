@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     'nuxt-icons',
-    '@vee-validate/nuxt'
+    '@vee-validate/nuxt',
+    '@nuxtjs/color-mode'
   ],
   eslint: {
     lintOnStart: false
@@ -51,5 +52,8 @@ export default defineNuxtConfig({
       redirectOn: 'root'
     },
     vueI18n: './i18n.config.ts'
+  },
+  colorMode: {
+    classSuffix: ''
   }
 })

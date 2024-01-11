@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-5">
-    <h1 class="text-2xl text-primary">
+    <h1 class="text-2xl">
       Hello (with tailwind styles)
     </h1>
     <div class="flex flex-col gap-2">
@@ -52,11 +52,18 @@
     </div>
     <div class="flex flex-col gap-2">
       <p class="font-semibold">
-        SVG Icons
+        SVG Icons & Color Mode
       </p>
       <div class="flex gap-2 text-2xl">
-        <NuxtIcon name="moon" />
-        <NuxtIcon name="sun" />
+        <button id="dark" type="button" @click.prevent="changeColorMode('dark')">
+          <NuxtIcon name="moon" />
+        </button>
+        <button id="light" type="button" @click.prevent="changeColorMode('light')">
+          <NuxtIcon name="sun" />
+        </button>
+        <button id="system" type="button" @click.prevent="changeColorMode('system')">
+          <NuxtIcon name="screen" />
+        </button>
       </div>
     </div>
     <div class="flex flex-col gap-2">
@@ -85,6 +92,7 @@ import * as zod from 'zod'
 const alertsStore = useAlertsStore()
 const { x, y } = useMouse()
 const switchLocalePath = useSwitchLocalePath()
+const colorMode = useColorMode()
 
 const list = ref(['Apple', 'Banana', 'Grape', 'Orange'])
 const listOrder = ref(0)
@@ -120,8 +128,12 @@ function organizeList () {
   listOrder.value = listOrder.value === 0 ? 1 : 0
 }
 
-function switchLanguage (locale:string) {
+function switchLanguage (locale: string) {
   navigateTo(switchLocalePath(locale))
+}
+
+function changeColorMode (value: 'dark' | 'light' | 'system') {
+  colorMode.preference = value
 }
 
 onMounted(() => {

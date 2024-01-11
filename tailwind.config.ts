@@ -5,6 +5,7 @@ export default <Partial<Config>>{
     './src/{app,error}.vue',
     './src/{components,layouts,pages}/**/*.vue'
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
