@@ -17,6 +17,7 @@
     "@formkit/auto-animate": "^0.8.1",
     "@nuxt/image": "^1.1.0",
     "@pinia/nuxt": "^0.5.1",
+    "nuxt-icons": "^3.2.1",
     "pinia": "^2.1.7"
   },
   "devDependencies": {

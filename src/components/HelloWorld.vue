@@ -50,6 +50,15 @@
         {{ $t('portuguese') }}
       </button>
     </div>
+    <div class="flex flex-col gap-2">
+      <p class="font-semibold">
+        SVG Icons
+      </p>
+      <div class="flex gap-2 text-2xl">
+        <NuxtIcon name="moon" />
+        <NuxtIcon name="sun" />
+      </div>
+    </div>
   </div>
 </template>
 

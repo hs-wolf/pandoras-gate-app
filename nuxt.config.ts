@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@formkit/auto-animate/nuxt',
     '@vueuse/nuxt',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    'nuxt-icons'
   ],
   eslint: {
     lintOnStart: false
