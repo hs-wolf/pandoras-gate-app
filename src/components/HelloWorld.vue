@@ -23,11 +23,17 @@
         </li>
       </ul>
     </div>
+    <br>
+    <div class="flex gap-2">
+      <p>Mouse X {{ x }}</p>
+      <p>Mouse Y {{ y }}</p>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 const alertsStore = useAlertsStore()
+const { x, y } = useMouse()
 
 const list = ref(['Apple', 'Banana', 'Grape', 'Orange'])
 const listOrder = ref(0)
