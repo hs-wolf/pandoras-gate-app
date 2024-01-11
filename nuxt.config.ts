@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     'nuxt-icons',
     '@vee-validate/nuxt',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxt/test-utils/module'
   ],
   eslint: {
     lintOnStart: false
