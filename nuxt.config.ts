@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@formkit/auto-animate/nuxt'
   ],
   eslint: {
     lintOnStart: false
