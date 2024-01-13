@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1>Layout Default</h1>
+  <div class="flex flex-col">
     <slot />
   </div>
 </template>

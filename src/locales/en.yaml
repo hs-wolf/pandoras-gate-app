@@ -4,3 +4,58 @@ nested:
   value: Nested
 english: English
 portuguese: Portuguese
+properties:
+  GENERAL_GRADE: Grade
+  GENERAL_LEVEL: Level
+  GENERAL_EXP: Exp
+  GENERAL_NEXT: Next
+  GENERAL_ENCHANCEMENTS: Enhancements
+  GENERAL_ATUAL_SKILL_REGEN: Atual Skill Regen
+  GENERAL_MAX_SKILL_REGEN: Max Skill Regen
+  GENERAL_JP: JP
+  GENERAL_GOLD: Gold
+  CONDITIONS_ATUAL_HP: Atual HP
+  CONDITIONS_ATUAL_MP: Atual MP
+  CONDITIONS_ATUAL_SP: Atual SP
+  CONDITIONS_ATUAL_HUNGER: Atual Hunger
+  CONDITIONS_MAX_HP: Max HP
+  CONDITIONS_MAX_MP: Max MP
+  CONDITIONS_MAX_SP: Max SP
+  CONDITIONS_MAX_HUNGER: Max Hunger
+  ATTRIBUTES_STRENGTH: Strength
+  ATTRIBUTES_AGILITY: Agility
+  ATTRIBUTES_DEXTERITY: Dexterity
+  ATTRIBUTES_VITALITY: Vitality
+  ATTRIBUTES_SPIRIT: Spirit
+  ATTRIBUTES_LUCK: Luck
+  ATTRIBUTES_MOD_STRENGTH: MOD Strength
+  ATTRIBUTES_MOD_AGILITY: MOD Agility
+  ATTRIBUTES_MOD_DEXTERITY: MOD Dexterity
+  ATTRIBUTES_MOD_VITALITY: MOD Vitality
+  ATTRIBUTES_MOD_SPIRIT: MOD Spirit
+  ATTRIBUTES_MOD_LUCK: MOD Luck
+  STATS_INITIATIVE: Initiative
+  STATS_DODGE: Dodge
+  STATS_MOVE: Move
+  STATS_CRITICAL: Critical
+  STATS_PHYSICAL_DEFENSE: Physical Defense
+  STATS_PHYSICAL_DICE: Physical Dice
+  STATS_MAGICAL_DEFENSE: Magical Defense
+  STATS_MAGICAL_DICE: Magical Dice
+  RANGE_UNARMED: Range Unarmed
+  RANGE_MELEE: Range Melee
+  RANGE_RANGED: Range Ranged
+  RANGE_FIREARM: Range Firearm
+  HIT_UNARMED: Hit Unarmed
+  HIT_MELEE: Hit Melee
+  HIT_RANGED: Hit Ranged
+  HIT_FIREARM: Hit Firearm
+  PHYSICIAL_BONUS_UNARMED: Physical Bonus Unarmed
+  PHYSICIAL_BONUS_MELEE: Physical Bonus Melee
+  PHYSICIAL_BONUS_RANGED: Physical Bonus Ranged
+  PHYSICIAL_BONUS_FIREARM: Physical Bonus Firearm
+operation-action:
+  SUM: Sum
+  SUBTRACTION: Subtraction
+  MULTIPLICATION: Multiplication
+  DIVISION: Division

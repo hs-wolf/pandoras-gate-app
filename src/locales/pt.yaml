@@ -4,3 +4,58 @@ nested:
   value: Aninhado
 english: Inglês
 portuguese: Português
+properties:
+  GENERAL_GRADE: Grau
+  GENERAL_LEVEL: Nível
+  GENERAL_EXP: Experiência
+  GENERAL_NEXT: Próximo
+  GENERAL_ENCHANCEMENTS: Aprimoramentos
+  GENERAL_ATUAL_SKILL_REGEN: Regen Atual de Habilidade
+  GENERAL_MAX_SKILL_REGEN: Regen Máx de Habilidade
+  GENERAL_JP: JP
+  GENERAL_GOLD: Ouro
+  CONDITIONS_ATUAL_HP: HP Atual
+  CONDITIONS_ATUAL_MP: MP Atual
+  CONDITIONS_ATUAL_SP: SP Atual
+  CONDITIONS_ATUAL_HUNGER: Fome Atual
+  CONDITIONS_MAX_HP: HP Máximo
+  CONDITIONS_MAX_MP: MP Máximo
+  CONDITIONS_MAX_SP: SP Máximo
+  CONDITIONS_MAX_HUNGER: Fome Máx
+  ATTRIBUTES_STRENGTH: Força
+  ATTRIBUTES_AGILITY: Agilidade
+  ATTRIBUTES_DEXTERITY: Destreza
+  ATTRIBUTES_VITALITY: Vitalidade
+  ATTRIBUTES_SPIRIT: Espírito
+  ATTRIBUTES_LUCK: Sorte
+  ATTRIBUTES_MOD_STRENGTH: MOD Força
+  ATTRIBUTES_MOD_AGILITY: MOD Agilidade
+  ATTRIBUTES_MOD_DEXTERITY: MOD Destreza
+  ATTRIBUTES_MOD_VITALITY: MOD Vitalidade
+  ATTRIBUTES_MOD_SPIRIT: MOD Espírito
+  ATTRIBUTES_MOD_LUCK: MOD Sorte
+  STATS_INITIATIVE: Iniciativa
+  STATS_DODGE: Esquiva
+  STATS_MOVE: Movimento
+  STATS_CRITICAL: Crítico
+  STATS_PHYSICAL_DEFENSE: Defesa Física
+  STATS_PHYSICAL_DICE: Dados Físicos
+  STATS_MAGICAL_DEFENSE: Defesa Mágica
+  STATS_MAGICAL_DICE: Dados Mágicos
+  RANGE_UNARMED: Alcance Desarmado
+  RANGE_MELEE: Alcance Corpo a Corpo
+  RANGE_RANGED: Alcance à Distância
+  RANGE_FIREARM: Alcance Arma de Fogo
+  HIT_UNARMED: Acerto Desarmado
+  HIT_MELEE: Acerto Corpo a Corpo
+  HIT_RANGED: Acerto à Distância
+  HIT_FIREARM: Acerto Arma de Fogo
+  PHYSICIAL_BONUS_UNARMED: Bônus Físico Desarmado
+  PHYSICIAL_BONUS_MELEE: Bônus Físico Corpo a Corpo
+  PHYSICIAL_BONUS_RANGED: Bônus Físico à Distância
+  PHYSICIAL_BONUS_FIREARM: Bônus Físico Arma de Fogo
+operation-action:
+  SUM: Soma
+  SUBTRACTION: Subtração
+  MULTIPLICATION: Multiplicação
+  DIVISION: Divisão

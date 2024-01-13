@@ -2,3 +2,15 @@ body {
   @apply bg-white text-primary font-sans antialiased transition-colors;
   @apply dark:bg-primary dark:text-white;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
