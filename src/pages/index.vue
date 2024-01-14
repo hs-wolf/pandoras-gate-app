@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <NuxtLink
-      :to="localePath({ path: `/character/${1234}` })"
+      :to="localePath({ name: `character` })"
       class="px-2 py-1 bg-gray-200"
     >
       <p>Character</p>

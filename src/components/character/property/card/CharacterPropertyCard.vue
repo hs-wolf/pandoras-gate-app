@@ -1,0 +1,35 @@
+<template>
+  <div v-if="property" v-auto-animate class="flex flex-col border border-neutral-400 rounded-sm text-sm md:text-base">
+    <button
+      :id="`menu-${property.type}`"
+      type="button"
+      class="flex items-center justify-between p-2 transition-colors"
+      :class="{ 'bg-neutral-400 text-white dark:text-black': showOperations }"
+      @click.prevent="showOperations = !showOperations"
+    >
+      <span class="font-semibold">
+        {{ $t(`properties.${property.type}`) }}
+      </span>
+      <NuxtIcon name="chevron-down" class="text-xl transition-transform" :class="{'rotate-180': showOperations }" />
+    </button>
+    <div v-if="showOperations" class="flex flex-col">
+      <CharacterPropertyCardOperation
+        v-for="(operation, index) in property.operations"
+        :key="operation.id"
+        v-model="property.operations[index]"
+      />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { type IProperty } from '~/types'
+
+const property = defineModel<IProperty>({ required: true })
+
+const showOperations = ref(false)
+</script>
+
+<style scoped>
+
+</style>

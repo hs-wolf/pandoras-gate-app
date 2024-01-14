@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export enum PropertyType {
   GENERAL_GRADE = 'GENERAL_GRADE',
   GENERAL_LEVEL = 'GENERAL_LEVEL',
@@ -59,20 +60,22 @@ export enum OperationAction {
 
 export interface IBasedOnOperation {
   type: PropertyType
-  action: OperationAction
-  value: number
+  modifyProperty: boolean
+  modifierAction?: OperationAction
+  modifierValue?: number
 }
 
 export interface IOperation {
   id: string
+  target: PropertyType
   action: OperationAction
-  absoluteValue: number
-  basedOnProperty: IBasedOnOperation
-  isBasedOnProperty: boolean
-  isPercentage: boolean
-  isSubstitution: boolean
-  priority: number
-  [key: string]: unknown
+  description?: string
+  isBasedOnProperty?: boolean
+  isPercentage?: boolean
+  isSubstitution?: boolean
+  value?: number
+  basedOnProperty?: IBasedOnOperation
+  substitutionPriority?: number
 }
 
 export interface IProperty {
@@ -103,155 +106,133 @@ export class Character {
     public guild: string,
     public elements: IElement[],
     public jobs: IJob[],
-    public properties: IProperty[]
+    public operations: IOperation[]
   ) {}
 
-  getProperty (propertyType: PropertyType): number {
-    const property = this.properties.find(stat => stat.type === propertyType)
-    if (property && property.operations.length) {
-      // Get list of substitutions operations and sort them.
-      const substitutionOperations = property.operations.filter(operation => operation.isSubstitution)
-
-      // Execute substituion operations.
-      // If there's no priority set, default It to 0.
-      // Get the operation with highest priority.
-      // Return the highest priority value or 1, ignore other operations.
-      if (substitutionOperations.length) {
-        const withMinimumPriority = substitutionOperations.map((operation) => {
-          if (typeof operation.priority !== 'number') {
-            operation.priority = 0
-          }
-          return operation
-        })
-        const highestPriority = withMinimumPriority.reduce((max, current) => {
-          return current.priority! > max.priority! ? current : max
-        }, substitutionOperations[0])
-        return highestPriority.absoluteValue ?? 1
-      }
-
-      // Placeholder that will holde the final value to be returned.
-      let finalValue = 0
-
-      // Get list of arithmetic operations that are not percentages or substitutions.
-      const arithmeticsOperations = property.operations.filter(operation => !operation.isPercentage && !operation.isSubstitution)
-
-      // Make arithmetic operations.
-      if (arithmeticsOperations.length) {
-        arithmeticsOperations
-          .filter(operation => operation.action === OperationAction.SUM)
-          .forEach((operation) => {
-            let valueToUse = 0
-            if (operation.isBasedOnProperty) {
-              valueToUse = this.getBasedOnOperationResult(operation.basedOnProperty)
-            } else if (typeof operation.absoluteValue === 'number') {
-              valueToUse = operation.absoluteValue
+  getProperty (propertyType: PropertyType, propertyTypesStack?: PropertyType[]): number {
+    try {
+      // Check for circular dependencies between types.
+      const updatedTypesStack = this.checkForCircularDependency(propertyType, propertyTypesStack)
+      // Get the list of operations that have the given propertyType as Its target.
+      const operations = this.operations.filter(operation => operation.target === propertyType)
+      if (operations.length) {
+        // Get list of substitutions operations and sort them based on priority.
+        // If no priority is present on a given operation, set It as 0.
+        // Return the highes priority operation as the returning value.
+        const substitutionOperations = operations.filter(operation => operation.isSubstitution)
+        if (substitutionOperations.length) {
+          const withMinimumPriority = substitutionOperations.map((operation) => {
+            if (typeof operation.substitutionPriority !== 'number') {
+              operation.substitutionPriority = 0
             }
-            console.log(`${property.type}: [${finalValue}] ${OperationAction.SUM} [${valueToUse}]${`(${operation.basedOnProperty?.type ? operation.basedOnProperty?.type : ''})`} = [${finalValue + valueToUse}]`)
-            finalValue += valueToUse
+            return operation
           })
-        arithmeticsOperations
-          .filter(operation => operation.action === OperationAction.SUBTRACTION)
-          .forEach((operation) => {
-            let valueToUse = 0
-            if (operation.isBasedOnProperty) {
-              valueToUse = this.getBasedOnOperationResult(operation.basedOnProperty)
-            } else if (typeof operation.absoluteValue === 'number') {
-              valueToUse = operation.absoluteValue
-            }
-            console.log(`${property.type}: [${finalValue}] ${OperationAction.SUBTRACTION} [${valueToUse}]${`(${operation.basedOnProperty?.type ? operation.basedOnProperty?.type : ''})`} = [${finalValue + valueToUse}] ou (1)`)
-            finalValue -= valueToUse
-            if (finalValue <= 0) {
-              finalValue = 1
-            }
-          })
-        arithmeticsOperations
-          .filter(operation => operation.action === OperationAction.MULTIPLICATION)
-          .forEach((operation) => {
-            let valueToUse = 0
-            if (operation.isBasedOnProperty) {
-              valueToUse = this.getBasedOnOperationResult(operation.basedOnProperty)
-            } else if (typeof operation.absoluteValue === 'number') {
-              valueToUse = operation.absoluteValue
-            }
-            if (valueToUse <= 0) {
-              valueToUse = 1
-            }
-            console.log(`${property.type}: [${finalValue}] ${OperationAction.MULTIPLICATION} [${valueToUse}]${`(${operation.basedOnProperty?.type ? operation.basedOnProperty?.type : ''})`} ou (1) = [${finalValue + valueToUse}]`)
-            finalValue *= valueToUse
-          })
-        arithmeticsOperations
-          .filter(operation => operation.action === OperationAction.DIVISION)
-          .forEach((operation) => {
-            let valueToUse = 0
-            if (operation.isBasedOnProperty) {
-              valueToUse = this.getBasedOnOperationResult(operation.basedOnProperty)
-            } else if (typeof operation.absoluteValue === 'number') {
-              valueToUse = operation.absoluteValue
-            }
-            if (valueToUse <= 0) {
-              valueToUse = 1
-            }
-            console.log(`${property.type}: [${finalValue}] ${OperationAction.DIVISION} [${valueToUse}]${`(${operation.basedOnProperty?.type ? operation.basedOnProperty?.type : ''})`} ou (1) = [${finalValue + valueToUse}]`)
-            finalValue /= valueToUse
-          })
-      }
-
-      // Get list of percentage operations and sort them.
-      const percentageOperations = property.operations.filter(operation =>
-        operation.action &&
-        [OperationAction.SUM, OperationAction.SUBTRACTION].includes(operation.action) &&
-        operation.isPercentage)
-
-      // Make percentage operations.
-      if (percentageOperations.length) {
-        const finalPercentage = percentageOperations.reduce((accumulator, operation) => {
-          let valueToUse = 0
-          if (operation.isBasedOnProperty) {
-            valueToUse = this.getBasedOnOperationResult(operation.basedOnProperty)
-          } else if (typeof operation.absoluteValue === 'number') {
-            valueToUse = operation.absoluteValue
-          }
-          return operation.action === OperationAction.SUM ? accumulator + valueToUse : accumulator - valueToUse
-        }, 0)
-        console.log(`${property.type}: [${finalValue}] PERCENTAGE [${finalPercentage}] = ${finalValue + (finalValue * (finalPercentage / 100))}`)
-        finalValue += (finalValue * (finalPercentage / 100))
-        if (finalValue <= 0) {
-          finalValue = 1
+          const highestPriority = withMinimumPriority.reduce((max, current) => {
+            return current.substitutionPriority! > max.substitutionPriority! ? current : max
+          }, substitutionOperations[0])
+          return highestPriority.value ?? 1
         }
+        // Placeholder that will holde the final value to be returned.
+        let finalValue = 0
+        // Get list of arithmetic operations that are not percentages or substitutions and execute them in order.
+        const arithmeticsOperations = operations.filter(operation => !operation.isPercentage && !operation.isSubstitution)
+        if (arithmeticsOperations.length) {
+          arithmeticsOperations
+            .filter(operation => operation.action === OperationAction.SUM)
+            .forEach((operation) => {
+              const valueToUse = this.checkIfOperationIsBasedOnProperty(operation, updatedTypesStack)
+              finalValue += valueToUse
+            })
+          arithmeticsOperations
+            .filter(operation => operation.action === OperationAction.SUBTRACTION)
+            .forEach((operation) => {
+              const valueToUse = this.checkIfOperationIsBasedOnProperty(operation, updatedTypesStack)
+              finalValue -= valueToUse
+              if (finalValue <= 0) {
+                finalValue = 1
+              }
+            })
+          arithmeticsOperations
+            .filter(operation => operation.action === OperationAction.MULTIPLICATION)
+            .forEach((operation) => {
+              const valueToUse = this.checkIfOperationIsBasedOnProperty(operation, updatedTypesStack)
+              finalValue *= valueToUse > 0 ? valueToUse : 1
+            })
+          arithmeticsOperations
+            .filter(operation => operation.action === OperationAction.DIVISION)
+            .forEach((operation) => {
+              const valueToUse = this.checkIfOperationIsBasedOnProperty(operation, updatedTypesStack)
+              finalValue /= valueToUse > 0 ? valueToUse : 1
+            })
+        }
+        // Get list of percentage operations and execute them.
+        const percentageOperations = operations.filter(operation => operation.isPercentage && operation.action && [OperationAction.SUM, OperationAction.SUBTRACTION].includes(operation.action))
+        if (percentageOperations.length) {
+          const finalPercentage = percentageOperations.reduce((accumulator, operation) => {
+            const valueToUse = this.checkIfOperationIsBasedOnProperty(operation, updatedTypesStack)
+            return operation.action === OperationAction.SUM ? accumulator + valueToUse : accumulator - valueToUse
+          }, 0)
+          const percentageValue = finalValue * (finalPercentage / 100)
+          finalValue += percentageValue
+          if (finalValue <= 0) {
+            finalValue = 1
+          }
+        }
+        return Math.floor(finalValue)
       }
-      return Math.round(finalValue)
+      // Return 1 if there are no operation for the propertyType.
+      return 1
+    } catch (error) {
+      console.log(error)
+      // Return 1 if an error occured (like a circular dependency).
+      return 1
     }
-    return 1
   }
 
-  getValueToUse (value: number | PropertyType): number {
-    if (typeof value === 'number') {
-      return value
+  // Given a propertyType and a propertytypesStack, check if the type already exists in the stack.
+  // If it exists, throw an error.
+  // Else, return an updated stack with the provided type included.
+  checkForCircularDependency (propertyType: PropertyType, propertyTypesStack?: PropertyType[]) {
+    if (propertyTypesStack?.length && propertyTypesStack.includes(propertyType)) {
+      alert('oof')
+      throw new Error(`${propertyType} was already in the operation stack, circular operations not permitted.`)
     }
-    if (Object.values(PropertyType).includes(value as PropertyType)) {
-      return this.getProperty(value as PropertyType)
-    }
-    return 0
+    return propertyTypesStack?.length ? [...propertyTypesStack, propertyType] : [propertyType]
   }
 
-  getBasedOnOperationResult (based: IBasedOnOperation) {
-    let valueToUse = this.getValueToUse(based.type)
-    switch (based.action) {
-      case OperationAction.SUM:
-        valueToUse += based.value
-        break
-      case OperationAction.SUBTRACTION:
-        valueToUse -= based.value
-        break
-      case OperationAction.MULTIPLICATION:
-        valueToUse *= based.value > 0 ? based.value : 1
-        break
-      case OperationAction.DIVISION:
-        valueToUse /= based.value > 0 ? based.value : 1
-        break
-      default:
-        break
+  // Check if an operation is based on another property, and retrive Its valu if so.
+  // Else, just return the absolute value or 0.
+  checkIfOperationIsBasedOnProperty (operation: IOperation, propertyTypesStack?: PropertyType[]) {
+    let valueToUse = 0
+    if (operation.isBasedOnProperty && operation.basedOnProperty) {
+      valueToUse = this.checkIfPropertyBasedOperationHasModifiers(operation.basedOnProperty, propertyTypesStack)
+    } else if (typeof operation.value === 'number') {
+      valueToUse = operation.value
     }
     return valueToUse
+  }
+
+  // Check if an operations which is based on another property has modifiers, if so, execute them before returning the value.
+  checkIfPropertyBasedOperationHasModifiers (based: IBasedOnOperation, recursingTypes?: PropertyType[]) {
+    let valueToUse = this.getProperty(based.type, recursingTypes)
+    if (based.modifyProperty && typeof based.modifierValue === 'number') {
+      switch (based.modifierAction) {
+        case OperationAction.SUM:
+          valueToUse += based.modifierValue
+          break
+        case OperationAction.SUBTRACTION:
+          valueToUse -= based.modifierValue
+          break
+        case OperationAction.MULTIPLICATION:
+          valueToUse *= based.modifierValue > 0 ? based.modifierValue : 1
+          break
+        case OperationAction.DIVISION:
+          valueToUse /= based.modifierValue > 0 ? based.modifierValue : 1
+          break
+        default:
+          break
+      }
+    }
+    return valueToUse >= 0 ? valueToUse : 0
   }
 }

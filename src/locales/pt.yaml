@@ -55,7 +55,31 @@ properties:
   PHYSICIAL_BONUS_RANGED: Bônus Físico à Distância
   PHYSICIAL_BONUS_FIREARM: Bônus Físico Arma de Fogo
 operation-action:
-  SUM: Soma
-  SUBTRACTION: Subtração
-  MULTIPLICATION: Multiplicação
-  DIVISION: Divisão
+  SUM: ( + ) Soma
+  SUBTRACTION: ( - ) Subtração
+  MULTIPLICATION: ( x ) Multiplicação
+  DIVISION: ( / ) Divisão
+components:
+  character:
+    property:
+      card:
+        operation:
+          target: Alvo
+          description: Descrição
+          action: Ação
+          value: Valor
+          substitution-value: Valor de Substituição
+          is-based-on-property: Baseado em propriedade
+          based-on: Baseado em
+          modify-property: Modificar propriedade
+          property-action: Ação na propriedade
+          property-action-value: Valor da ação na propriedade
+          is-percetage: "% Porcentagem"
+          is-substitution: Substituição
+          priority-value: Valor de prioridade
+pages:
+  character:
+    new-operation:
+     label: + Nova Operação
+    save-operation: Salvar
+    cancel-operation: Cancelar

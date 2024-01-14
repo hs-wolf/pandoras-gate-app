@@ -55,7 +55,31 @@ properties:
   PHYSICIAL_BONUS_RANGED: Physical Bonus Ranged
   PHYSICIAL_BONUS_FIREARM: Physical Bonus Firearm
 operation-action:
-  SUM: Sum
-  SUBTRACTION: Subtraction
-  MULTIPLICATION: Multiplication
-  DIVISION: Division
+  SUM: "( + ) Sum"
+  SUBTRACTION: "( - ) Subtraction"
+  MULTIPLICATION: "( x ) Multiplication"
+  DIVISION: "( / ) Division"
+components:
+  character:
+    property:
+      card:
+        operation:
+          target: Target
+          description: Description
+          action: Action
+          value: Value
+          substitution-value: Substitution Value
+          is-based-on-property: Based on property
+          based-on: Based on
+          modify-property: Modify property
+          property-action: Property action
+          property-action-value: Property action value
+          is-percetage: "% Percentage"
+          is-substitution: Substitution
+          priority-value: Priority value
+pages:
+  character:
+    new-operation:
+     label: + New Operation
+    save-operation: Save
+    cancel-operation: Cancel
