@@ -14,10 +14,10 @@ properties:
   GENERAL_MAX_SKILL_REGEN: Max Skill Regen
   GENERAL_JP: JP
   GENERAL_GOLD: Gold
-  CONDITIONS_ATUAL_HP: Atual HP
-  CONDITIONS_ATUAL_MP: Atual MP
-  CONDITIONS_ATUAL_SP: Atual SP
-  CONDITIONS_ATUAL_HUNGER: Atual Hunger
+  CONDITIONS_ATUAL_HP: HP
+  CONDITIONS_ATUAL_MP: MP
+  CONDITIONS_ATUAL_SP: SP
+  CONDITIONS_ATUAL_HUNGER: Hunger
   CONDITIONS_MAX_HP: Max HP
   CONDITIONS_MAX_MP: Max MP
   CONDITIONS_MAX_SP: Max SP
@@ -42,18 +42,105 @@ properties:
   STATS_PHYSICAL_DICE: Physical Dice
   STATS_MAGICAL_DEFENSE: Magical Defense
   STATS_MAGICAL_DICE: Magical Dice
-  RANGE_UNARMED: Range Unarmed
-  RANGE_MELEE: Range Melee
-  RANGE_RANGED: Range Ranged
-  RANGE_FIREARM: Range Firearm
-  HIT_UNARMED: Hit Unarmed
-  HIT_MELEE: Hit Melee
-  HIT_RANGED: Hit Ranged
-  HIT_FIREARM: Hit Firearm
-  PHYSICIAL_BONUS_UNARMED: Physical Bonus Unarmed
-  PHYSICIAL_BONUS_MELEE: Physical Bonus Melee
-  PHYSICIAL_BONUS_RANGED: Physical Bonus Ranged
-  PHYSICIAL_BONUS_FIREARM: Physical Bonus Firearm
+  RANGE_UNARMED: Unarmed
+  RANGE_MELEE: Melee
+  RANGE_RANGED: Ranged
+  RANGE_FIREARM: Firearm
+  HIT_UNARMED: Unarmed
+  HIT_MELEE: Melee
+  HIT_RANGED: Ranged
+  HIT_FIREARM: Firearm
+  PHYSICIAL_BONUS_UNARMED: Unarmed
+  PHYSICIAL_BONUS_MELEE: Melee
+  PHYSICIAL_BONUS_RANGED: Ranged
+  PHYSICIAL_BONUS_FIREARM: Firearm
+  MAGICAL_BONUS_WATER: Water
+  MAGICAL_BONUS_ETHEREAL: Ethereal
+  MAGICAL_BONUS_FIRE: Fire
+  MAGICAL_BONUS_ICE: Ice
+  MAGICAL_BONUS_MOON: Moon
+  MAGICAL_BONUS_LIGHT: Light
+  MAGICAL_BONUS_MAGICK: Magick
+  MAGICAL_BONUS_NATURE: Nature
+  MAGICAL_BONUS_SUN: Sun
+  MAGICAL_BONUS_SOUL: Soul
+  MAGICAL_BONUS_EARTH: Earth
+  MAGICAL_BONUS_DARKNESS: Darkness
+  MAGICAL_BONUS_THUNDER: Thunder
+  MAGICAL_BONUS_WIND: Wind
+  EXPERTISE_MELEE_WEAPONS: Exp. Melee Weapons
+  EXPERTISE_MECHANICAL_WEAPONS: Exp. Mechanical Weapons
+  EXPERTISE_WILLPOWER: Exp. Willpower
+  EXPERTISE_FORGE: Exp. Forge
+  EXPERTISE_IMMOBILIZATION: Exp. Immobilization
+  EXPERTISE_UNARMED_COMBAT: Exp. Unarmed Combat
+  EXPERTISE_MINING: Exp. Mining
+  EXPERTISE_MOUNT: Exp. Mount
+  EXPERTISE_TRACK: Exp. Track
+  EXPERTISE_MISLEAD: Exp. Mislead
+  EXPERTISE_DISGUISE: Exp. Disguise
+  EXPERTISE_DUAL_WIELD: Exp. Dual Wield
+  EXPERTISE_HIDE: Exp. Hide
+  EXPERTISE_DODGE: Exp. Dodge
+  EXPERTISE_ESCAPE: Exp. Escape
+  EXPERTISE_JUMP: Exp. Jump
+  EXPERTISE_AGRICULTURE: Exp. Agriculture
+  EXPERTISE_RANGED_WEAPON: Exp. Ranged Weapon
+  EXPERTISE_FIREARM: Exp. Firearms
+  EXPERTISE_MASONRY: Exp. Masonry
+  EXPERTISE_THROW_OBJECT: Exp. Throw Object
+  EXPERTISE_CLIMB: Exp. Climb
+  EXPERTISE_BUILD_BOAT: Exp. Build Boat
+  EXPERTISE_SWIM: Exp. Swim
+  EXPERTISE_PILOTING: Exp. Piloting
+  EXPERTISE_SET_TRAP: Exp. Set Trap
+  EXPERTISE_FIRST_AID: Exp. First Aid
+  EXPERTISE_CHARISMA: Exp. Charisma
+  EXPERTISE_PHYSICAL_DEFENSE: Exp. Physical Defense
+  EXPERTISE_LEADERSHIP: Exp. Leadership
+  EXPERTISE_SURVIVAL: Exp. Survival
+  EXPERTISE_AID: Exp. Aid
+  EXPERTISE_BLUFF: Exp. Bluff
+  EXPERTISE_CONJURATION: Exp. Conjuration
+  EXPERTISE_MAGICAL_DEFENSE: Exp. Magical Defense
+  EXPERTISE_WATER_ELEMENT: Exp. Water
+  EXPERTISE_ETHEREAL_ELEMENT: Exp. Ethereal
+  EXPERTISE_FIRE_ELEMENT: Exp. Fire
+  EXPERTISE_ICE_ELEMENT: Exp. Ice
+  EXPERTISE_MOON_ELEMENT: Exp. Moon
+  EXPERTISE_LIGHT_ELEMENT: Exp. Light
+  EXPERTISE_MAGICK_ELEMENT: Exp. Magick
+  EXPERTISE_NATURE_ELEMENT: Exp. Nature
+  EXPERTISE_SUN_ELEMENT: Exp. Sun
+  EXPERTISE_SOUL_ELEMENT: Exp. Soul
+  EXPERTISE_EARTH_ELEMENT: Exp. Earth
+  EXPERTISE_DARKNESS_ELEMENT: Exp. Darkness
+  EXPERTISE_THUNDER_ELEMENT: Exp. Thunder
+  EXPERTISE_WIND_ELEMENT: Exp. Wind
+  EXPERTISE_INTERPRET_DREAMS: Exp. Interpret Dreams
+  EXPERTISE_INTERROGATE: Exp. Interrogate
+  EXPERTISE_INTIMIDATE: Exp. Intimidate
+  EXPERTISE_LANGUAGE: Exp. Language
+  EXPERTISE_CURSE: Exp. Curse
+  EXPERTISE_MYSTICISM: Exp. Mysticism
+  EXPERTISE_NEGOTIATE: Exp. Negotiate
+  EXPERTISE_PERCEPTION: Exp. Perception
+  EXPERTISE_PREDICT_WEATHER: Exp. Predict Weather
+  EXPERTISE_TACTICS: Exp. Tactics
+  EXPERTISE_CRITICAL: Exp. Critical
+  EXPERTISE_PLAY_CALCULATE: Exp. Play/Calculate
+  EXPERTISE_MAGICK_FIND: Exp. Magick Find
+  EXPERTISE_ASTRONOMY: Exp. Astronomy
+  EXPERTISE_ACROBATICS: Exp. Acrobatics
+  EXPERTISE_STEAL: Exp. Steal
+  EXPERTISE_CHEMISTRY: Exp. Chemistry
+  EXPERTISE_RELAXATION: Exp. Relaxation
+  EXPERTISE_FAITH: Exp. Faith
+  EXPERTISE_SPECIAL_WEAPON: Exp. Special Weapon
+  EXPERTISE_COMBO: Exp. Combo
+  EXPERTISE_MVP: Exp. MVP
+  EXPERTISE_PVP: Exp. PVP
+  EXPERTISE_SYNERGY: Exp. Synergy
 operation-action:
   SUM: "( + ) Sum"
   SUBTRACTION: "( - ) Subtraction"
@@ -61,6 +148,33 @@ operation-action:
   DIVISION: "( / ) Division"
 components:
   character:
+    tabs:
+      info:
+        title: Info
+        player: "Player:"
+        guild: "Guild:"
+        skills-regen: Skills Regen
+        attribute: Attribute
+        total: Total
+        modifier: MOD
+        stats: Stats
+        ranges: Ranges
+        hits: Hits
+        physical-bonus: Physical Bonus
+        magical-bonus: Magical Bonus
+        expertises-strength: Expertises Strength
+        expertises-agility: Expertises Agility
+        expertises-dexterity: Expertises Dexterity
+        expertises-vitality: Expertises Vitality
+        expertises-spirit: Expertises Spirit
+        expertises-luck: Expertises Luck
+        expertises-special: Expertises Special
+      buffs: 
+        title: Buffs
+      inventory: 
+        title: Inventory
+      formulas: 
+        title: Formulas
     property:
       card:
         operation:

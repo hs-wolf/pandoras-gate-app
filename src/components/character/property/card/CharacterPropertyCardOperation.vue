@@ -22,7 +22,7 @@
         {{ $t('components.character.property.card.operation.target') }}
       </p>
       <select :id="`operation-target-${operation.id}`" v-model="operation.target" class="custom-select">
-        <option v-for="operationAction in Object.values(PropertyType)" :key="operationAction" :value="operationAction">
+        <option v-for="operationAction in Object.values(ALL_PROPERTIES)" :key="operationAction" :value="operationAction">
           {{ $t(`properties.${operationAction}`) }}
         </option>
       </select>
@@ -132,7 +132,7 @@
 </template>
 
 <script setup lang="ts">
-import { type IOperation, OperationAction, PropertyType } from '~/types'
+import { type IOperation, OperationAction, ALL_PROPERTIES } from '~/types'
 
 defineProps<{ showTarget?: boolean }>()
 
@@ -141,7 +141,7 @@ const operation = defineModel<IOperation>({ required: true })
 // const formattedJSON = computed(() => JSON.stringify(operation.value, null, 4))
 
 const selectableTypes = computed(() => {
-  const arrayOfProperties = Object.values(PropertyType)
+  const arrayOfProperties = Object.values(ALL_PROPERTIES)
   const existingIndex = arrayOfProperties.findIndex(value => value === operation.value.target)
   if (existingIndex >= 0) {
     arrayOfProperties.splice(existingIndex, 1)

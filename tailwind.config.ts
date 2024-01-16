@@ -10,9 +10,9 @@ export default <Partial<Config>>{
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#000000',
-          1: '#0d0d0d',
-          2: '#191919'
+          DEFAULT: '#5670c3',
+          light: '#8fa0d7',
+          dark: '#173083'
         }
       }
     }

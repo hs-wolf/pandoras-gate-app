@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col overflow-auto">
     <NuxtLink
       :to="localePath({ name: `character` })"
       class="px-2 py-1 bg-gray-200"
