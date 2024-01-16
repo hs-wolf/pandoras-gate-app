@@ -6,7 +6,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.ATTRIBUTES_MOD_STRENGTH,
       default: true,
       action: OperationAction.SUM,
@@ -20,7 +20,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.ATTRIBUTES_MOD_AGILITY,
       default: true,
       action: OperationAction.SUM,
@@ -34,7 +34,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.ATTRIBUTES_MOD_DEXTERITY,
       default: true,
       action: OperationAction.SUM,
@@ -48,7 +48,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.ATTRIBUTES_MOD_VITALITY,
       default: true,
       action: OperationAction.SUM,
@@ -62,7 +62,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.ATTRIBUTES_MOD_SPIRIT,
       default: true,
       action: OperationAction.SUM,
@@ -76,7 +76,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.ATTRIBUTES_MOD_LUCK,
       default: true,
       action: OperationAction.SUM,
@@ -93,7 +93,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.STATS_INITIATIVE,
       default: true,
       action: OperationAction.SUM,
@@ -107,7 +107,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.STATS_DODGE,
       default: true,
       action: OperationAction.SUM,
@@ -121,7 +121,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.STATS_MOVE,
       default: true,
       action: OperationAction.SUM,
@@ -130,7 +130,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.STATS_CRITICAL,
         default: true,
         action: OperationAction.SUM,
@@ -144,7 +144,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.STATS_CRITICAL,
         default: true,
         action: OperationAction.SUM,
@@ -160,7 +160,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.STATS_PHYSICAL_DEFENSE,
         default: true,
         action: OperationAction.SUM,
@@ -174,7 +174,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.STATS_PHYSICAL_DEFENSE,
         default: true,
         action: OperationAction.SUM,
@@ -189,7 +189,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ],
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.STATS_PHYSICAL_DICE,
       default: true,
       action: OperationAction.SUM,
@@ -204,7 +204,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.STATS_MAGICAL_DEFENSE,
         default: true,
         action: OperationAction.SUM,
@@ -218,7 +218,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.STATS_MAGICAL_DEFENSE,
         default: true,
         action: OperationAction.SUM,
@@ -233,7 +233,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ],
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.STATS_MAGICAL_DICE,
       default: true,
       action: OperationAction.SUM,
@@ -250,7 +250,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.RANGE_UNARMED,
       default: true,
       action: OperationAction.SUM,
@@ -258,7 +258,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.RANGE_MELEE,
       default: true,
       action: OperationAction.SUM,
@@ -266,7 +266,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.RANGE_RANGED,
       default: true,
       action: OperationAction.SUM,
@@ -280,7 +280,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.RANGE_FIREARM,
       default: true,
       action: OperationAction.SUM,
@@ -298,7 +298,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_UNARMED,
         default: true,
         action: OperationAction.SUM,
@@ -312,7 +312,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_UNARMED,
         default: true,
         action: OperationAction.SUM,
@@ -328,7 +328,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_MELEE,
         default: true,
         action: OperationAction.SUM,
@@ -342,7 +342,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_MELEE,
         default: true,
         action: OperationAction.SUM,
@@ -358,7 +358,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_RANGED,
         default: true,
         action: OperationAction.SUM,
@@ -372,7 +372,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_RANGED,
         default: true,
         action: OperationAction.SUM,
@@ -388,7 +388,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_FIREARM,
         default: true,
         action: OperationAction.SUM,
@@ -402,7 +402,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.HIT_FIREARM,
         default: true,
         action: OperationAction.SUM,
@@ -421,7 +421,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_UNARMED,
         default: true,
         action: OperationAction.SUM,
@@ -435,7 +435,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_UNARMED,
         default: true,
         action: OperationAction.SUM,
@@ -451,7 +451,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_MELEE,
         default: true,
         action: OperationAction.SUM,
@@ -465,7 +465,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_MELEE,
         default: true,
         action: OperationAction.SUM,
@@ -481,7 +481,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_RANGED,
         default: true,
         action: OperationAction.SUM,
@@ -495,7 +495,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_RANGED,
         default: true,
         action: OperationAction.SUM,
@@ -511,7 +511,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_FIREARM,
         default: true,
         action: OperationAction.SUM,
@@ -525,7 +525,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.PHYSICIAL_BONUS_FIREARM,
         default: true,
         action: OperationAction.SUM,
@@ -543,7 +543,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_WATER,
       default: true,
       action: OperationAction.SUM,
@@ -557,7 +557,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_ETHEREAL,
       default: true,
       action: OperationAction.SUM,
@@ -571,7 +571,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_FIRE,
       default: true,
       action: OperationAction.SUM,
@@ -585,7 +585,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_ICE,
       default: true,
       action: OperationAction.SUM,
@@ -599,7 +599,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_MOON,
       default: true,
       action: OperationAction.SUM,
@@ -613,7 +613,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_LIGHT,
       default: true,
       action: OperationAction.SUM,
@@ -627,7 +627,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_MAGICK,
       default: true,
       action: OperationAction.SUM,
@@ -641,7 +641,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_NATURE,
       default: true,
       action: OperationAction.SUM,
@@ -655,7 +655,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_SUN,
       default: true,
       action: OperationAction.SUM,
@@ -669,7 +669,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_SOUL,
       default: true,
       action: OperationAction.SUM,
@@ -683,7 +683,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_EARTH,
       default: true,
       action: OperationAction.SUM,
@@ -697,7 +697,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_DARKNESS,
       default: true,
       action: OperationAction.SUM,
@@ -711,7 +711,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_THUNDER,
       default: true,
       action: OperationAction.SUM,
@@ -725,7 +725,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.MAGICAL_BONUS_WIND,
       default: true,
       action: OperationAction.SUM,
@@ -742,7 +742,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MELEE_WEAPONS,
       default: true,
       action: OperationAction.SUM,
@@ -754,7 +754,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MECHANICAL_WEAPONS,
       default: true,
       action: OperationAction.SUM,
@@ -766,7 +766,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_WILLPOWER,
       default: true,
       action: OperationAction.SUM,
@@ -778,7 +778,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_FORGE,
       default: true,
       action: OperationAction.SUM,
@@ -790,7 +790,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_IMMOBILIZATION,
       default: true,
       action: OperationAction.SUM,
@@ -802,7 +802,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_UNARMED_COMBAT,
       default: true,
       action: OperationAction.SUM,
@@ -814,7 +814,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MINING,
       default: true,
       action: OperationAction.SUM,
@@ -826,7 +826,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MOUNT,
       default: true,
       action: OperationAction.SUM,
@@ -838,7 +838,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_TRACK,
       default: true,
       action: OperationAction.SUM,
@@ -854,7 +854,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MISLEAD,
       default: true,
       action: OperationAction.SUM,
@@ -866,7 +866,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_DISGUISE,
       default: true,
       action: OperationAction.SUM,
@@ -878,7 +878,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_DUAL_WIELD,
       default: true,
       action: OperationAction.SUM,
@@ -890,7 +890,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_HIDE,
       default: true,
       action: OperationAction.SUM,
@@ -902,7 +902,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_DODGE,
       default: true,
       action: OperationAction.SUM,
@@ -914,7 +914,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_ESCAPE,
       default: true,
       action: OperationAction.SUM,
@@ -926,7 +926,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_JUMP,
       default: true,
       action: OperationAction.SUM,
@@ -941,7 +941,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_AGRICULTURE,
       default: true,
       action: OperationAction.SUM,
@@ -953,7 +953,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_RANGED_WEAPON,
       default: true,
       action: OperationAction.SUM,
@@ -965,7 +965,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_FIREARM,
       default: true,
       action: OperationAction.SUM,
@@ -977,7 +977,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MASONRY,
       default: true,
       action: OperationAction.SUM,
@@ -989,7 +989,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_THROW_OBJECT,
       default: true,
       action: OperationAction.SUM,
@@ -1001,7 +1001,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_CLIMB,
       default: true,
       action: OperationAction.SUM,
@@ -1013,7 +1013,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_BUILD_BOAT,
       default: true,
       action: OperationAction.SUM,
@@ -1025,7 +1025,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_SWIM,
       default: true,
       action: OperationAction.SUM,
@@ -1037,7 +1037,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_PILOTING,
       default: true,
       action: OperationAction.SUM,
@@ -1049,7 +1049,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_SET_TRAP,
       default: true,
       action: OperationAction.SUM,
@@ -1061,7 +1061,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_FIRST_AID,
       default: true,
       action: OperationAction.SUM,
@@ -1077,7 +1077,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_CHARISMA,
       default: true,
       action: OperationAction.SUM,
@@ -1089,7 +1089,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_PHYSICAL_DEFENSE,
       default: true,
       action: OperationAction.SUM,
@@ -1101,7 +1101,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_LEADERSHIP,
       default: true,
       action: OperationAction.SUM,
@@ -1113,7 +1113,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_SURVIVAL,
       default: true,
       action: OperationAction.SUM,
@@ -1129,7 +1129,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_AID,
       default: true,
       action: OperationAction.SUM,
@@ -1141,7 +1141,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_BLUFF,
       default: true,
       action: OperationAction.SUM,
@@ -1153,7 +1153,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_CONJURATION,
       default: true,
       action: OperationAction.SUM,
@@ -1165,7 +1165,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MAGICAL_DEFENSE,
       default: true,
       action: OperationAction.SUM,
@@ -1177,7 +1177,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_WATER_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1189,7 +1189,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_ETHEREAL_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1201,7 +1201,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_FIRE_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1213,7 +1213,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_ICE_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1225,7 +1225,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MOON_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1237,7 +1237,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_LIGHT_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1249,7 +1249,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MAGICK_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1261,7 +1261,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_NATURE_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1273,7 +1273,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_SUN_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1285,7 +1285,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_SOUL_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1297,7 +1297,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_EARTH_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1309,7 +1309,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_DARKNESS_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1321,7 +1321,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_THUNDER_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1333,7 +1333,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_WIND_ELEMENT,
       default: true,
       action: OperationAction.SUM,
@@ -1345,7 +1345,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_INTERPRET_DREAMS,
       default: true,
       action: OperationAction.SUM,
@@ -1357,7 +1357,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_INTERROGATE,
       default: true,
       action: OperationAction.SUM,
@@ -1369,7 +1369,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_INTIMIDATE,
       default: true,
       action: OperationAction.SUM,
@@ -1381,7 +1381,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_LANGUAGE,
       default: true,
       action: OperationAction.SUM,
@@ -1393,7 +1393,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_CURSE,
       default: true,
       action: OperationAction.SUM,
@@ -1405,7 +1405,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MYSTICISM,
       default: true,
       action: OperationAction.SUM,
@@ -1417,7 +1417,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_NEGOTIATE,
       default: true,
       action: OperationAction.SUM,
@@ -1429,7 +1429,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_PERCEPTION,
       default: true,
       action: OperationAction.SUM,
@@ -1441,7 +1441,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_PREDICT_WEATHER,
       default: true,
       action: OperationAction.SUM,
@@ -1453,7 +1453,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_TACTICS,
       default: true,
       action: OperationAction.SUM,
@@ -1469,7 +1469,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
   ...[
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_CRITICAL,
       default: true,
       action: OperationAction.SUM,
@@ -1481,7 +1481,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_PLAY_CALCULATE,
       default: true,
       action: OperationAction.SUM,
@@ -1493,7 +1493,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     },
     {
       id: uuidv4(),
-      description: 'Fórmula Básica',
+      description: 'Fórmula Padrão',
       target: ALL_PROPERTIES.EXPERTISE_MAGICK_FIND,
       default: true,
       action: OperationAction.SUM,
@@ -1509,7 +1509,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.EXPERTISE_ACROBATICS,
         default: true,
         action: OperationAction.SUM,
@@ -1523,7 +1523,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.EXPERTISE_ACROBATICS,
         default: true,
         action: OperationAction.SUM,
@@ -1539,7 +1539,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
     ...[
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.EXPERTISE_STEAL,
         default: true,
         action: OperationAction.SUM,
@@ -1553,7 +1553,7 @@ export const DEFAULT_CHARACTER_FORMULAS: IOperation[] = [
       },
       {
         id: uuidv4(),
-        description: 'Fórmula Básica',
+        description: 'Fórmula Padrão',
         target: ALL_PROPERTIES.EXPERTISE_STEAL,
         default: true,
         action: OperationAction.SUM,
