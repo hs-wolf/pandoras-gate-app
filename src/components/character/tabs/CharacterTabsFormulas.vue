@@ -11,15 +11,15 @@
         />
         <div class="grid grid-cols-2 gap-2">
           <button id="cancel-operation" type="button" class="px-2 py-1.5 bg-red-800 rounded-sm text-white" @click.prevent="cancelNewOperation">
-            {{ $t('pages.character.cancel-operation') }}
+            {{ $t('pages.character-sheet.cancel-operation') }}
           </button>
           <button id="save-operation" type="button" class="px-2 py-1.5 bg-green-800 rounded-sm text-white" @click.prevent="saveNewOperation">
-            {{ $t('pages.character.save-operation') }}
+            {{ $t('pages.character-sheet.save-operation') }}
           </button>
         </div>
       </div>
       <button v-else id="new-operation" type="button" class="px-2 py-1.5 bg-blue-800 rounded-sm text-white" @click.prevent="startNewOperation">
-        {{ $t('pages.character.new-operation.label') }}
+        {{ $t('pages.character-sheet.new-operation.label') }}
       </button>
     </div>
     <div class="flex flex-col gap-2">

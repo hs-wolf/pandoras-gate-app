@@ -1,6 +1,6 @@
 body {
   @apply bg-white text-black font-sans antialiased transition-colors;
-  @apply dark:bg-black dark:text-yellow-500;
+  @apply dark:bg-black dark:text-yellow-400;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -17,4 +17,20 @@ input[type=number] {
 
 .nuxt-icon svg {
   margin-bottom: 0 !important;
+}
+
+.btn-effect {
+  @apply cursor-pointer transition-transform active:scale-90;
+}
+
+.btn {
+  @apply flex justify-center items-center gap-2 w-full px-3 py-2.5 shadow rounded-sm text-sm font-semibold whitespace-nowrap transition-all;
+  @apply active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  .nuxt-icon {
+    @apply text-base;
+  }
+}
+
+.btn-primary {
+  @apply bg-primary text-white active:bg-primary-dark dark:active:bg-primary-light;
 }

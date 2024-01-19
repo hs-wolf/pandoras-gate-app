@@ -1,18 +1,22 @@
 <template>
-  <div class="flex flex-col overflow-auto">
+  <div class="flex flex-col h-full gap-4 px-2 py-3">
     <NuxtLink
-      :to="localePath({ name: `character` })"
-      class="px-2 py-1 bg-gray-200"
+      :to="localePath({ name: `character-sheet` })"
+      class="btn btn-primary"
     >
-      <p>Character</p>
+      <p>{{ $t('pages.index.got-to-character-sheet') }}</p>
+      <NuxtIcon name="user" />
     </NuxtLink>
-    <HelloWorld />
   </div>
 </template>
 
 <script setup lang="ts">
 const localePath = useLocalePath()
+const navbarStore = useNavbarStore()
 
+onBeforeMount(() => {
+  navbarStore.setTitle('Pandoras Gate')
+})
 </script>
 
 <style scoped>

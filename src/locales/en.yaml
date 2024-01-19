@@ -4,6 +4,13 @@ nested:
   value: Nested
 english: English
 portuguese: Portuguese
+languages:
+  en: English
+  pt: Portuguese
+themes:
+  dark: Dark
+  light: Light
+  system: System
 properties:
   GENERAL_GRADE: Grade
   GENERAL_LEVEL: Level
@@ -147,7 +154,11 @@ operation-action:
   MULTIPLICATION: "( x ) Multiplication"
   DIVISION: "( / ) Division"
 components:
-  character:
+  navbar:
+    links:
+      index: Home
+      character-sheet: Character Sheet
+  character-sheet:
     tabs:
       info:
         title: Info
@@ -192,7 +203,9 @@ components:
           is-substitution: Substitution
           priority-value: Priority value
 pages:
-  character:
+  index:
+    got-to-character-sheet: Go to Character Sheet
+  character-sheet:
     new-operation:
      label: + New Operation
     save-operation: Save

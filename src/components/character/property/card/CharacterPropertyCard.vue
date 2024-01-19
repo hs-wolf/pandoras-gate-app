@@ -1,10 +1,10 @@
 <template>
-  <div v-if="property" v-auto-animate class="flex flex-col border border-neutral-400 rounded-sm text-sm md:text-base">
+  <div v-if="property" v-auto-animate class="flex flex-col border border-black/20 dark:border-white/40 rounded-sm text-sm md:text-base">
     <button
       :id="`menu-${property.type}`"
       type="button"
       class="flex items-center justify-between p-2 transition-colors"
-      :class="{ 'bg-neutral-400 text-white dark:text-black': showOperations }"
+      :class="{ 'bg-black/20 dark:bg-white/40 text-black dark:text-white': showOperations }"
       @click.prevent="showOperations = !showOperations"
     >
       <span class="font-semibold">

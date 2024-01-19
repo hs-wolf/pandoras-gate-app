@@ -1,24 +1,27 @@
 <template>
-  <div v-auto-animate class="flex flex-col h-full pb-12">
-    <component :is="tabsList[currentTab].component" v-model="character" class="h-full overflow-auto" />
-    <div class="z-10 fixed bottom-0 inset-x-0 grid h-12 bg-primary" :style="{ 'grid-template-columns': `repeat(${tabsList.length}, minmax(0, 1fr))` }">
+  <div v-auto-animate class="relative flex flex-col h-full pb-12 overflow-auto">
+    <div class="z-[150] fixed bottom-0 inset-x-0 grid h-12 bg-white dark:bg-black border-t border-black/5 dark:border-white/15" :style="{ 'grid-template-columns': `repeat(${tabsList.length}, minmax(0, 1fr))` }">
       <button
         v-for="(tab, tabIndex) in tabsList"
-        id="tab-change"
+        :id="`tab-change-${tabIndex}`"
         :key="tab.name"
         type="button"
-        class="text-white active:bg-primary-dark transition-colors"
+        class="transition-colors"
+        :class="{ 'bg-primary text-white': currentTab === tabIndex }"
         @click.prevent="changeTab(tabIndex)"
       >
-        {{ $t(`components.character.tabs.${tab.name}.title`) }}
+        {{ $t(`components.character-sheet.tabs.${tab.name}.title`) }}
       </button>
     </div>
+    <component :is="tabsList[currentTab].component" v-if="tabsList[currentTab].component" v-model="character" />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { ConcreteComponent } from 'vue'
 import { Character, DEFAULT_CHARACTER_FORMULAS } from '~/types'
+
+const navbarStore = useNavbarStore()
 
 type CharacterTab = {
   name: string
@@ -57,8 +60,14 @@ function changeTab (index: number) {
   currentTab.value = index
   triggerRef(tabsList)
 }
+
+onBeforeMount(() => {
+  navbarStore.setTitle('Character')
+})
 </script>
 
 <style scoped>
-
+.asas {
+  position: static;
+}
 </style>

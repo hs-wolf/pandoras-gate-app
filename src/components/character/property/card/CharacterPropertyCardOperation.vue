@@ -2,12 +2,12 @@
   <div
     v-auto-animate
     class="flex flex-col gap-2 w-full p-2"
-    :class=" showTarget ? 'border border-neutral-400 dark:border-neutral-400 rounded-sm' : 'border-b border-neutral-400 last:border-none'"
+    :class=" showTarget ? 'border border-black/20 dark:border-white/40 rounded-sm' : 'border-b border-black/20 dark:border-white/40 last:border-none'"
   >
     <!-- THE FIELD FOR THE OPERATION DESCRIPTION -->
     <div class="flex flex-col gap-2">
       <p class="font-semibold whitespace-nowrap">
-        {{ $t('components.character.property.card.operation.description') }}
+        {{ $t('components.character-sheet.property.card.operation.description') }}
       </p>
       <input
         id="value-input"
@@ -19,7 +19,7 @@
     <!-- OPTIONAL TARGET FIELD -->
     <div v-if="showTarget" class="flex items-center gap-2">
       <p class="font-semibold whitespace-nowrap">
-        {{ $t('components.character.property.card.operation.target') }}
+        {{ $t('components.character-sheet.property.card.operation.target') }}
       </p>
       <select :id="`operation-target-${operation.id}`" v-model="operation.target" class="custom-select">
         <option v-for="operationAction in Object.values(ALL_PROPERTIES)" :key="operationAction" :value="operationAction">
@@ -30,7 +30,7 @@
     <!-- THE MAIN ACTION TAKEN IF NOT A SUBSTITUTION -->
     <div v-if="!operation.isSubstitution" class="flex items-center gap-2">
       <p class="font-semibold whitespace-nowrap">
-        {{ $t('components.character.property.card.operation.action') }}
+        {{ $t('components.character-sheet.property.card.operation.action') }}
       </p>
       <select :id="`action-${operation.id}`" v-model="operation.action" class="custom-select">
         <option v-for="operationAction in Object.values(OperationAction)" :key="operationAction" :value="operationAction">
@@ -42,7 +42,7 @@
       <!-- THE FIELD FOR THE ACTION VALUE OR ABSOLUTE VALUE -->
       <div v-if="!operation.isBasedOnProperty || operation.isSubstitution" class="flex items-center gap-2 w-full">
         <p class="font-semibold whitespace-nowrap">
-          {{ $t(operation.isSubstitution ? 'components.character.property.card.operation.substitution-value' : 'components.character.property.card.operation.value') }}
+          {{ $t(operation.isSubstitution ? 'components.character-sheet.property.card.operation.substitution-value' : 'components.character-sheet.property.card.operation.value') }}
         </p>
         <input
           id="value-input"
@@ -55,20 +55,20 @@
       </div>
       <div v-if="!operation.isSubstitution && !operation.isBasedOnProperty" class="flex items-center gap-2 whitespace-nowrap">
         <input :id="`is-percentage-${operation.id}`" v-model="operation.isPercentage" type="checkbox" class="custom-checkbox">
-        <label :for="`is-percentage-${operation.id}`">{{ $t('components.character.property.card.operation.is-percetage') }}</label>
+        <label :for="`is-percentage-${operation.id}`">{{ $t('components.character-sheet.property.card.operation.is-percetage') }}</label>
       </div>
     </div>
     <!-- THE CHECKBOX THAT SHOW OR HIDE THE BASED ON PROPERTY FIELDS -->
     <div v-if="!operation.isSubstitution" v-auto-animate class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
         <input :id="`is-based-on-property-${operation.id}`" v-model="operation.isBasedOnProperty" type="checkbox" class="custom-checkbox">
-        <label :for="`is-based-on-property-${operation.id}`">{{ $t('components.character.property.card.operation.is-based-on-property') }}</label>
+        <label :for="`is-based-on-property-${operation.id}`">{{ $t('components.character-sheet.property.card.operation.is-based-on-property') }}</label>
       </div>
       <!-- THE FIELDS FOR WHEN THE VALUE IS ANOTHER PROPERTY -->
       <div v-if="operation.isBasedOnProperty && operation.basedOnProperty" v-auto-animate class="flex flex-col gap-2">
         <div class="flex items-center gap-2">
           <p class="font-semibold whitespace-nowrap">
-            {{ $t('components.character.property.card.operation.based-on') }}
+            {{ $t('components.character-sheet.property.card.operation.based-on') }}
           </p>
           <select :id="`property-select-${operation.id}`" v-model="operation.basedOnProperty.type" class="custom-select">
             <option v-for="propertyType in selectableTypes" :key="propertyType" :value="propertyType">
@@ -78,12 +78,12 @@
         </div>
         <div class="flex items-center gap-2">
           <input :id="`modify-property-${operation.id}`" v-model="operation.basedOnProperty.modifyProperty" type="checkbox" class="custom-checkbox">
-          <label :for="`modify-property-${operation.id}`">{{ $t('components.character.property.card.operation.modify-property') }}</label>
+          <label :for="`modify-property-${operation.id}`">{{ $t('components.character-sheet.property.card.operation.modify-property') }}</label>
         </div>
         <div v-if="operation.basedOnProperty.modifyProperty" class="flex flex-col gap-2">
           <div class="flex items-center gap-2 w-full">
             <p class="font-semibold whitespace-nowrap">
-              {{ $t('components.character.property.card.operation.property-action') }}
+              {{ $t('components.character-sheet.property.card.operation.property-action') }}
             </p>
             <select :id="`action-${operation.id}`" v-model="operation.basedOnProperty.modifierAction" class="custom-select">
               <option v-for="operationAction in Object.values(OperationAction)" :key="operationAction" :value="operationAction">
@@ -93,7 +93,7 @@
           </div>
           <div class="flex items-center gap-2 w-full">
             <p class="font-semibold whitespace-nowrap">
-              {{ $t('components.character.property.card.operation.property-action-value') }}
+              {{ $t('components.character-sheet.property.card.operation.property-action-value') }}
             </p>
             <input
               id="value-input"
@@ -109,12 +109,12 @@
     </div>
     <div v-if="!operation.isBasedOnProperty" class="flex items-center gap-2">
       <input :id="`is-substitution-${operation.id}`" v-model="operation.isSubstitution" type="checkbox" class="custom-checkbox">
-      <label :for="`is-substitution-${operation.id}`">{{ $t('components.character.property.card.operation.is-substitution') }}</label>
+      <label :for="`is-substitution-${operation.id}`">{{ $t('components.character-sheet.property.card.operation.is-substitution') }}</label>
     </div>
     <!-- THE FIELD FOR THE PRIORITY VALUE WHEN DOING A SUBSTITUTION OPERATION -->
     <div v-if="operation.isSubstitution" class="flex items-center gap-2">
       <p class="font-semibold whitespace-nowrap">
-        {{ $t('components.character.property.card.operation.priority-value') }}
+        {{ $t('components.character-sheet.property.card.operation.priority-value') }}
       </p>
       <input
         id="value-input"
@@ -186,12 +186,12 @@ watch(() => operation.value.basedOnProperty?.modifyProperty, () => {
 
 <style scoped lang="scss">
 .custom-select {
-  @apply w-full px-2 py-1.5 leading-6 bg-neutral-800 rounded-sm text-white;
+  @apply w-full px-2 py-1.5 leading-6 bg-black/20 dark:bg-white/40 rounded-sm text-black dark:text-white;
 }
 .custom-checkbox {
   @apply w-4 h-4;
 }
 .custom-input {
-  @apply w-full px-1.5 py-1 bg-neutral-800 border border-neutral-800 rounded-sm outline-none text-white;
+  @apply w-full px-1.5 py-1 bg-black/20 dark:bg-white/40  rounded-sm outline-none text-black dark:text-white;
 }
 </style>

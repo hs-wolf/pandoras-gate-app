@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col h-full">
+  <div class="relative flex flex-col h-full">
+    <MainNavbar />
     <slot />
   </div>
 </template>

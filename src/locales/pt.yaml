@@ -4,6 +4,13 @@ nested:
   value: Aninhado
 english: Inglês
 portuguese: Português
+languages:
+  en: Inglês
+  pt: Português
+themes:
+  dark: Escuro
+  light: Claro
+  system: Sistema
 properties:
   GENERAL_GRADE: Grau
   GENERAL_LEVEL: Nível
@@ -147,6 +154,10 @@ operation-action:
   MULTIPLICATION: ( x ) Multiplicação
   DIVISION: ( / ) Divisão
 components:
+  navbar:
+    links:
+      index: Início
+      character-sheet: Ficha do Personagem
   character:
     tabs:
       info:
@@ -192,7 +203,9 @@ components:
           is-substitution: Substituição
           priority-value: Valor de prioridade
 pages:
-  character:
+  index:
+    got-to-character-sheet: Ir para a ficha de personagem
+  character-sheet:
     new-operation:
      label: + Nova Operação
     save-operation: Salvar

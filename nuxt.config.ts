@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     enabled: true
   },
   srcDir: 'src',
-  css: ['assets/css/main.scss'],
+  css: ['assets/css/main.scss', 'assets/css/transitions.scss'],
   app: {
     head: {
       htmlAttrs: {
