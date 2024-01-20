@@ -42,7 +42,7 @@ const showNewOperation = ref(false)
 const newOperationId = ref('')
 
 const groupedOperations = computed(() => character.value.operations.reduce((result, current) => {
-  if (current.id !== newOperationId.value && !current.default) {
+  if (current.id !== newOperationId.value && !current.baseFormula && !current.baseValue) {
     const categoryItem = result.find(item => item.type === current.target)
     if (categoryItem) {
       categoryItem.operations.push(current)

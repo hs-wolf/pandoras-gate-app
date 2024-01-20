@@ -10,7 +10,7 @@ languages:
 themes:
   dark: Escuro
   light: Claro
-  system: Sistema
+  system: Sistema=
 properties:
   GENERAL_GRADE: Grau
   GENERAL_LEVEL: Nível
@@ -148,22 +148,41 @@ properties:
   EXPERTISE_MVP: Per. MVP
   EXPERTISE_PVP: Per. PVP
   EXPERTISE_SYNERGY: Per. Sinergia
+elements:
+  fire: Fogo
+  nature: Natureza
+  wind: Vento
+  earth: Terra
+  thunder: Trovão
+  water: Água
+jobs:
+  acolyte: Acólito
+  archer: Arqueiro
+  mage: Mago
+  merchant: Mercador
+  swordsman: Espadachim
+  thief: Gatuno
 operation-action:
   SUM: ( + ) Soma
   SUBTRACTION: ( - ) Subtração
   MULTIPLICATION: ( x ) Multiplicação
   DIVISION: ( / ) Divisão
+general:
+  save-changes: Salvar mudanças
 components:
   navbar:
     links:
       index: Início
       character-sheet: Ficha do Personagem
-  character:
+  character-sheet:
     tabs:
       info:
         title: Info
-        player: "Jogador:"
-        guild: "Guilda:"
+        base:
+          player: "Player:"
+          guild: "Guild:"
+          elements: "Elements:"
+          jobs: "Jobs:"
         skills-regen: Regeneração de Skills
         attribute: Atributo
         total: Total

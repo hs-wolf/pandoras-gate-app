@@ -1,12 +1,6 @@
 <template>
   <div class="flex flex-col gap-2 px-2 py-3">
-    <div class="flex flex-col text-lg px-1">
-      <h1 class="text-2xl font-semibold">
-        {{ character.character }}
-      </h1>
-      <h1>{{ $t('components.character-sheet.tabs.info.player') }} <span class="font-semibold">{{ character.player }}</span></h1>
-      <h1>{{ $t('components.character-sheet.tabs.info.guild') }} <span class="font-semibold">{{ character.guild }}</span></h1>
-    </div>
+    <CharacterSheetTabsInfoBase v-model="character" />
     <div class="flex flex-col p-2 border border-black/20 dark:border-white/40 rounded-sm">
       <div class="general-property">
         <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GRADE}`) }}: <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_GRADE) }}</span></p>

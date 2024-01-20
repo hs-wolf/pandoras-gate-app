@@ -148,11 +148,27 @@ properties:
   EXPERTISE_MVP: Exp. MVP
   EXPERTISE_PVP: Exp. PVP
   EXPERTISE_SYNERGY: Exp. Synergy
+elements:
+  fire: Fire
+  nature: Nature
+  wind: Wind
+  earth: Earth
+  thunder: Thunder
+  water: Water
+jobs:
+  acolyte: Acolyte
+  archer: Archer
+  mage: Mage
+  merchant: Merchant
+  swordsman: Swordsman
+  thief: Thief
 operation-action:
   SUM: "( + ) Sum"
   SUBTRACTION: "( - ) Subtraction"
   MULTIPLICATION: "( x ) Multiplication"
   DIVISION: "( / ) Division"
+general:
+  save-changes: Save changes
 components:
   navbar:
     links:
@@ -162,8 +178,11 @@ components:
     tabs:
       info:
         title: Info
-        player: "Player:"
-        guild: "Guild:"
+        base:
+          player: "Player:"
+          guild: "Guild:"
+          elements: "Elements:"
+          jobs: "Jobs:"
         skills-regen: Skills Regen
         attribute: Attribute
         total: Total

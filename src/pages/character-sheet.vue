@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import type { ConcreteComponent } from 'vue'
-import { Character, DEFAULT_CHARACTER_FORMULAS } from '~/types'
+import { Character, DEFAULT_CHARACTER_FORMULAS, ELEMENTS_LIST, JOBS_LIST } from '~/types'
 
 const navbarStore = useNavbarStore()
 
@@ -32,15 +32,15 @@ const currentTab = ref(0)
 const tabsList = shallowRef<CharacterTab[]>([
   {
     name: 'info',
-    component: resolveComponent('CharacterTabsInfo')
+    component: resolveComponent('CharacterSheetTabsInfo')
   },
   {
     name: 'buffs',
-    component: resolveComponent('CharacterTabsBuffs')
+    component: resolveComponent('CharacterSheetTabsBuffs')
   },
   {
     name: 'formulas',
-    component: resolveComponent('CharacterTabsFormulas')
+    component: resolveComponent('CharacterSheetTabsFormulas')
   }
 ])
 
@@ -48,8 +48,14 @@ const character = ref(new Character(
   'Jose',
   'Tai Lung',
   'Falcões de Primus',
-  [],
-  [],
+  [
+    ELEMENTS_LIST[0],
+    ELEMENTS_LIST[1]
+  ],
+  [
+    JOBS_LIST[0],
+    JOBS_LIST[1]
+  ],
   DEFAULT_CHARACTER_FORMULAS
 ))
 

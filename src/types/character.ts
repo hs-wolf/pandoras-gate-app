@@ -226,7 +226,8 @@ export interface IOperation {
   id: string
   target: AllPropertiesTypes
   action: OperationAction
-  default?: boolean
+  baseFormula?: boolean
+  baseValue?: boolean
   description?: string
   isBasedOnProperty?: boolean
   isPercentage?: boolean
@@ -244,23 +245,27 @@ export interface IProperty {
 export interface IElement {
   type: string,
   advantage?: {
-    element: string
+    type: string
     value: string
   },
-  description: string
+  disadvantage?: {
+    type: string
+    value: string
+  },
+  description?: string
 }
 
 export interface IJob {
-  name: string,
-  tier: string,
-  description: string
+  type: string,
+  tier: number,
+  description?: string
 }
 
 export class Character {
   // eslint-disable-next-line no-useless-constructor
   constructor (
     public player: string,
-    public character: string,
+    public name: string,
     public guild: string,
     public elements: IElement[],
     public jobs: IJob[],
@@ -336,8 +341,10 @@ export class Character {
             finalValue = 1
           }
         }
-        if (Math.floor(finalValue) <= 0) {
-          finalValue = 1
+        if (![...Object.values(GENERAL_PROPERTIES), ...Object.values(CONDITIONS_PROPERTIES)].includes(propertyType)) {
+          if (Math.floor(finalValue) <= 0) {
+            finalValue = 1
+          }
         }
         return Math.floor(finalValue)
       }
@@ -397,3 +404,99 @@ export class Character {
     return valueToUse >= 0 ? valueToUse : 0
   }
 }
+
+export const ELEMENTS_LIST: IElement[] = [
+  {
+    type: 'fire',
+    advantage: {
+      type: 'nature',
+      value: '25'
+    },
+    disadvantage: {
+      type: 'water',
+      value: '25'
+    }
+  },
+  {
+    type: 'nature',
+    advantage: {
+      type: 'ice',
+      value: '25'
+    },
+    disadvantage: {
+      type: 'fire',
+      value: '25'
+    }
+  },
+  {
+    type: 'wind',
+    advantage: {
+      type: 'earth',
+      value: '25'
+    },
+    disadvantage: {
+      type: 'nature',
+      value: '25'
+    }
+  },
+  {
+    type: 'earth',
+    advantage: {
+      type: 'thunder',
+      value: '25'
+    },
+    disadvantage: {
+      type: 'wind',
+      value: '25'
+    }
+  },
+  {
+    type: 'thunder',
+    advantage: {
+      type: 'water',
+      value: '25'
+    },
+    disadvantage: {
+      type: 'earth',
+      value: '25'
+    }
+  },
+  {
+    type: 'water',
+    advantage: {
+      type: 'fire',
+      value: '25'
+    },
+    disadvantage: {
+      type: 'thunder',
+      value: '25'
+    }
+  }
+]
+
+export const JOBS_LIST: IJob[] = [
+  {
+    type: 'acolyte',
+    tier: 1
+  },
+  {
+    type: 'archer',
+    tier: 1
+  },
+  {
+    type: 'mage',
+    tier: 1
+  },
+  {
+    type: 'merchant',
+    tier: 1
+  },
+  {
+    type: 'swordsman',
+    tier: 1
+  },
+  {
+    type: 'thief',
+    tier: 1
+  }
+]
