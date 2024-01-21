@@ -17,7 +17,7 @@ properties:
   GENERAL_EXP: Exp
   GENERAL_NEXT: Next
   GENERAL_ENCHANCEMENTS: Enhancements
-  GENERAL_ATUAL_SKILL_REGEN: Atual Skill Regen
+  GENERAL_ATUAL_SKILL_REGEN: Skill Regen
   GENERAL_MAX_SKILL_REGEN: Max Skill Regen
   GENERAL_JP: JP
   GENERAL_GOLD: Gold
@@ -168,7 +168,8 @@ operation-action:
   MULTIPLICATION: "( x ) Multiplication"
   DIVISION: "( / ) Division"
 general:
-  save-changes: Save changes
+  save-changes: Save
+  reset-changes: Reset
 components:
   navbar:
     links:
@@ -179,10 +180,21 @@ components:
       info:
         title: Info
         base:
-          player: "Player:"
-          guild: "Guild:"
-          elements: "Elements:"
-          jobs: "Jobs:"
+          character:
+            label: "Character:"
+            placeholder: Character name...
+          player:
+            label: "Player:"
+            placeholder: Player name...
+          guild:
+            label: "Guild:"
+            placeholder: Guild name...
+          elements:
+            label: "Elements:"
+            placeholder: "Select the elements"
+          jobs:
+            label: "Jobs:"
+            placeholder: "Select the elements"
         skills-regen: Skills Regen
         attribute: Attribute
         total: Total

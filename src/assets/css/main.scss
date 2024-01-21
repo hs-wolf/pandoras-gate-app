@@ -38,3 +38,15 @@ input[type=number] {
 .btn-action {
   @apply bg-action text-white active:bg-action-dark dark:active:bg-action-light;
 }
+
+.btn-danger {
+  @apply bg-danger text-white active:bg-danger-dark dark:active:bg-danger-light;
+}
+
+.custom-input {
+  @apply w-full px-2 py-1 bg-black/20 dark:bg-white/40 rounded-sm outline-none text-black placeholder:text-black/50 dark:text-white
+}
+
+.custom-select {
+  @apply w-full p-2 leading-6 bg-black/20 dark:bg-white/40 rounded-sm text-black dark:text-white;
+}

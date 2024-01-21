@@ -10,15 +10,15 @@ languages:
 themes:
   dark: Escuro
   light: Claro
-  system: Sistema=
+  system: Sistema
 properties:
   GENERAL_GRADE: Grau
   GENERAL_LEVEL: Nível
   GENERAL_EXP: Experiência
   GENERAL_NEXT: Next
   GENERAL_ENCHANCEMENTS: Aprimoramentos
-  GENERAL_ATUAL_SKILL_REGEN: Regen Atual de Habilidade
-  GENERAL_MAX_SKILL_REGEN: Regen Máx de Habilidade
+  GENERAL_ATUAL_SKILL_REGEN: Regen de Skill
+  GENERAL_MAX_SKILL_REGEN: Máx Regen de Skill
   GENERAL_JP: JP
   GENERAL_GOLD: Ouro
   CONDITIONS_ATUAL_HP: HP
@@ -168,7 +168,8 @@ operation-action:
   MULTIPLICATION: ( x ) Multiplicação
   DIVISION: ( / ) Divisão
 general:
-  save-changes: Salvar mudanças
+  save-changes: Salvar 
+  reset-changes: Resetar
 components:
   navbar:
     links:
@@ -179,10 +180,21 @@ components:
       info:
         title: Info
         base:
-          player: "Player:"
-          guild: "Guild:"
-          elements: "Elements:"
-          jobs: "Jobs:"
+          character:
+            label: "Personagem:"
+            placeholder: Nome do personagem...
+          player:
+            label: "Jogador:"
+            placeholder: Nome do jogador...
+          guild:
+            label: "Guilda:"
+            placeholder: Nome da guilda...
+          elements:
+            label: "Elementos:"
+            placeholder: "Selecione os elementos"
+          jobs:
+            label: "Classes:"
+            placeholder: "Selecione as classes"
         skills-regen: Regeneração de Skills
         attribute: Atributo
         total: Total

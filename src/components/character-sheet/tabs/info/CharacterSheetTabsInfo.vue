@@ -1,29 +1,7 @@
 <template>
-  <div class="flex flex-col gap-2 px-2 py-3">
+  <div v-auto-animate class="flex flex-col gap-2 px-2 py-3">
     <CharacterSheetTabsInfoBase v-model="character" />
-    <div class="flex flex-col p-2 border border-black/20 dark:border-white/40 rounded-sm">
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GRADE}`) }}: <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_GRADE) }}</span></p>
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_LEVEL}`) }}: <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_LEVEL) }}</span></p>
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_EXP}`) }}: <span>{{ `${character.getProperty(GENERAL_PROPERTIES.GENERAL_EXP)} / ${character.getProperty(GENERAL_PROPERTIES.GENERAL_NEXT)}` }}</span></p>
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_ENCHANCEMENTS}`) }}: <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_ENCHANCEMENTS) }}</span></p>
-      </div>
-      <div class="general-property">
-        <p>{{ $t('components.character-sheet.tabs.info.skills-regen') }}: <span>{{ `${character.getProperty(GENERAL_PROPERTIES.GENERAL_ATUAL_SKILL_REGEN)} / ${character.getProperty(GENERAL_PROPERTIES.GENERAL_MAX_SKILL_REGEN)}` }}</span></p>
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_JP}`) }}: <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_JP) }}</span></p>
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GOLD}`) }}: <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_GOLD) }}</span></p>
-      </div>
-    </div>
+    <CharacterSheetTabsInfoGeneral v-model="character" />
     <div class="grid grid-cols-2 gap-2 p-2 border border-black/20 dark:border-white/40 rounded-sm">
       <div class="conditions-item text-red-700">
         <p>{{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP}`) }}</p>
@@ -214,7 +192,6 @@
 <script setup lang="ts">
 import {
   Character,
-  GENERAL_PROPERTIES,
   CONDITIONS_PROPERTIES,
   ATTRIBUTES_PROPERTIES,
   ATTRIBUTES_MOD_PROPERTIES,
