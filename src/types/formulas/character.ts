@@ -28,7 +28,7 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
   {
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
-    target: ALL_PROPERTIES.ATTRIBUTES_MOD_STRENGTH,
+    target: ALL_PROPERTIES.ATTRIBUTES_STRENGTH_MOD,
     baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
@@ -42,7 +42,7 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
   {
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
-    target: ALL_PROPERTIES.ATTRIBUTES_MOD_AGILITY,
+    target: ALL_PROPERTIES.ATTRIBUTES_AGILITY_MOD,
     baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
@@ -56,7 +56,7 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
   {
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
-    target: ALL_PROPERTIES.ATTRIBUTES_MOD_DEXTERITY,
+    target: ALL_PROPERTIES.ATTRIBUTES_DEXTERITY_MOD,
     baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
@@ -70,7 +70,7 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
   {
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
-    target: ALL_PROPERTIES.ATTRIBUTES_MOD_VITALITY,
+    target: ALL_PROPERTIES.ATTRIBUTES_VITALITY_MOD,
     baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
@@ -84,7 +84,7 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
   {
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
-    target: ALL_PROPERTIES.ATTRIBUTES_MOD_SPIRIT,
+    target: ALL_PROPERTIES.ATTRIBUTES_SPIRIT_MOD,
     baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
@@ -98,7 +98,7 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
   {
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
-    target: ALL_PROPERTIES.ATTRIBUTES_MOD_LUCK,
+    target: ALL_PROPERTIES.ATTRIBUTES_LUCK_MOD,
     baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
@@ -120,7 +120,7 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_AGILITY,
+      type: ALL_PROPERTIES.ATTRIBUTES_AGILITY_MOD,
       modifyProperty: true,
       modifierAction: OperationAction.DIVISION,
       modifierValue: 2
@@ -134,7 +134,7 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_AGILITY,
+      type: ALL_PROPERTIES.ATTRIBUTES_AGILITY_MOD,
       modifyProperty: true,
       modifierAction: OperationAction.DIVISION,
       modifierValue: 2
@@ -157,7 +157,7 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
-        type: ALL_PROPERTIES.ATTRIBUTES_MOD_LUCK,
+        type: ALL_PROPERTIES.ATTRIBUTES_LUCK_MOD,
         modifyProperty: true,
         modifierAction: OperationAction.DIVISION,
         modifierValue: 5
@@ -187,7 +187,7 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
-        type: ALL_PROPERTIES.ATTRIBUTES_MOD_VITALITY,
+        type: ALL_PROPERTIES.ATTRIBUTES_VITALITY_MOD,
         modifyProperty: true,
         modifierAction: OperationAction.DIVISION,
         modifierValue: 2
@@ -231,7 +231,7 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
-        type: ALL_PROPERTIES.ATTRIBUTES_MOD_SPIRIT,
+        type: ALL_PROPERTIES.ATTRIBUTES_SPIRIT_MOD,
         modifyProperty: true,
         modifierAction: OperationAction.DIVISION,
         modifierValue: 2
@@ -313,7 +313,7 @@ const DEFAULT_CHARACTER_HITS: IOperation[] = [
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
-          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_MOD_STRENGTH,
+          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_STRENGTH_MOD,
           modifyProperty: true,
           modifierAction: OperationAction.DIVISION,
           modifierValue: 2
@@ -347,7 +347,7 @@ const DEFAULT_CHARACTER_HITS: IOperation[] = [
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
-          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_MOD_DEXTERITY,
+          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_DEXTERITY_MOD,
           modifyProperty: true,
           modifierAction: OperationAction.DIVISION,
           modifierValue: 2
@@ -384,7 +384,7 @@ const DEFAULT_CHARACTER_PHYSICAL_BONUSES: IOperation[] = [
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
-          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_MOD_STRENGTH,
+          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_STRENGTH_MOD,
           modifyProperty: true,
           modifierAction: OperationAction.DIVISION,
           modifierValue: 2
@@ -418,7 +418,7 @@ const DEFAULT_CHARACTER_PHYSICAL_BONUSES: IOperation[] = [
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
-          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_MOD_DEXTERITY,
+          type: ATTRIBUTES_MOD_PROPERTIES.ATTRIBUTES_DEXTERITY_MOD,
           modifyProperty: true,
           modifierAction: OperationAction.DIVISION,
           modifierValue: 2
@@ -470,7 +470,7 @@ const DEFAULT_CHARACTER_STRENGTH_EXPERTISES: IOperation[] = Object.values(EXPERT
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_STRENGTH,
+      type: ALL_PROPERTIES.ATTRIBUTES_STRENGTH_MOD,
       modifyProperty: false
     }
   }
@@ -485,7 +485,7 @@ const DEFAULT_CHARACTER_AGILITY_EXPERTISES: IOperation[] = Object.values(EXPERTI
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_AGILITY,
+      type: ALL_PROPERTIES.ATTRIBUTES_AGILITY_MOD,
       modifyProperty: false
     }
   }
@@ -500,7 +500,7 @@ const DEFAULT_CHARACTER_DEXTERITY_EXPERTISES: IOperation[] = Object.values(EXPER
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_DEXTERITY,
+      type: ALL_PROPERTIES.ATTRIBUTES_DEXTERITY_MOD,
       modifyProperty: false
     }
   }
@@ -515,7 +515,7 @@ const DEFAULT_CHARACTER_VITALITY_EXPERTISES: IOperation[] = Object.values(EXPERT
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_VITALITY,
+      type: ALL_PROPERTIES.ATTRIBUTES_VITALITY_MOD,
       modifyProperty: false
     }
   }
@@ -530,7 +530,7 @@ const DEFAULT_CHARACTER_SPIRIT_EXPERTISES: IOperation[] = Object.values(EXPERTIS
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_SPIRIT,
+      type: ALL_PROPERTIES.ATTRIBUTES_SPIRIT_MOD,
       modifyProperty: false
     }
   }
@@ -545,7 +545,7 @@ const DEFAULT_CHARACTER_LUCK_EXPERTISES: IOperation[] = Object.values(EXPERTISE_
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
-      type: ALL_PROPERTIES.ATTRIBUTES_MOD_LUCK,
+      type: ALL_PROPERTIES.ATTRIBUTES_LUCK_MOD,
       modifyProperty: false
     }
   }
@@ -561,7 +561,7 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
-        type: ALL_PROPERTIES.ATTRIBUTES_MOD_AGILITY,
+        type: ALL_PROPERTIES.ATTRIBUTES_AGILITY_MOD,
         modifyProperty: true,
         modifierAction: OperationAction.DIVISION,
         modifierValue: 2
@@ -575,7 +575,7 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
-        type: ALL_PROPERTIES.ATTRIBUTES_MOD_DEXTERITY,
+        type: ALL_PROPERTIES.ATTRIBUTES_DEXTERITY_MOD,
         modifyProperty: true,
         modifierAction: OperationAction.DIVISION,
         modifierValue: 2
@@ -591,7 +591,7 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
-        type: ALL_PROPERTIES.ATTRIBUTES_MOD_AGILITY,
+        type: ALL_PROPERTIES.ATTRIBUTES_AGILITY_MOD,
         modifyProperty: true,
         modifierAction: OperationAction.DIVISION,
         modifierValue: 2
@@ -605,7 +605,7 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
-        type: ALL_PROPERTIES.ATTRIBUTES_MOD_DEXTERITY,
+        type: ALL_PROPERTIES.ATTRIBUTES_DEXTERITY_MOD,
         modifyProperty: true,
         modifierAction: OperationAction.DIVISION,
         modifierValue: 2

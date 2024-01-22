@@ -1,5 +1,5 @@
 <template>
-  <div v-if="editFields" class="relative flex flex-col gap-2">
+  <div v-if="editFields" class="flex flex-col gap-2">
     <div class="base-property">
       <p>
         {{ $t('components.character-sheet.tabs.info.base.character.label') }}
@@ -36,38 +36,40 @@
         class="custom-input"
       >
     </div>
-    <div class="base-property flex-col !items-start">
-      <p>
-        {{ $t('components.character-sheet.tabs.info.base.elements.label') }}
-      </p>
-      <select id="character-elements" v-model="elements" class="custom-select" multiple>
-        <option v-for="element in ELEMENTS_LIST" :key="element.type" :value="element.type">
-          {{ $t(`elements.${element.type}`) }}
-        </option>
-      </select>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="base-property flex-col !items-start">
+        <p>
+          {{ $t('components.character-sheet.tabs.info.base.elements.label') }}
+        </p>
+        <select id="character-elements" v-model="elements" class="custom-select" multiple>
+          <option v-for="element in ELEMENTS_LIST" :key="element.type" :value="element.type">
+            {{ $t(`elements.${element.type}`) }}
+          </option>
+        </select>
+      </div>
+      <div class="base-property flex-col !items-start">
+        <p>
+          {{ $t('components.character-sheet.tabs.info.base.jobs.label') }}
+        </p>
+        <select id="character-jobs" v-model="jobs" class="custom-select" multiple>
+          <option v-for="job in JOBS_LIST" :key="job.type" :value="job.type">
+            {{ $t(`jobs.${job.type}`) }}
+          </option>
+        </select>
+      </div>
     </div>
-    <div class="base-property flex-col !items-start">
-      <p>
-        {{ $t('components.character-sheet.tabs.info.base.jobs.label') }}
-      </p>
-      <select id="character-jobs" v-model="jobs" class="custom-select" multiple>
-        <option v-for="job in JOBS_LIST" :key="job.type" :value="job.type">
-          {{ $t(`jobs.${job.type}`) }}
-        </option>
-      </select>
-    </div>
-    <div class="grid grid-cols-2 gap-2 mt-2">
+    <div class="grid grid-cols-3 gap-2 my-2">
       <button id="general-reset-changes" class="btn btn-danger" @click.prevent="resetChanges">
         {{ $t('general.reset-changes') }}
       </button>
-      <button id="general-save-changes" class="btn btn-action" @click.prevent="saveChanges">
+      <button id="general-save-changes" class="btn btn-action col-span-2" @click.prevent="saveChanges">
         {{ $t('general.save-changes') }}
       </button>
     </div>
   </div>
   <div v-else class="relative flex flex-col">
     <button id="edit-base" class="btn-effect absolute top-2 end-2" @click.prevent="toggleEditFields()">
-      <NuxtIcon name="pen" class="text-xl" />
+      <NuxtIcon name="pen" class="text-2xl text-primary" />
     </button>
     <h1 class="text-xl font-semibold">
       {{ character.name }}

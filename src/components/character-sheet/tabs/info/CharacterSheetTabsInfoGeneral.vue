@@ -1,28 +1,26 @@
 <template>
   <div v-if="editFields" class="flex flex-col gap-2 p-2 border border-black/20 dark:border-white/40 rounded-sm">
-    <div class="grid grid-cols-2 gap-2">
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GRADE}`) }}:</p>
-        <input
-          :id="`input-${GENERAL_PROPERTIES.GENERAL_GRADE}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GRADE)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_LEVEL}`) }}:</p>
-        <input
-          :id="`input-${GENERAL_PROPERTIES.GENERAL_LEVEL}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_LEVEL)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-      </div>
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GRADE}`) }}:</p>
+      <input
+        :id="`input-${GENERAL_PROPERTIES.GENERAL_GRADE}`"
+        v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GRADE)].value"
+        type="number"
+        pattern="[0-9]"
+        min="0"
+        class="custom-input"
+      >
+    </div>
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_LEVEL}`) }}:</p>
+      <input
+        :id="`input-${GENERAL_PROPERTIES.GENERAL_LEVEL}`"
+        v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_LEVEL)].value"
+        type="number"
+        pattern="[0-9]"
+        min="0"
+        class="custom-input"
+      >
     </div>
     <div class="general-property">
       <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_EXP}`) }}:</p>
@@ -79,52 +77,48 @@
         >
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-2">
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_JP}`) }}:</p>
-        <input
-          :id="`input-${GENERAL_PROPERTIES.GENERAL_JP}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_JP)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GOLD}`) }}:</p>
-        <input
-          :id="`input-${GENERAL_PROPERTIES.GENERAL_GOLD}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GOLD)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-      </div>
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_JP}`) }}:</p>
+      <input
+        :id="`input-${GENERAL_PROPERTIES.GENERAL_JP}`"
+        v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_JP)].value"
+        type="number"
+        pattern="[0-9]"
+        min="0"
+        class="custom-input"
+      >
     </div>
-    <div class="grid grid-cols-2 gap-2 mt-2">
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GOLD}`) }}:</p>
+      <input
+        :id="`input-${GENERAL_PROPERTIES.GENERAL_GOLD}`"
+        v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GOLD)].value"
+        type="number"
+        pattern="[0-9]"
+        min="0"
+        class="custom-input"
+      >
+    </div>
+    <div class="grid grid-cols-3 gap-2 mt-2">
       <button id="general-reset-changes" class="btn btn-danger" @click.prevent="resetChanges">
         {{ $t('general.reset-changes') }}
       </button>
-      <button id="general-save-changes" class="btn btn-action" @click.prevent="saveChanges">
+      <button id="general-save-changes" class="btn btn-action col-span-2" @click.prevent="saveChanges">
         {{ $t('general.save-changes') }}
       </button>
     </div>
   </div>
   <div v-else class="relative flex flex-col p-2 border border-black/20 dark:border-white/40 rounded-sm">
     <button id="edit-base" class="btn-effect absolute top-2 end-2" @click.prevent="toggleEditFields()">
-      <NuxtIcon name="pen" class="text-xl" />
+      <NuxtIcon name="pen" class="text-2xl text-primary" />
     </button>
-    <div class="grid grid-cols-2">
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GRADE}`) }}</p>
-        <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_GRADE) }}</span>
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_LEVEL}`) }}</p>
-        <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_LEVEL) }}</span>
-      </div>
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GRADE}`) }}</p>
+      <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_GRADE) }}</span>
+    </div>
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_LEVEL}`) }}</p>
+      <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_LEVEL) }}</span>
     </div>
     <div class="general-property">
       <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_EXP}`) }}</p>
@@ -138,15 +132,13 @@
       <p>{{ $t('components.character-sheet.tabs.info.skills-regen') }}</p>
       <span>{{ `${character.getProperty(GENERAL_PROPERTIES.GENERAL_ATUAL_SKILL_REGEN)} / ${character.getProperty(GENERAL_PROPERTIES.GENERAL_MAX_SKILL_REGEN)}` }}</span>
     </div>
-    <div class="grid grid-cols-2">
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_JP}`) }}</p>
-        <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_JP) }}</span>
-      </div>
-      <div class="general-property">
-        <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GOLD}`) }}</p>
-        <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_GOLD) }}</span>
-      </div>
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_JP}`) }}</p>
+      <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_JP) }}</span>
+    </div>
+    <div class="general-property">
+      <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GOLD}`) }}</p>
+      <span>{{ character.getProperty(GENERAL_PROPERTIES.GENERAL_GOLD) }}</span>
     </div>
   </div>
 </template>

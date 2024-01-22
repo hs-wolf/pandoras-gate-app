@@ -170,6 +170,8 @@ operation-action:
 general:
   save-changes: Save
   reset-changes: Reset
+  base: Base
+  total: Total
 components:
   navbar:
     links:
@@ -195,15 +197,17 @@ components:
           jobs:
             label: "Jobs:"
             placeholder: "Select the elements"
-        skills-regen: Skills Regen
-        attribute: Attribute
-        total: Total
-        modifier: MOD
+        conditions:
+          attribute: Attribute
+          base: Base
+          total: Total
+          modifier: MOD
         stats: Stats
         ranges: Ranges
         hits: Hits
         physical-bonus: Physical Bonus
         magical-bonus: Magical Bonus
+        skills-regen: Skills Regen
         expertises-strength: Expertises Strength
         expertises-agility: Expertises Agility
         expertises-dexterity: Expertises Dexterity
