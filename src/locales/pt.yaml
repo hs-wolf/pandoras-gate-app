@@ -4,3 +4,248 @@ nested:
   value: Aninhado
 english: Inglês
 portuguese: Português
+languages:
+  en: Inglês
+  pt: Português
+themes:
+  dark: Escuro
+  light: Claro
+  system: Sistema
+properties:
+  GENERAL_GRADE: Grau
+  GENERAL_LEVEL: Nível
+  GENERAL_EXP: Experiência
+  GENERAL_NEXT: Next
+  GENERAL_ENCHANCEMENTS: Aprimoramentos
+  GENERAL_ATUAL_SKILL_REGEN: Regen de Skill
+  GENERAL_MAX_SKILL_REGEN: Máx Regen de Skill
+  GENERAL_JP: JP
+  GENERAL_GOLD: Ouro
+  CONDITIONS_ATUAL_HP: HP
+  CONDITIONS_ATUAL_MP: MP
+  CONDITIONS_ATUAL_SP: SP
+  CONDITIONS_ATUAL_HUNGER: Fome
+  CONDITIONS_MAX_HP: HP Máx.
+  CONDITIONS_MAX_MP: MP Máx.
+  CONDITIONS_MAX_SP: SP Máx.
+  CONDITIONS_MAX_HUNGER: Fome Máx.
+  ATTRIBUTES_STRENGTH: Força
+  ATTRIBUTES_AGILITY: Agilidade
+  ATTRIBUTES_DEXTERITY: Destreza
+  ATTRIBUTES_VITALITY: Vitalidade
+  ATTRIBUTES_SPIRIT: Espírito
+  ATTRIBUTES_LUCK: Sorte
+  ATTRIBUTES_STRENGTH_MOD: MOD Força
+  ATTRIBUTES_AGILITY_MOD: MOD Agilidade
+  ATTRIBUTES_DEXTERITY_MOD: MOD Destreza
+  ATTRIBUTES_VITALITY_MOD: MOD Vitalidade
+  ATTRIBUTES_SPIRIT_MOD: MOD Espírito
+  ATTRIBUTES_LUCK_MOD: MOD Sorte
+  STATS_INITIATIVE: Iniciativa
+  STATS_DODGE: Esquiva
+  STATS_MOVE: Movimento
+  STATS_CRITICAL: Crítico
+  STATS_PHYSICAL_DEFENSE: Def. Física
+  STATS_PHYSICAL_DICE: Ddo. Físico
+  STATS_MAGICAL_DEFENSE: Def. Mágica
+  STATS_MAGICAL_DICE: Ddo. Mágico
+  RANGE_UNARMED: Alcance_Desarmado
+  RANGE_MELEE: Alcance_Corpo a Corpo
+  RANGE_RANGED: Alcance_Distância
+  RANGE_FIREARM: Alcance_Arma de Fogo
+  HIT_UNARMED: Acerto_Desarmado
+  HIT_MELEE: Acerto_Corpo a Corpo
+  HIT_RANGED: Acerto_Distância
+  HIT_FIREARM: Acerto_Arma de Fogo
+  PHYSICIAL_BONUS_UNARMED: Bônus Físico_Desarmado
+  PHYSICIAL_BONUS_MELEE: Bônus Físico_Corpo a Corpo
+  PHYSICIAL_BONUS_RANGED: Bônus Físico_Distância
+  PHYSICIAL_BONUS_FIREARM: Bônus Físico_Arma de Fogo
+  MAGICAL_BONUS_WATER: Bônus Mágico_Água
+  MAGICAL_BONUS_ETHEREAL: Bônus Mágico_Etéreo
+  MAGICAL_BONUS_FIRE: Bônus Mágico_Fogo
+  MAGICAL_BONUS_ICE: Bônus Mágico_Gelo
+  MAGICAL_BONUS_MOON: Bônus Mágico_Lua
+  MAGICAL_BONUS_LIGHT: Bônus Mágico_Luz
+  MAGICAL_BONUS_MAGICK: Bônus Mágico_Magick
+  MAGICAL_BONUS_NATURE: Bônus Mágico_Natureza
+  MAGICAL_BONUS_SUN: Bônus Mágico_Sol
+  MAGICAL_BONUS_SOUL: Bônus Mágico_Soul
+  MAGICAL_BONUS_EARTH: Bônus Mágico_Terra
+  MAGICAL_BONUS_DARKNESS: Bônus Mágico_Escuridão
+  MAGICAL_BONUS_THUNDER: Bônus Mágico_Trovão
+  MAGICAL_BONUS_WIND: Bônus Mágico_Vento
+  EXPERTISE_MELEE_WEAPONS: Per_Armas Brancas
+  EXPERTISE_MECHANICAL_WEAPONS: Per_Armas Mecanicas
+  EXPERTISE_WILLPOWER: Per_Força de Vontade
+  EXPERTISE_FORGE: Per_Forjar
+  EXPERTISE_IMMOBILIZATION: Per_Imobilização
+  EXPERTISE_UNARMED_COMBAT: Per_Luta Desarmada
+  EXPERTISE_MINING: Per_Mineração
+  EXPERTISE_MOUNT: Per_Montaria
+  EXPERTISE_TRACK: Per_Rastrear
+  EXPERTISE_MISLEAD: Per_Despistar
+  EXPERTISE_DISGUISE: Per_Disfarce
+  EXPERTISE_DUAL_WIELD: Per_Dual Wield
+  EXPERTISE_HIDE: Per_Esconder
+  EXPERTISE_DODGE: Per_Esquiva
+  EXPERTISE_ESCAPE: Per_Fugir
+  EXPERTISE_JUMP: Per_Pular
+  EXPERTISE_AGRICULTURE: Per_Agricultura
+  EXPERTISE_RANGED_WEAPON: Per_Arma de Alcance
+  EXPERTISE_FIREARM: Per_Arma de Fogo
+  EXPERTISE_MASONRY: Per_Alvenaria
+  EXPERTISE_THROW_OBJECT: Per_Arremessar Objeto 
+  EXPERTISE_CLIMB: Per_Escalar
+  EXPERTISE_BUILD_BOAT: Per_Fazer Barco 
+  EXPERTISE_SWIM: Per_Nadar
+  EXPERTISE_PILOTING: Per_Pilotagem
+  EXPERTISE_SET_TRAP: Per_Preparar Armadilha
+  EXPERTISE_FIRST_AID: Per_Primeiros Socorros
+  EXPERTISE_CHARISMA: Per_Carisma
+  EXPERTISE_PHYSICAL_DEFENSE: Per_Defesa Física
+  EXPERTISE_LEADERSHIP: Per_Liderança
+  EXPERTISE_SURVIVAL: Per_Sobrevivência
+  EXPERTISE_AID: Per_Auxílio
+  EXPERTISE_BLUFF: Per_Blefar
+  EXPERTISE_CONJURATION: Per_Conjuração
+  EXPERTISE_MAGICAL_DEFENSE: Per_Defesa Mágica
+  EXPERTISE_WATER_ELEMENT: Per_Água
+  EXPERTISE_ETHEREAL_ELEMENT: Per_Etéreo 
+  EXPERTISE_FIRE_ELEMENT: Per_Fogo
+  EXPERTISE_ICE_ELEMENT: Per_Gelo
+  EXPERTISE_MOON_ELEMENT: Per_Lua
+  EXPERTISE_LIGHT_ELEMENT: Per_Luz
+  EXPERTISE_MAGICK_ELEMENT: Per_Magick
+  EXPERTISE_NATURE_ELEMENT: Per_Natureza
+  EXPERTISE_SUN_ELEMENT: Per_Sol
+  EXPERTISE_SOUL_ELEMENT: Per_Soul
+  EXPERTISE_EARTH_ELEMENT: Per_Terra
+  EXPERTISE_DARKNESS_ELEMENT: Per_Trevas
+  EXPERTISE_THUNDER_ELEMENT: Per_Trovão
+  EXPERTISE_WIND_ELEMENT: Per_Vento
+  EXPERTISE_INTERPRET_DREAMS: Per_Interpretar Sonhos
+  EXPERTISE_INTERROGATE: Per_Interrogar
+  EXPERTISE_INTIMIDATE: Per_Intimidar
+  EXPERTISE_LANGUAGE: Per_Linguagem
+  EXPERTISE_CURSE: Per_Maldição
+  EXPERTISE_MYSTICISM: Per_Misticismo
+  EXPERTISE_NEGOTIATE: Per_Negociar
+  EXPERTISE_PERCEPTION: Per_Percepção
+  EXPERTISE_PREDICT_WEATHER: Per_Prever Tempo
+  EXPERTISE_TACTICS: Per_Tática 
+  EXPERTISE_CRITICAL: Per_Crítico
+  EXPERTISE_PLAY_CALCULATE: Per_Jogar / Calcular
+  EXPERTISE_MAGICK_FIND: Per_Magick Find
+  EXPERTISE_ASTRONOMY: Per_Astronomia
+  EXPERTISE_ACROBATICS: Per_Acrobacia
+  EXPERTISE_STEAL: Per_Furtar
+  EXPERTISE_CHEMISTRY: Per_Química
+  EXPERTISE_RELAXATION: Per_Relaxamento
+  EXPERTISE_FAITH: Per_Fé
+  EXPERTISE_SPECIAL_WEAPON: Per_Arma Especial
+  EXPERTISE_COMBO: Per_Combo
+  EXPERTISE_MVP: Per_MVP
+  EXPERTISE_PVP: Per_PVP
+  EXPERTISE_SYNERGY: Per_Sinergia
+elements:
+  fire: Fogo
+  nature: Natureza
+  wind: Vento
+  earth: Terra
+  thunder: Trovão
+  water: Água
+jobs:
+  acolyte: Acólito
+  archer: Arqueiro
+  mage: Mago
+  merchant: Mercador
+  swordsman: Espadachim
+  thief: Gatuno
+operation-action:
+  SUM: ( + ) Soma
+  SUBTRACTION: ( - ) Subtração
+  MULTIPLICATION: ( x ) Multiplicação
+  DIVISION: ( / ) Divisão
+general:
+  save-changes: Salvar 
+  reset-changes: Resetar
+  base: Base
+  total: Total
+  modifier: MOD
+  atual: Atual
+  max: Máx.
+components:
+  navbar:
+    links:
+      index: Início
+      character-sheet: Ficha do Personagem
+  character-sheet:
+    tabs:
+      info:
+        title: Info
+        base:
+          character:
+            label: "Personagem:"
+            placeholder: Nome do personagem...
+          player:
+            label: "Jogador:"
+            placeholder: Nome do jogador...
+          guild:
+            label: "Guilda:"
+            placeholder: Nome da guilda...
+          elements:
+            label: "Elementos:"
+            placeholder: "Selecione os elementos"
+          jobs:
+            label: "Classes:"
+            placeholder: "Selecione as classes"
+        general: Geral
+        conditions: Condições
+        attributes: Atributos
+        stats: Status
+        ranges: Alcances
+        hits: Acertos
+        physical-bonus: Bônus Físico
+        magical-bonus: Bônus Mágico
+        expertises-strength: Perícias Força
+        expertises-agility: Perícias Agilidade
+        expertises-dexterity: Perícias Destreza
+        expertises-vitality: Perícias Vitalidade
+        expertises-spirit: Perícias Espírito
+        expertises-luck: Perícias Sorte
+        expertises-special: Perícias Especiais
+      effects: 
+        title: Efeitos
+        new-effect: Novo Efeito +
+      inventory: 
+        title: Inventário
+      formulas: 
+        title: Fórmulas
+        new-formula: Nova Fórmula +
+    property:
+      card:
+        operation:
+          target: Alvo
+          description: Descrição
+          action: Ação
+          value: Valor
+          substitution-value: Valor de Substituição
+          is-based-on-property: Baseado em propriedade
+          based-on: Baseado em
+          modify-property: Modificar propriedade
+          property-action: Ação na propriedade
+          property-action-value: Valor da ação na propriedade
+          is-percetage: "% Porcentagem"
+          is-substitution: Substituição
+          priority-value: Valor de prioridade
+pages:
+  index:
+    title: Pandoras Gate App
+    got-to-character-sheet: Ir para a ficha de personagem
+  character-sheet:
+    title: Ficha do Personagem
+    new-operation:
+     label: + Nova Operação
+    save-operation: Salvar
+    cancel-operation: Cancelar

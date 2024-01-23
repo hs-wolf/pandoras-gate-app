@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Layout Default</h1>
+  <div class="relative flex flex-col h-full">
+    <MainNavbar />
     <slot />
   </div>
 </template>

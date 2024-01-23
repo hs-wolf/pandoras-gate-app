@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col p-5">
+  <div :dir="direction" class="fixed inset-0 flex flex-col">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -7,7 +7,8 @@
 </template>
 
 <script setup lang="ts">
-
+const localesStore = useLocalesStore()
+const { direction } = storeToRefs(localesStore)
 </script>
 
 <style scoped>

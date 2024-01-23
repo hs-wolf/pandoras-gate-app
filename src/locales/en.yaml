@@ -4,3 +4,248 @@ nested:
   value: Nested
 english: English
 portuguese: Portuguese
+languages:
+  en: English
+  pt: Portuguese
+themes:
+  dark: Dark
+  light: Light
+  system: System
+properties:
+  GENERAL_GRADE: Grade
+  GENERAL_LEVEL: Level
+  GENERAL_EXP: Exp
+  GENERAL_NEXT: Next
+  GENERAL_ENCHANCEMENTS: Enhancements
+  GENERAL_ATUAL_SKILL_REGEN: Skill Regen
+  GENERAL_MAX_SKILL_REGEN: Max Skill Regen
+  GENERAL_JP: JP
+  GENERAL_GOLD: Gold
+  CONDITIONS_ATUAL_HP: HP
+  CONDITIONS_ATUAL_MP: MP
+  CONDITIONS_ATUAL_SP: SP
+  CONDITIONS_ATUAL_HUNGER: Hunger
+  CONDITIONS_MAX_HP: Max HP
+  CONDITIONS_MAX_MP: Max MP
+  CONDITIONS_MAX_SP: Max SP
+  CONDITIONS_MAX_HUNGER: Max Hunger
+  ATTRIBUTES_STRENGTH: Strength
+  ATTRIBUTES_AGILITY: Agility
+  ATTRIBUTES_DEXTERITY: Dexterity
+  ATTRIBUTES_VITALITY: Vitality
+  ATTRIBUTES_SPIRIT: Spirit
+  ATTRIBUTES_LUCK: Luck
+  ATTRIBUTES_STRENGTH_MOD: MOD Strength
+  ATTRIBUTES_AGILITY_MOD: MOD Agility
+  ATTRIBUTES_DEXTERITY_MOD: MOD Dexterity
+  ATTRIBUTES_VITALITY_MOD: MOD Vitality
+  ATTRIBUTES_SPIRIT_MOD: MOD Spirit
+  ATTRIBUTES_LUCK_MOD: MOD Luck
+  STATS_INITIATIVE: Initiative
+  STATS_DODGE: Dodge
+  STATS_MOVE: Move
+  STATS_CRITICAL: Critical
+  STATS_PHYSICAL_DEFENSE: Physical Def.
+  STATS_PHYSICAL_DICE: Physical Dice
+  STATS_MAGICAL_DEFENSE: Magical Def.
+  STATS_MAGICAL_DICE: Magical Dice
+  RANGE_UNARMED: Range_Unarmed
+  RANGE_MELEE: Range_Melee
+  RANGE_RANGED: Range_Ranged
+  RANGE_FIREARM: Range_Firearm
+  HIT_UNARMED: Hit_Unarmed
+  HIT_MELEE: Hit_Melee
+  HIT_RANGED: Hit_Ranged
+  HIT_FIREARM: Hit_Firearm
+  PHYSICIAL_BONUS_UNARMED: Physical Bonus_Unarmed
+  PHYSICIAL_BONUS_MELEE: Physical Bonus_Melee
+  PHYSICIAL_BONUS_RANGED: Physical Bonus_Ranged
+  PHYSICIAL_BONUS_FIREARM: Physical Bonus_Firearm
+  MAGICAL_BONUS_WATER: Magical Bonus_Water
+  MAGICAL_BONUS_ETHEREAL: Magical Bonus_Ethereal
+  MAGICAL_BONUS_FIRE: Magical Bonus_Fire
+  MAGICAL_BONUS_ICE: Magical Bonus_Ice
+  MAGICAL_BONUS_MOON: Magical Bonus_Moon
+  MAGICAL_BONUS_LIGHT: Magical Bonus_Light
+  MAGICAL_BONUS_MAGICK: Magical Bonus_Magick
+  MAGICAL_BONUS_NATURE: Magical Bonus_Nature
+  MAGICAL_BONUS_SUN: Magical Bonus_Sun
+  MAGICAL_BONUS_SOUL: Magical Bonus_Soul
+  MAGICAL_BONUS_EARTH: Magical Bonus_Earth
+  MAGICAL_BONUS_DARKNESS: Magical Bonus_Darkness
+  MAGICAL_BONUS_THUNDER: Magical Bonus_Thunder
+  MAGICAL_BONUS_WIND: Magical Bonus_Wind
+  EXPERTISE_MELEE_WEAPONS: Exp_Melee Weapons
+  EXPERTISE_MECHANICAL_WEAPONS: Exp_Mech. Weapons
+  EXPERTISE_WILLPOWER: Exp_Willpower
+  EXPERTISE_FORGE: Exp_Forge
+  EXPERTISE_IMMOBILIZATION: Exp_Immobilization
+  EXPERTISE_UNARMED_COMBAT: Exp_Unarmed Combat
+  EXPERTISE_MINING: Exp_Mining
+  EXPERTISE_MOUNT: Exp_Mount
+  EXPERTISE_TRACK: Exp_Track
+  EXPERTISE_MISLEAD: Exp_Mislead
+  EXPERTISE_DISGUISE: Exp_Disguise
+  EXPERTISE_DUAL_WIELD: Exp_Dual Wield
+  EXPERTISE_HIDE: Exp_Hide
+  EXPERTISE_DODGE: Exp_Dodge
+  EXPERTISE_ESCAPE: Exp_Escape
+  EXPERTISE_JUMP: Exp_Jump
+  EXPERTISE_AGRICULTURE: Exp_Agriculture
+  EXPERTISE_RANGED_WEAPON: Exp_Ranged Weapon
+  EXPERTISE_FIREARM: Exp_Firearms
+  EXPERTISE_MASONRY: Exp_Masonry
+  EXPERTISE_THROW_OBJECT: Exp_Throw Object
+  EXPERTISE_CLIMB: Exp_Climb
+  EXPERTISE_BUILD_BOAT: Exp_Build Boat
+  EXPERTISE_SWIM: Exp_Swim
+  EXPERTISE_PILOTING: Exp_Piloting
+  EXPERTISE_SET_TRAP: Exp_Set Trap
+  EXPERTISE_FIRST_AID: Exp_First Aid
+  EXPERTISE_CHARISMA: Exp_Charisma
+  EXPERTISE_PHYSICAL_DEFENSE: Exp_Physical Def.
+  EXPERTISE_LEADERSHIP: Exp_Leadership
+  EXPERTISE_SURVIVAL: Exp_Survival
+  EXPERTISE_AID: Exp_Aid
+  EXPERTISE_BLUFF: Exp_Bluff
+  EXPERTISE_CONJURATION: Exp_Conjuration
+  EXPERTISE_MAGICAL_DEFENSE: Exp_Magical Def.
+  EXPERTISE_WATER_ELEMENT: Exp_Water
+  EXPERTISE_ETHEREAL_ELEMENT: Exp_Ethereal
+  EXPERTISE_FIRE_ELEMENT: Exp_Fire
+  EXPERTISE_ICE_ELEMENT: Exp_Ice
+  EXPERTISE_MOON_ELEMENT: Exp_Moon
+  EXPERTISE_LIGHT_ELEMENT: Exp_Light
+  EXPERTISE_MAGICK_ELEMENT: Exp_Magick
+  EXPERTISE_NATURE_ELEMENT: Exp_Nature
+  EXPERTISE_SUN_ELEMENT: Exp_Sun
+  EXPERTISE_SOUL_ELEMENT: Exp_Soul
+  EXPERTISE_EARTH_ELEMENT: Exp_Earth
+  EXPERTISE_DARKNESS_ELEMENT: Exp_Darkness
+  EXPERTISE_THUNDER_ELEMENT: Exp_Thunder
+  EXPERTISE_WIND_ELEMENT: Exp_Wind
+  EXPERTISE_INTERPRET_DREAMS: Exp_Interpret Dreams
+  EXPERTISE_INTERROGATE: Exp_Interrogate
+  EXPERTISE_INTIMIDATE: Exp_Intimidate
+  EXPERTISE_LANGUAGE: Exp_Language
+  EXPERTISE_CURSE: Exp_Curse
+  EXPERTISE_MYSTICISM: Exp_Mysticism
+  EXPERTISE_NEGOTIATE: Exp_Negotiate
+  EXPERTISE_PERCEPTION: Exp_Perception
+  EXPERTISE_PREDICT_WEATHER: Exp_Predict Weather
+  EXPERTISE_TACTICS: Exp_Tactics
+  EXPERTISE_CRITICAL: Exp_Critical
+  EXPERTISE_PLAY_CALCULATE: Exp_Play/Calculate
+  EXPERTISE_MAGICK_FIND: Exp_Magick Find
+  EXPERTISE_ASTRONOMY: Exp_Astronomy
+  EXPERTISE_ACROBATICS: Exp_Acrobatics
+  EXPERTISE_STEAL: Exp_Steal
+  EXPERTISE_CHEMISTRY: Exp_Chemistry
+  EXPERTISE_RELAXATION: Exp_Relaxation
+  EXPERTISE_FAITH: Exp_Faith
+  EXPERTISE_SPECIAL_WEAPON: Exp_Special Weapon
+  EXPERTISE_COMBO: Exp_Combo
+  EXPERTISE_MVP: Exp_MVP
+  EXPERTISE_PVP: Exp_PVP
+  EXPERTISE_SYNERGY: Exp_Synergy
+elements:
+  fire: Fire
+  nature: Nature
+  wind: Wind
+  earth: Earth
+  thunder: Thunder
+  water: Water
+jobs:
+  acolyte: Acolyte
+  archer: Archer
+  mage: Mage
+  merchant: Merchant
+  swordsman: Swordsman
+  thief: Thief
+operation-action:
+  SUM: "( + ) Sum"
+  SUBTRACTION: "( - ) Subtraction"
+  MULTIPLICATION: "( x ) Multiplication"
+  DIVISION: "( / ) Division"
+general:
+  save-changes: Save
+  reset-changes: Reset
+  base: Base
+  total: Total
+  modifier: MOD
+  atual: Atual
+  max: Max.
+components:
+  navbar:
+    links:
+      index: Home
+      character-sheet: Character Sheet
+  character-sheet:
+    tabs:
+      info:
+        title: Info
+        base:
+          character:
+            label: "Character:"
+            placeholder: Character name...
+          player:
+            label: "Player:"
+            placeholder: Player name...
+          guild:
+            label: "Guild:"
+            placeholder: Guild name...
+          elements:
+            label: "Elements:"
+            placeholder: "Select the elements"
+          jobs:
+            label: "Jobs:"
+            placeholder: "Select the elements"
+        general: General
+        conditions: Conditions
+        attributes: Attributes
+        stats: Stats
+        ranges: Ranges
+        hits: Hits
+        physical-bonus: Physical Bonus
+        magical-bonus: Magical Bonus
+        expertises-strength: Expertises Strength
+        expertises-agility: Expertises Agility
+        expertises-dexterity: Expertises Dexterity
+        expertises-vitality: Expertises Vitality
+        expertises-spirit: Expertises Spirit
+        expertises-luck: Expertises Luck
+        expertises-special: Expertises Special
+      effects: 
+        title: Effects
+        new-effect: New Effect +
+      inventory: 
+        title: Inventory
+      formulas: 
+        title: Formulas
+        new-formula: Nova Fórmula +
+    property:
+      card:
+        operation:
+          target: Target
+          description: Description
+          action: Action
+          value: Value
+          substitution-value: Substitution Value
+          is-based-on-property: Based on property
+          based-on: Based on
+          modify-property: Modify property
+          property-action: Property action
+          property-action-value: Property action value
+          is-percetage: "% Percentage"
+          is-substitution: Substitution
+          priority-value: Priority value
+pages:
+  index:
+    title: Pandoras Gate App
+    got-to-character-sheet: Go to Character Sheet
+  character-sheet:
+    title: Character Sheet
+    new-operation:
+     label: + New Operation
+    save-operation: Save
+    cancel-operation: Cancel

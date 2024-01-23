@@ -1,9 +1,10 @@
 export default defineNuxtConfig({
+  ssr: false,
   devtools: {
     enabled: true
   },
   srcDir: 'src',
-  css: ['assets/css/main.scss'],
+  css: ['assets/css/main.scss', 'assets/css/transitions.scss'],
   app: {
     head: {
       htmlAttrs: {
@@ -57,7 +58,7 @@ export default defineNuxtConfig({
         file: 'pt.yaml'
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'pt',
     langDir: 'locales',
     lazy: true,
     detectBrowserLanguage: {

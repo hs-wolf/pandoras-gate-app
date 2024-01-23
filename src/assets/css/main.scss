@@ -1,4 +1,52 @@
 body {
-  @apply bg-white text-primary font-sans antialiased transition-colors;
-  @apply dark:bg-primary dark:text-white;
+  @apply bg-white text-black font-sans antialiased transition-colors;
+  @apply dark:bg-black dark:text-yellow-400;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.nuxt-icon svg {
+  margin-bottom: 0 !important;
+}
+
+.btn-effect {
+  @apply cursor-pointer transition-transform active:scale-90;
+}
+
+.btn {
+  @apply flex justify-center items-center gap-2 w-full px-3 py-2 shadow rounded-sm text-sm font-semibold whitespace-nowrap transition-all;
+  @apply active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  .nuxt-icon {
+    @apply text-base;
+  }
+}
+
+.btn-primary {
+  @apply bg-primary text-white active:bg-primary-dark dark:active:bg-primary-light;
+}
+
+.btn-action {
+  @apply bg-action text-white active:bg-action-dark dark:active:bg-action-light;
+}
+
+.btn-danger {
+  @apply bg-danger text-white active:bg-danger-dark dark:active:bg-danger-light;
+}
+
+.custom-input {
+  @apply min-w-0 w-full px-2 py-1 bg-black/20 dark:bg-white/40 rounded-sm outline-none text-base font-normal text-black placeholder:text-black/50 dark:text-white
+}
+
+.custom-select {
+  @apply w-full p-2 leading-6 bg-black/20 dark:bg-white/40 rounded-sm text-black dark:text-white;
 }
