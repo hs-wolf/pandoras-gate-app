@@ -217,10 +217,12 @@ components:
         expertises-special: Expertises Special
       effects: 
         title: Effects
+        new-effect: New Effect +
       inventory: 
         title: Inventory
       formulas: 
         title: Formulas
+        new-formula: Nova Fórmula +
     property:
       card:
         operation:

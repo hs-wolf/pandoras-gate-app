@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-2 px-2 py-3">
+  <div class="flex flex-col gap-4 px-2 py-3">
     <h1 class="text-2xl font-semibold">
       {{ $t('components.character-sheet.tabs.effects.title') }}
     </h1>
@@ -8,6 +8,7 @@
         <CharacterSheetPropertyCardOperation
           v-model="character.operations[character.operations.length-1]"
           :show-target="true"
+          :init-open="true"
         />
         <div class="grid grid-cols-2 gap-2">
           <button id="cancel-operation" type="button" class="px-2 py-1.5 bg-red-800 rounded-sm text-white" @click.prevent="cancelNewOperation">
@@ -18,15 +19,16 @@
           </button>
         </div>
       </div>
-      <button v-else id="new-operation" type="button" class="px-2 py-1.5 bg-blue-800 rounded-sm text-white" @click.prevent="startNewOperation">
-        {{ $t('pages.character-sheet.new-operation.label') }}
+      <button v-else id="new-operation" type="button" class="btn btn-action" @click.prevent="startNewOperation">
+        {{ $t('components.character-sheet.tabs.effects.new-effect') }}
       </button>
     </div>
     <div class="flex flex-col gap-2">
-      <CharacterSheetPropertyCard
-        v-for="(property, index) in groupedOperations"
-        :key="property.type"
-        v-model="groupedOperations[index]"
+      <CharacterSheetPropertyCardOperation
+        v-for="(operation) in customOperations"
+        :key="operation.id"
+        v-model="character.operations[getOperationIndex(operation.id)]"
+        :show-target="true"
       />
     </div>
   </div>
@@ -34,27 +36,20 @@
 
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
-import { Character, OperationAction, ALL_PROPERTIES, type IProperty } from '~/types'
+import { Character, OperationAction, ALL_PROPERTIES } from '~/types'
 
 const character = defineModel<Character>({ required: true })
+
+const characterSheetStore = useCharacterSheetStore()
 
 const showNewOperation = ref(false)
 const newOperationId = ref('')
 
-const groupedOperations = computed(() => character.value.operations.reduce((result, current) => {
-  if (current.id !== newOperationId.value && !current.baseFormula && !current.baseValue) {
-    const categoryItem = result.find(item => item.type === current.target)
-    if (categoryItem) {
-      categoryItem.operations.push(current)
-    } else {
-      result.push({
-        type: current.target,
-        operations: [current]
-      })
-    }
-  }
-  return result
-}, [] as IProperty[]))
+const customOperations = computed(() => character.value.operations.filter(operation => !operation.baseFormula && !operation.baseValue && operation.id !== newOperationId.value))
+
+function getOperationIndex (id: string) {
+  return character.value.operations.findIndex(operation => operation.id === id)
+}
 
 function startNewOperation () {
   const id = uuidv4()
@@ -71,6 +66,7 @@ function startNewOperation () {
 function saveNewOperation () {
   newOperationId.value = ''
   showNewOperation.value = false
+  characterSheetStore.saveCharacter()
 }
 
 function cancelNewOperation () {

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-2 px-2 py-3">
     <h1 class="text-2xl font-semibold">
-      Formulas
+      {{ $t('components.character-sheet.tabs.formulas.title') }}
     </h1>
     <div v-auto-animate class="flex flex-col gap-2">
       <div v-if="showNewOperation" class="flex flex-col gap-2">
@@ -9,17 +9,17 @@
           v-model="character.operations[character.operations.length-1]"
           :show-target="true"
         />
-        <div class="grid grid-cols-2 gap-2">
-          <button id="cancel-operation" type="button" class="px-2 py-1.5 bg-red-800 rounded-sm text-white" @click.prevent="cancelNewOperation">
+        <div class="grid grid-cols-3 gap-2">
+          <button id="cancel-operation" type="button" class="px-2 py-1.5 bg-danger rounded-sm text-white" @click.prevent="cancelNewOperation">
             {{ $t('pages.character-sheet.cancel-operation') }}
           </button>
-          <button id="save-operation" type="button" class="px-2 py-1.5 bg-green-800 rounded-sm text-white" @click.prevent="saveNewOperation">
+          <button id="save-operation" type="button" class="col-span-2 px-2 py-1.5 bg-action rounded-sm text-white" @click.prevent="saveNewOperation">
             {{ $t('pages.character-sheet.save-operation') }}
           </button>
         </div>
       </div>
       <button v-else id="new-operation" type="button" class="px-2 py-1.5 bg-blue-800 rounded-sm text-white" @click.prevent="startNewOperation">
-        {{ $t('pages.character-sheet.new-operation.label') }}
+        {{ $t('components.character-sheet.tabs.formulas.new-formula') }}
       </button>
     </div>
     <div class="flex flex-col gap-2">
@@ -63,7 +63,8 @@ function startNewOperation () {
     id,
     target: ALL_PROPERTIES.ATTRIBUTES_AGILITY,
     action: OperationAction.SUM,
-    value: 1
+    value: 1,
+    baseFormula: true
   })
   showNewOperation.value = true
 }

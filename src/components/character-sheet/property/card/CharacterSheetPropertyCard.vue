@@ -8,7 +8,7 @@
       @click.prevent="showOperations = !showOperations"
     >
       <span class="font-semibold">
-        {{ $t(`properties.${property.type}`) }}
+        {{ $t(`properties.${property.type}`).split("_").join(' ') }}
       </span>
       <NuxtIcon name="chevron-down" class="text-xl transition-transform" :class="{'rotate-180': showOperations }" />
     </button>

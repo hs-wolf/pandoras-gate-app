@@ -172,6 +172,7 @@ general:
   reset-changes: Resetar
   base: Base
   total: Total
+  modifier: MOD
   atual: Atual
   max: Máx.
 components:
@@ -216,10 +217,12 @@ components:
         expertises-special: Perícias Especiais
       effects: 
         title: Efeitos
+        new-effect: Novo Efeito +
       inventory: 
         title: Inventário
       formulas: 
         title: Fórmulas
+        new-formula: Nova Fórmula +
     property:
       card:
         operation:
