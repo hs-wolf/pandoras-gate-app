@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-2 px-2 py-3">
     <h1 class="text-2xl font-semibold">
-      Buff & Debuffs
+      {{ $t('components.character-sheet.tabs.effects.title') }}
     </h1>
     <div v-auto-animate class="flex flex-col gap-2">
       <div v-if="showNewOperation" class="flex flex-col gap-2">

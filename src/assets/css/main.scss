@@ -44,7 +44,7 @@ input[type=number] {
 }
 
 .custom-input {
-  @apply min-w-0 w-full px-2 py-1 bg-black/20 dark:bg-white/40 rounded-sm outline-none text-black placeholder:text-black/50 dark:text-white
+  @apply min-w-0 w-full px-2 py-1 bg-black/20 dark:bg-white/40 rounded-sm outline-none text-base font-normal text-black placeholder:text-black/50 dark:text-white
 }
 
 .custom-select {

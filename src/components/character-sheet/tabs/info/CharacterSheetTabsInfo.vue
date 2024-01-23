@@ -4,31 +4,36 @@
     <CharacterSheetTabsInfoGeneral v-model="character" @save="saveExplictiChanges" />
     <CharacterSheetTabsInfoConditions v-model="character" @save="saveExplictiChanges" />
     <CharacterSheetTabsInfoAttributes v-model="character" @save="saveExplictiChanges" />
-    <CharacterSheetTabsInfoStats v-model="character" />
+    <CharacterSheetTabsInfoProperty
+      v-model="character"
+      :properties="STATS_PROPERTIES"
+      :title="$t('components.character-sheet.tabs.info.stats')"
+      :break-in-columns="true"
+    />
     <div class="grid grid-cols-2 gap-2">
-      <div class="flex flex-col gap-2">
-        <CharacterSheetTabsInfoProperty
-          v-model="character"
-          :properties="RANGE_PROPERTIES"
-          :title="$t('components.character-sheet.tabs.info.ranges')"
-        />
-        <CharacterSheetTabsInfoProperty
-          v-model="character"
-          :properties="HIT_PROPERTIES"
-          :title="$t('components.character-sheet.tabs.info.hits')"
-        />
-        <CharacterSheetTabsInfoProperty
-          v-model="character"
-          :properties="PHYSICIAL_BONUS_PROPERTIES"
-          :title="$t('components.character-sheet.tabs.info.physical-bonus')"
-        />
-      </div>
       <CharacterSheetTabsInfoProperty
         v-model="character"
-        :properties="MAGICAL_BONUS_PROPERTIES"
-        :title="$t('components.character-sheet.tabs.info.magical-bonus')"
+        :properties="RANGE_PROPERTIES"
+        :title="$t('components.character-sheet.tabs.info.ranges')"
+      />
+      <CharacterSheetTabsInfoProperty
+        v-model="character"
+        :properties="HIT_PROPERTIES"
+        :title="$t('components.character-sheet.tabs.info.hits')"
       />
     </div>
+    <CharacterSheetTabsInfoProperty
+      v-model="character"
+      :properties="PHYSICIAL_BONUS_PROPERTIES"
+      :title="$t('components.character-sheet.tabs.info.physical-bonus')"
+      :break-in-columns="true"
+    />
+    <CharacterSheetTabsInfoProperty
+      v-model="character"
+      :properties="MAGICAL_BONUS_PROPERTIES"
+      :title="$t('components.character-sheet.tabs.info.magical-bonus')"
+      :break-in-columns="true"
+    />
     <CharacterSheetTabsInfoExpertise
       v-model="character"
       :properties="EXPERTISE_STRENGTH_PROPERTIES"
@@ -87,7 +92,8 @@ import {
   EXPERTISE_VITALITY_PROPERTIES,
   EXPERTISE_SPIRIT_PROPERTIES,
   EXPERTISE_LUCK_PROPERTIES,
-  EXPERTISE_SPECIAL_PROPERTIES
+  EXPERTISE_SPECIAL_PROPERTIES,
+  STATS_PROPERTIES
 } from '~/types'
 
 const character = defineModel<Character>({ required: true })

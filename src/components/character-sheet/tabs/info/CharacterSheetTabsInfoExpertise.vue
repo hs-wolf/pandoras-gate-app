@@ -1,46 +1,38 @@
 <template>
-  <div v-if="editFields" class="flex flex-col p-2 border border-black/20 dark:border-white/40 rounded-sm">
-    <div class="flex flex-col gap-1">
-      <h1 class="text-lg font-semibold">
-        {{ title }}
-      </h1>
-      <div class="flex gap-2">
-        <div class="flex flex-col gap-1">
-          <p>&nbsp;</p>
-          <p v-for="property in properties" :key="property" class="text-sm leading-8 whitespace-nowrap">
-            {{ $t(`properties.${property}`) }}
-          </p>
+  <div v-if="editFields" class="flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
+    <h1 v-if="title" class="text-xl text-primary font-semibold uppercase">
+      {{ title }}
+    </h1>
+    <div class="flex gap-4">
+      <div class="flex flex-col gap-1">
+        <p class="text-sm">
+          &nbsp;
+        </p>
+        <p v-for="property in properties" :key="property" class="leading-8 truncate">
+          {{ $t(`properties.${property}`).split('_').pop() }}
+        </p>
+      </div>
+      <div class="flex flex-col gap-1 w-full text-center font-semibold">
+        <div class="grid grid-cols-2 gap-4 text-sm uppercase">
+          <p>{{ $t('general.base') }}</p>
+          <p>{{ $t('general.total') }}</p>
         </div>
-        <div class="grid grid-cols-2 w-full">
-          <div class="flex flex-col items-center gap-1">
-            <h1>
-              {{ $t('general.base') }}
-            </h1>
-            <div class="flex flex-col gap-1 px-2">
-              <input
-                v-for="property in properties"
-                :id="`input-${property}`"
-                :key="property"
-                v-model="character.operations[getOperationIndex(property)].value"
-                type="number"
-                pattern="[0-9]"
-                min="0"
-                class="custom-input max-w-14"
-              >
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 text-center font-semibold">
-            <h1>
-              {{ $t('general.total') }}
-            </h1>
-            <p v-for="property in properties" :key="property" class="leading-8">
-              {{ character.getProperty(property) }}
-            </p>
-          </div>
+        <div v-for="property in properties" :key="property" class="grid grid-cols-2 gap-4 text-lg leading-8">
+          <input
+            :id="`input-${property}`"
+            v-model="character.operations[getOperationIndex(property)].value"
+            type="number"
+            pattern="[0-9]"
+            min="0"
+            class="custom-input"
+          >
+          <p>
+            {{ character.getProperty(property) }}
+          </p>
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-3 gap-2 mt-4">
+    <div class="grid grid-cols-3 gap-2 mt-2">
       <button id="general-reset-changes" class="btn btn-danger" @click.prevent="resetChanges">
         {{ $t('general.reset-changes') }}
       </button>
@@ -49,38 +41,34 @@
       </button>
     </div>
   </div>
-  <div v-else class="relative flex flex-col p-2 border border-black/20 dark:border-white/40 rounded-sm">
-    <button id="edit-base" class="btn-effect absolute top-2 end-2" @click.prevent="toggleEditFields()">
+  <div v-else class="relative flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
+    <button id="edit-base" class="btn-effect flex items-center gap-1" @click.prevent="toggleEditFields()">
       <NuxtIcon name="pen" class="text-2xl text-primary" />
-    </button>
-    <div class="flex flex-col gap-1">
-      <h1 class="text-lg font-semibold">
+      <h1 v-if="title" class="text-xl font-semibold uppercase">
         {{ title }}
       </h1>
-      <div class="flex gap-2">
-        <div class="flex flex-col">
-          <p>&nbsp;</p>
-          <p v-for="property in properties" :key="property" class="text-sm leading-6 whitespace-nowrap">
-            {{ $t(`properties.${property}`) }}
-          </p>
+    </button>
+    <div class="flex gap-2">
+      <div class="flex flex-col">
+        <p class="text-sm">
+          &nbsp;
+        </p>
+        <p v-for="property in properties" :key="property" class="leading-7 truncate">
+          {{ $t(`properties.${property}`).split('_').pop() }}
+        </p>
+      </div>
+      <div class="flex flex-col w-full text-center font-semibold">
+        <div class="grid grid-cols-2 gap-4 text-sm uppercase">
+          <p>{{ $t('general.base') }}</p>
+          <p>{{ $t('general.total') }}</p>
         </div>
-        <div class="grid grid-cols-2 w-full">
-          <div class="flex flex-col text-center">
-            <h1>
-              {{ $t('general.base') }}
-            </h1>
-            <p v-for="property in properties" :key="property">
-              {{ baseOperations.find((operation) => operation.target === property)?.value }}
-            </p>
-          </div>
-          <div class="flex flex-col text-center font-semibold">
-            <h1>
-              {{ $t('general.total') }}
-            </h1>
-            <p v-for="property in properties" :key="property">
-              {{ character.getProperty(property) }}
-            </p>
-          </div>
+        <div v-for="property in properties" :key="property" class="grid grid-cols-2 gap-4 text-lg">
+          <p class="text-base leading-7 font-normal">
+            {{ baseOperations.find((operation) => operation.target === property)?.value }}
+          </p>
+          <p>
+            {{ character.getProperty(property) }}
+          </p>
         </div>
       </div>
     </div>
@@ -136,6 +124,6 @@ onBeforeMount(() => {
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 
 </style>

@@ -20,6 +20,7 @@
 <script setup lang="ts">
 import type { ConcreteComponent } from 'vue'
 
+const { t } = useI18n()
 const navbarStore = useNavbarStore()
 const characterSheetStore = useCharacterSheetStore()
 const { character } = storeToRefs(characterSheetStore)
@@ -36,8 +37,8 @@ const tabsList = shallowRef<CharacterTab[]>([
     component: resolveComponent('CharacterSheetTabsInfo')
   },
   {
-    name: 'buffs',
-    component: resolveComponent('CharacterSheetTabsBuffs')
+    name: 'effects',
+    component: resolveComponent('CharacterSheetTabsEffects')
   },
   {
     name: 'formulas',
@@ -54,7 +55,7 @@ function changeTab (index: number) {
 }
 
 onBeforeMount(() => {
-  navbarStore.setTitle('Character')
+  navbarStore.setTitle(t('pages.character-sheet.title'))
 })
 </script>
 

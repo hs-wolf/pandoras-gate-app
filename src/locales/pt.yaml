@@ -25,10 +25,10 @@ properties:
   CONDITIONS_ATUAL_MP: MP
   CONDITIONS_ATUAL_SP: SP
   CONDITIONS_ATUAL_HUNGER: Fome
-  CONDITIONS_MAX_HP: HP Máximo
-  CONDITIONS_MAX_MP: MP Máximo
-  CONDITIONS_MAX_SP: SP Máximo
-  CONDITIONS_MAX_HUNGER: Fome Máx
+  CONDITIONS_MAX_HP: HP Máx.
+  CONDITIONS_MAX_MP: MP Máx.
+  CONDITIONS_MAX_SP: SP Máx.
+  CONDITIONS_MAX_HUNGER: Fome Máx.
   ATTRIBUTES_STRENGTH: Força
   ATTRIBUTES_AGILITY: Agilidade
   ATTRIBUTES_DEXTERITY: Destreza
@@ -45,109 +45,109 @@ properties:
   STATS_DODGE: Esquiva
   STATS_MOVE: Movimento
   STATS_CRITICAL: Crítico
-  STATS_PHYSICAL_DEFENSE: Defesa Física
-  STATS_PHYSICAL_DICE: Dados Físicos
-  STATS_MAGICAL_DEFENSE: Defesa Mágica
-  STATS_MAGICAL_DICE: Dados Mágicos
-  RANGE_UNARMED: Desarmado
-  RANGE_MELEE: Corpo a Corpo
-  RANGE_RANGED: Distância
-  RANGE_FIREARM: Arma de Fogo
-  HIT_UNARMED: Desarmado
-  HIT_MELEE: Corpo a Corpo
-  HIT_RANGED: Distância
-  HIT_FIREARM: Arma de Fogo
-  PHYSICIAL_BONUS_UNARMED: Desarmado
-  PHYSICIAL_BONUS_MELEE: Corpo a Corpo
-  PHYSICIAL_BONUS_RANGED: Distância
-  PHYSICIAL_BONUS_FIREARM: Arma de Fogo
-  MAGICAL_BONUS_WATER: Água
-  MAGICAL_BONUS_ETHEREAL: Etéreo
-  MAGICAL_BONUS_FIRE: Fogo
-  MAGICAL_BONUS_ICE: Gelo
-  MAGICAL_BONUS_MOON: Lua
-  MAGICAL_BONUS_LIGHT: Luz
-  MAGICAL_BONUS_MAGICK: Magick
-  MAGICAL_BONUS_NATURE: Natureza
-  MAGICAL_BONUS_SUN: Sol
-  MAGICAL_BONUS_SOUL: Soul
-  MAGICAL_BONUS_EARTH: Terra
-  MAGICAL_BONUS_DARKNESS: Escuridão
-  MAGICAL_BONUS_THUNDER: Trovão
-  MAGICAL_BONUS_WIND: Vento
-  EXPERTISE_MELEE_WEAPONS: Per. Armas Brancas
-  EXPERTISE_MECHANICAL_WEAPONS: Per. Armas Mecanicas
-  EXPERTISE_WILLPOWER: Per. Força de Vontade
-  EXPERTISE_FORGE: Per. Forjar
-  EXPERTISE_IMMOBILIZATION: Per. Imobilização
-  EXPERTISE_UNARMED_COMBAT: Per. Luta Desarmada
-  EXPERTISE_MINING: Per. Mineração
-  EXPERTISE_MOUNT: Per. Montaria
-  EXPERTISE_TRACK: Per. Rastrear
-  EXPERTISE_MISLEAD: Per. Despistar
-  EXPERTISE_DISGUISE: Per. Disfarce
-  EXPERTISE_DUAL_WIELD: Per. Dual Wield
-  EXPERTISE_HIDE: Per. Esconder
-  EXPERTISE_DODGE: Per. Esquiva
-  EXPERTISE_ESCAPE: Per. Fugir
-  EXPERTISE_JUMP: Per. Pular
-  EXPERTISE_AGRICULTURE: Per. Agricultura
-  EXPERTISE_RANGED_WEAPON: Per. Arma de Alcance
-  EXPERTISE_FIREARM: Per. Arma de Fogo
-  EXPERTISE_MASONRY: Per. Alvenaria
-  EXPERTISE_THROW_OBJECT: Per. Arremessar Objeto 
-  EXPERTISE_CLIMB: Per. Escalar
-  EXPERTISE_BUILD_BOAT: Per. Fazer Barco 
-  EXPERTISE_SWIM: Per. Nadar
-  EXPERTISE_PILOTING: Per. Pilotagem
-  EXPERTISE_SET_TRAP: Per. Preparar Armadilha
-  EXPERTISE_FIRST_AID: Per. Primeiros Socorros
-  EXPERTISE_CHARISMA: Per. Carisma
-  EXPERTISE_PHYSICAL_DEFENSE: Per. Defesa Física
-  EXPERTISE_LEADERSHIP: Per. Liderança
-  EXPERTISE_SURVIVAL: Per. Sobrevivência
-  EXPERTISE_AID: Per. Auxílio
-  EXPERTISE_BLUFF: Per. Blefar
-  EXPERTISE_CONJURATION: Per. Conjuração
-  EXPERTISE_MAGICAL_DEFENSE: Per. Defesa Mágica
-  EXPERTISE_WATER_ELEMENT: Per. Água
-  EXPERTISE_ETHEREAL_ELEMENT: Per. Etéreo 
-  EXPERTISE_FIRE_ELEMENT: Per. Fogo
-  EXPERTISE_ICE_ELEMENT: Per. Gelo
-  EXPERTISE_MOON_ELEMENT: Per. Lua
-  EXPERTISE_LIGHT_ELEMENT: Per. Luz
-  EXPERTISE_MAGICK_ELEMENT: Per. Magick
-  EXPERTISE_NATURE_ELEMENT: Per. Natureza
-  EXPERTISE_SUN_ELEMENT: Per. Sol
-  EXPERTISE_SOUL_ELEMENT: Per. Soul
-  EXPERTISE_EARTH_ELEMENT: Per. Terra
-  EXPERTISE_DARKNESS_ELEMENT: Per. Trevas
-  EXPERTISE_THUNDER_ELEMENT: Per. Trovão
-  EXPERTISE_WIND_ELEMENT: Per. Vento
-  EXPERTISE_INTERPRET_DREAMS: Per. Interpretar Sonhos
-  EXPERTISE_INTERROGATE: Per. Interrogar
-  EXPERTISE_INTIMIDATE: Per. Intimidar
-  EXPERTISE_LANGUAGE: Per. Linguagem
-  EXPERTISE_CURSE: Per. Maldição
-  EXPERTISE_MYSTICISM: Per. Misticismo
-  EXPERTISE_NEGOTIATE: Per. Negociar
-  EXPERTISE_PERCEPTION: Per. Percepção
-  EXPERTISE_PREDICT_WEATHER: Per. Prever Tempo
-  EXPERTISE_TACTICS: Per. Tática 
-  EXPERTISE_CRITICAL: Per. Crítico
-  EXPERTISE_PLAY_CALCULATE: Per. Jogar / Calcular
-  EXPERTISE_MAGICK_FIND: Per. Magick Find
-  EXPERTISE_ASTRONOMY: Per. Astronomia
-  EXPERTISE_ACROBATICS: Per. Acrobacia
-  EXPERTISE_STEAL: Per. Furtar
-  EXPERTISE_CHEMISTRY: Per. Química
-  EXPERTISE_RELAXATION: Per. Relaxamento
-  EXPERTISE_FAITH: Per. Fé
-  EXPERTISE_SPECIAL_WEAPON: Per. Arma Especial
-  EXPERTISE_COMBO: Per. Combo
-  EXPERTISE_MVP: Per. MVP
-  EXPERTISE_PVP: Per. PVP
-  EXPERTISE_SYNERGY: Per. Sinergia
+  STATS_PHYSICAL_DEFENSE: Def. Física
+  STATS_PHYSICAL_DICE: Ddo. Físico
+  STATS_MAGICAL_DEFENSE: Def. Mágica
+  STATS_MAGICAL_DICE: Ddo. Mágico
+  RANGE_UNARMED: Alcance_Desarmado
+  RANGE_MELEE: Alcance_Corpo a Corpo
+  RANGE_RANGED: Alcance_Distância
+  RANGE_FIREARM: Alcance_Arma de Fogo
+  HIT_UNARMED: Acerto_Desarmado
+  HIT_MELEE: Acerto_Corpo a Corpo
+  HIT_RANGED: Acerto_Distância
+  HIT_FIREARM: Acerto_Arma de Fogo
+  PHYSICIAL_BONUS_UNARMED: Bônus Físico_Desarmado
+  PHYSICIAL_BONUS_MELEE: Bônus Físico_Corpo a Corpo
+  PHYSICIAL_BONUS_RANGED: Bônus Físico_Distância
+  PHYSICIAL_BONUS_FIREARM: Bônus Físico_Arma de Fogo
+  MAGICAL_BONUS_WATER: Bônus Mágico_Água
+  MAGICAL_BONUS_ETHEREAL: Bônus Mágico_Etéreo
+  MAGICAL_BONUS_FIRE: Bônus Mágico_Fogo
+  MAGICAL_BONUS_ICE: Bônus Mágico_Gelo
+  MAGICAL_BONUS_MOON: Bônus Mágico_Lua
+  MAGICAL_BONUS_LIGHT: Bônus Mágico_Luz
+  MAGICAL_BONUS_MAGICK: Bônus Mágico_Magick
+  MAGICAL_BONUS_NATURE: Bônus Mágico_Natureza
+  MAGICAL_BONUS_SUN: Bônus Mágico_Sol
+  MAGICAL_BONUS_SOUL: Bônus Mágico_Soul
+  MAGICAL_BONUS_EARTH: Bônus Mágico_Terra
+  MAGICAL_BONUS_DARKNESS: Bônus Mágico_Escuridão
+  MAGICAL_BONUS_THUNDER: Bônus Mágico_Trovão
+  MAGICAL_BONUS_WIND: Bônus Mágico_Vento
+  EXPERTISE_MELEE_WEAPONS: Per_Armas Brancas
+  EXPERTISE_MECHANICAL_WEAPONS: Per_Armas Mecanicas
+  EXPERTISE_WILLPOWER: Per_Força de Vontade
+  EXPERTISE_FORGE: Per_Forjar
+  EXPERTISE_IMMOBILIZATION: Per_Imobilização
+  EXPERTISE_UNARMED_COMBAT: Per_Luta Desarmada
+  EXPERTISE_MINING: Per_Mineração
+  EXPERTISE_MOUNT: Per_Montaria
+  EXPERTISE_TRACK: Per_Rastrear
+  EXPERTISE_MISLEAD: Per_Despistar
+  EXPERTISE_DISGUISE: Per_Disfarce
+  EXPERTISE_DUAL_WIELD: Per_Dual Wield
+  EXPERTISE_HIDE: Per_Esconder
+  EXPERTISE_DODGE: Per_Esquiva
+  EXPERTISE_ESCAPE: Per_Fugir
+  EXPERTISE_JUMP: Per_Pular
+  EXPERTISE_AGRICULTURE: Per_Agricultura
+  EXPERTISE_RANGED_WEAPON: Per_Arma de Alcance
+  EXPERTISE_FIREARM: Per_Arma de Fogo
+  EXPERTISE_MASONRY: Per_Alvenaria
+  EXPERTISE_THROW_OBJECT: Per_Arremessar Objeto 
+  EXPERTISE_CLIMB: Per_Escalar
+  EXPERTISE_BUILD_BOAT: Per_Fazer Barco 
+  EXPERTISE_SWIM: Per_Nadar
+  EXPERTISE_PILOTING: Per_Pilotagem
+  EXPERTISE_SET_TRAP: Per_Preparar Armadilha
+  EXPERTISE_FIRST_AID: Per_Primeiros Socorros
+  EXPERTISE_CHARISMA: Per_Carisma
+  EXPERTISE_PHYSICAL_DEFENSE: Per_Defesa Física
+  EXPERTISE_LEADERSHIP: Per_Liderança
+  EXPERTISE_SURVIVAL: Per_Sobrevivência
+  EXPERTISE_AID: Per_Auxílio
+  EXPERTISE_BLUFF: Per_Blefar
+  EXPERTISE_CONJURATION: Per_Conjuração
+  EXPERTISE_MAGICAL_DEFENSE: Per_Defesa Mágica
+  EXPERTISE_WATER_ELEMENT: Per_Água
+  EXPERTISE_ETHEREAL_ELEMENT: Per_Etéreo 
+  EXPERTISE_FIRE_ELEMENT: Per_Fogo
+  EXPERTISE_ICE_ELEMENT: Per_Gelo
+  EXPERTISE_MOON_ELEMENT: Per_Lua
+  EXPERTISE_LIGHT_ELEMENT: Per_Luz
+  EXPERTISE_MAGICK_ELEMENT: Per_Magick
+  EXPERTISE_NATURE_ELEMENT: Per_Natureza
+  EXPERTISE_SUN_ELEMENT: Per_Sol
+  EXPERTISE_SOUL_ELEMENT: Per_Soul
+  EXPERTISE_EARTH_ELEMENT: Per_Terra
+  EXPERTISE_DARKNESS_ELEMENT: Per_Trevas
+  EXPERTISE_THUNDER_ELEMENT: Per_Trovão
+  EXPERTISE_WIND_ELEMENT: Per_Vento
+  EXPERTISE_INTERPRET_DREAMS: Per_Interpretar Sonhos
+  EXPERTISE_INTERROGATE: Per_Interrogar
+  EXPERTISE_INTIMIDATE: Per_Intimidar
+  EXPERTISE_LANGUAGE: Per_Linguagem
+  EXPERTISE_CURSE: Per_Maldição
+  EXPERTISE_MYSTICISM: Per_Misticismo
+  EXPERTISE_NEGOTIATE: Per_Negociar
+  EXPERTISE_PERCEPTION: Per_Percepção
+  EXPERTISE_PREDICT_WEATHER: Per_Prever Tempo
+  EXPERTISE_TACTICS: Per_Tática 
+  EXPERTISE_CRITICAL: Per_Crítico
+  EXPERTISE_PLAY_CALCULATE: Per_Jogar / Calcular
+  EXPERTISE_MAGICK_FIND: Per_Magick Find
+  EXPERTISE_ASTRONOMY: Per_Astronomia
+  EXPERTISE_ACROBATICS: Per_Acrobacia
+  EXPERTISE_STEAL: Per_Furtar
+  EXPERTISE_CHEMISTRY: Per_Química
+  EXPERTISE_RELAXATION: Per_Relaxamento
+  EXPERTISE_FAITH: Per_Fé
+  EXPERTISE_SPECIAL_WEAPON: Per_Arma Especial
+  EXPERTISE_COMBO: Per_Combo
+  EXPERTISE_MVP: Per_MVP
+  EXPERTISE_PVP: Per_PVP
+  EXPERTISE_SYNERGY: Per_Sinergia
 elements:
   fire: Fogo
   nature: Natureza
@@ -172,6 +172,8 @@ general:
   reset-changes: Resetar
   base: Base
   total: Total
+  atual: Atual
+  max: Máx.
 components:
   navbar:
     links:
@@ -197,17 +199,14 @@ components:
           jobs:
             label: "Classes:"
             placeholder: "Selecione as classes"
-        conditions:
-          attribute: Atributo
-          base: Base
-          total: Total
-          modifier: MOD
+        general: Geral
+        conditions: Condições
+        attributes: Atributos
         stats: Status
         ranges: Alcances
         hits: Acertos
         physical-bonus: Bônus Físico
         magical-bonus: Bônus Mágico
-        skills-regen: Regeneração de Skills
         expertises-strength: Perícias Força
         expertises-agility: Perícias Agilidade
         expertises-dexterity: Perícias Destreza
@@ -215,8 +214,8 @@ components:
         expertises-spirit: Perícias Espírito
         expertises-luck: Perícias Sorte
         expertises-special: Perícias Especiais
-      buffs: 
-        title: Buffs
+      effects: 
+        title: Efeitos
       inventory: 
         title: Inventário
       formulas: 
@@ -239,8 +238,10 @@ components:
           priority-value: Valor de prioridade
 pages:
   index:
+    title: Pandoras Gate App
     got-to-character-sheet: Ir para a ficha de personagem
   character-sheet:
+    title: Ficha do Personagem
     new-operation:
      label: + Nova Operação
     save-operation: Salvar

@@ -1,99 +1,63 @@
 <template>
-  <div v-if="editFields" class="flex flex-col gap-2 p-2 border border-black/20 dark:border-white/40 rounded-sm">
-    <div class="condition-edit">
-      <p class="text-red-700">
-        {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP}`) }}
-      </p>
-      <div class="relative grid grid-cols-2 items-center gap-5 w-full">
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-        <span class="absolute flex text-center left-1/2 -translate-x-1/2">/</span>
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_MAX_HP}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_MAX_HP)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
+  <div v-if="editFields" class="flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
+    <h1 class="text-xl text-primary font-semibold uppercase">
+      {{ $t('components.character-sheet.tabs.info.conditions') }}
+    </h1>
+    <div class="flex gap-4">
+      <div class="flex flex-col gap-1 text-xl font-semibold leading-8">
+        <p class="text-sm">
+          &nbsp;
+        </p>
+        <p class="text-danger">
+          {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP}`) }}
+        </p>
+        <p class="text-purple-600">
+          {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_SP}`) }}
+        </p>
+        <p class="text-primary">
+          {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP}`) }}
+        </p>
+        <p>
+          {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HUNGER}`) }}
+        </p>
       </div>
-    </div>
-    <div class="condition-edit">
-      <p class="text-blue-700">
-        {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP}`) }}
-      </p>
-      <div class="relative grid grid-cols-2 items-center gap-5 w-full">
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-        <span class="absolute flex text-center left-1/2 -translate-x-1/2">/</span>
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_MAX_MP}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_MAX_MP)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-      </div>
-    </div>
-    <div class="condition-edit">
-      <p class="text-purple-700">
-        {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_SP}`) }}
-      </p>
-      <div class="relative grid grid-cols-2 items-center gap-5 w-full">
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_SP}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_SP)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-        <span class="absolute flex text-center left-1/2 -translate-x-1/2">/</span>
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_MAX_SP}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_MAX_SP)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-      </div>
-    </div>
-    <div class="condition-edit">
-      <p>
-        {{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HUNGER}`) }}
-      </p>
-      <div class="relative grid grid-cols-2 items-center gap-5 w-full">
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HUNGER}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HUNGER)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
-        <span class="absolute flex text-center left-1/2 -translate-x-1/2">/</span>
-        <input
-          :id="`input-${CONDITIONS_PROPERTIES.CONDITIONS_MAX_HUNGER}`"
-          v-model="character.operations[getOperationIndex(CONDITIONS_PROPERTIES.CONDITIONS_MAX_HUNGER)].value"
-          type="number"
-          pattern="[0-9]"
-          min="0"
-          class="custom-input"
-        >
+      <div class="flex flex-col gap-1 w-full text-center">
+        <div class="grid grid-cols-2 gap-4 text-sm font-semibold uppercase">
+          <p>{{ $t('general.atual') }}</p>
+          <p>{{ $t('general.max') }}</p>
+        </div>
+        <div class="relative grid grid-cols-2 gap-4 text-lg leading-8">
+          <div class="flex flex-col gap-1">
+            <input
+              v-for="property in [CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP,
+                                  CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_SP,
+                                  CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP,
+                                  CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HUNGER]"
+              :id="`input-${property}`"
+              :key="property"
+              v-model="character.operations[getOperationIndex(property)].value"
+              type="number"
+              pattern="[0-9]"
+              min="0"
+              class="custom-input"
+            >
+          </div>
+          <div class="flex flex-col gap-1">
+            <input
+              v-for="property in [CONDITIONS_PROPERTIES.CONDITIONS_MAX_HP,
+                                  CONDITIONS_PROPERTIES.CONDITIONS_MAX_SP,
+                                  CONDITIONS_PROPERTIES.CONDITIONS_MAX_MP,
+                                  CONDITIONS_PROPERTIES.CONDITIONS_MAX_HUNGER]"
+              :id="`input-${property}`"
+              :key="property"
+              v-model="character.operations[getOperationIndex(property)].value"
+              type="number"
+              pattern="[0-9]"
+              min="0"
+              class="custom-input"
+            >
+          </div>
+        </div>
       </div>
     </div>
     <div class="grid grid-cols-2 gap-2 mt-2">
@@ -105,21 +69,24 @@
       </button>
     </div>
   </div>
-  <div v-else class="relative grid grid-cols-2 gap-2 p-2 border border-black/20 dark:border-white/40 rounded-sm">
-    <button id="edit-base" class="btn-effect absolute top-2 end-2" @click.prevent="toggleEditFields()">
+  <div v-else class="relative flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
+    <button id="edit-base" class="btn-effect col-span-2 flex items-center gap-1" @click.prevent="toggleEditFields()">
       <NuxtIcon name="pen" class="text-2xl text-primary" />
+      <h1 class="text-xl font-semibold uppercase">
+        {{ $t('components.character-sheet.tabs.info.conditions') }}
+      </h1>
     </button>
-    <div class="condition text-red-700">
+    <div class="condition text-danger">
       <p>{{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP}`) }}</p>
       <span>{{ `${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HP)} / ${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_MAX_HP)}` }}</span>
+    </div>
+    <div class="condition text-primary">
+      <p>{{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP}`) }}</p>
+      <span>{{ `${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP)} / ${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_MAX_MP)}` }}</span>
     </div>
     <div class="condition text-purple-700">
       <p>{{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_SP}`) }}</p>
       <span>{{ `${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_SP)} / ${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_MAX_SP)}` }}</span>
-    </div>
-    <div class="condition text-blue-700">
-      <p>{{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP}`) }}</p>
-      <span>{{ `${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_MP)} / ${character.getProperty(CONDITIONS_PROPERTIES.CONDITIONS_MAX_MP)}` }}</span>
     </div>
     <div class="condition">
       <p>{{ $t(`properties.${CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HUNGER}`) }}</p>
@@ -176,13 +143,13 @@ onBeforeMount(() => {
 
 <style scoped lang="scss">
 .condition {
-  @apply flex items-center gap-2 text-xl font-semibold;
-
-}
-.condition-edit {
-  @apply flex items-center gap-2;
+  @apply flex items-center gap-2 font-semibold;
   p {
-    @apply text-lg font-semibold;
+    @apply text-xl;
   }
+  span {
+    @apply text-2xl;
+  }
+
 }
 </style>

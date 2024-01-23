@@ -11,11 +11,12 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
 const localePath = useLocalePath()
 const navbarStore = useNavbarStore()
 
 onBeforeMount(() => {
-  navbarStore.setTitle('Pandoras Gate')
+  navbarStore.setTitle(t('pages.index.title'))
 })
 </script>
 
