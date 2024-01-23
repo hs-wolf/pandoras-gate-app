@@ -13,7 +13,7 @@
       <NuxtIcon name="chevron-down" class="text-xl transition-transform" :class="{'rotate-180': showOperations }" />
     </button>
     <div v-if="showOperations" class="flex flex-col">
-      <CharacterPropertyCardOperation
+      <CharacterSheetPropertyCardOperation
         v-for="(operation, index) in property.operations"
         :key="operation.id"
         v-model="property.operations[index]"

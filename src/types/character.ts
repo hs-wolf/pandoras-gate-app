@@ -264,13 +264,50 @@ export interface IJob {
 export class Character {
   // eslint-disable-next-line no-useless-constructor
   constructor (
+    public id: string,
     public player: string,
     public name: string,
     public guild: string,
     public elements: IElement[],
     public jobs: IJob[],
-    public operations: IOperation[]
+    public operations: IOperation[],
+    public readonly version = Character.currentVersion
   ) {}
+
+  static readonly currentVersion = '0.0.1'
+
+  static fromMap (map: Character | Record<string, unknown>) {
+    return new Character(
+      map.id as string,
+      map.player as string,
+      map.name as string,
+      map.guild as string,
+      map.elements as IElement[],
+      map.jobs as IJob[],
+      map.operations as IOperation[],
+      map.version as string
+    )
+  }
+
+  toMap (): Omit<Character,
+  | 'currentVersion'
+  | 'toMap'
+  | 'getProperty'
+  | 'checkForCircularDependency'
+  | 'checkIfOperationIsBasedOnProperty'
+  | 'checkIfPropertyBasedOperationHasModifiers'
+  > {
+    return {
+      id: this.id,
+      player: this.player,
+      name: this.name,
+      guild: this.guild,
+      elements: this.elements,
+      jobs: this.jobs,
+      operations: this.operations,
+      version: this.version
+    }
+  }
 
   getProperty (propertyType: AllPropertiesTypes, propertyTypesStack?: AllPropertiesTypes[]): number {
     try {

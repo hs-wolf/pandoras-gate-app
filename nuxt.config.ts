@@ -57,7 +57,7 @@ export default defineNuxtConfig({
         file: 'pt.yaml'
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'pt',
     langDir: 'locales',
     lazy: true,
     detectBrowserLanguage: {

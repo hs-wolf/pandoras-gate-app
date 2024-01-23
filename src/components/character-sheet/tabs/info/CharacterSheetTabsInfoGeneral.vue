@@ -148,6 +148,8 @@ import { type Character, GENERAL_PROPERTIES, type AllPropertiesTypes, type IOper
 
 const character = defineModel<Character>({ required: true })
 
+const emits = defineEmits<{(e:'save'): void}>()
+
 const editFields = ref(false)
 
 const operationsToReset = ref<IOperation[]>([])
@@ -163,6 +165,7 @@ function getOperationIndex (type: AllPropertiesTypes) {
 function saveChanges () {
   toggleEditFields(false)
   saveOperationsToReset()
+  emits('save')
 }
 
 function resetChanges () {

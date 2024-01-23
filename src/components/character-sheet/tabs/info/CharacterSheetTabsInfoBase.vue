@@ -106,6 +106,8 @@ import { type Character, ELEMENTS_LIST, type IElement, JOBS_LIST, type IJob } fr
 
 const character = defineModel<Character>({ required: true })
 
+const emits = defineEmits<{(e:'save'): void}>()
+
 const { t } = useI18n()
 
 const editFields = ref(false)
@@ -131,6 +133,7 @@ function saveChanges () {
   }).filter(job => job) as IJob []
   character.value.elements = elementsToSave
   character.value.jobs = jobsToSave
+  emits('save')
 }
 
 function resetChanges () {

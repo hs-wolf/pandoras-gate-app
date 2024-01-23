@@ -84,6 +84,8 @@ import { type Character, type AllPropertiesTypes, type IOperation, ATTRIBUTES_PR
 
 const character = defineModel<Character>({ required: true })
 
+const emits = defineEmits<{(e:'save'): void}>()
+
 const editFields = ref(false)
 
 const baseOperations = computed(() => character.value.operations.filter(operation => operation.baseValue && Object.values(ATTRIBUTES_PROPERTIES).includes(operation.target)))
@@ -105,6 +107,7 @@ function getModByAttribute (type: AllPropertiesTypes) {
 function saveChanges () {
   toggleEditFields(false)
   saveOperationsToReset()
+  emits('save')
 }
 
 function resetChanges () {

@@ -1,5 +1,5 @@
 <template>
-  <div v-auto-animate class="relative flex flex-col h-full pb-12 overflow-auto">
+  <div v-if="character" v-auto-animate class="relative flex flex-col h-full pb-12 overflow-auto">
     <div class="z-[150] fixed bottom-0 inset-x-0 grid h-12 bg-white dark:bg-black border-t border-black/5 dark:border-white/15" :style="{ 'grid-template-columns': `repeat(${tabsList.length}, minmax(0, 1fr))` }">
       <button
         v-for="(tab, tabIndex) in tabsList"
@@ -19,9 +19,10 @@
 
 <script setup lang="ts">
 import type { ConcreteComponent } from 'vue'
-import { Character, DEFAULT_CHARACTER_FORMULAS, ELEMENTS_LIST, JOBS_LIST } from '~/types'
 
 const navbarStore = useNavbarStore()
+const characterSheetStore = useCharacterSheetStore()
+const { character } = storeToRefs(characterSheetStore)
 
 type CharacterTab = {
   name: string
@@ -43,21 +44,6 @@ const tabsList = shallowRef<CharacterTab[]>([
     component: resolveComponent('CharacterSheetTabsFormulas')
   }
 ])
-
-const character = ref(new Character(
-  'Jose',
-  'Tai Lung',
-  'Falcões de Primus',
-  [
-    ELEMENTS_LIST[0],
-    ELEMENTS_LIST[1]
-  ],
-  [
-    JOBS_LIST[0],
-    JOBS_LIST[1]
-  ],
-  DEFAULT_CHARACTER_FORMULAS
-))
 
 function changeTab (index: number) {
   if (currentTab.value === index) {

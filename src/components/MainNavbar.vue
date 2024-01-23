@@ -48,7 +48,7 @@
           </div>
           <div class="flex flex-col justify-end items-end gap-3">
             <button
-              v-for="language in menuLanguages"
+              v-for="language in Object.values(SupportedLocales)"
               :id="`change-language-${language}`"
               :key="language"
               class="flex items-center gap-1"
@@ -68,11 +68,13 @@
 </template>
 
 <script setup lang="ts">
+import { SupportedLocales } from '~/utils/constants'
+
 const localePath = useLocalePath()
-const switchLocalePath = useSwitchLocalePath()
 const colorMode = useColorMode()
 const navbarStore = useNavbarStore()
 const { title } = storeToRefs(navbarStore)
+const localesStore = useLocalesStore()
 
 const showMenu = ref(false)
 const menuLinks = ref(['index', 'character-sheet'])
@@ -90,7 +92,6 @@ const menuThemes = ref([
     icon: 'screen'
   }
 ])
-const menuLanguages = ref(['en', 'pt'])
 
 function menuLinkClick () {
   showMenu.value = false
@@ -100,8 +101,8 @@ function changeColorMode (value: string) {
   colorMode.preference = value
 }
 
-function changeLanguage (locale: string) {
-  navigateTo(switchLocalePath(locale))
+function changeLanguage (locale: SupportedLocales) {
+  localesStore.changeLocale(locale)
 }
 </script>
 

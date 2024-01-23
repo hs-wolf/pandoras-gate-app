@@ -5,7 +5,7 @@
     </h1>
     <div v-auto-animate class="flex flex-col gap-2">
       <div v-if="showNewOperation" class="flex flex-col gap-2">
-        <CharacterPropertyCardOperation
+        <CharacterSheetPropertyCardOperation
           v-model="character.operations[character.operations.length-1]"
           :show-target="true"
         />
@@ -23,7 +23,7 @@
       </button>
     </div>
     <div class="flex flex-col gap-2">
-      <CharacterPropertyCard
+      <CharacterSheetPropertyCard
         v-for="(property, index) in groupedOperations"
         :key="property.type"
         v-model="groupedOperations[index]"
