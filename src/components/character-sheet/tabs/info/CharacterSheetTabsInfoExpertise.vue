@@ -26,7 +26,7 @@
             min="0"
             class="custom-input"
           >
-          <p>
+          <p :class="{'text-danger font-normal' : (character.operations[getOperationIndex(property)].value ?? 0) <= 0}">
             {{ character.getProperty(property) }}
           </p>
         </div>
@@ -66,7 +66,7 @@
           <p class="text-base leading-7 font-normal">
             {{ baseOperations.find((operation) => operation.target === property)?.value }}
           </p>
-          <p>
+          <p :class="{'text-danger font-normal' : (character.operations[getOperationIndex(property)].value ?? 0) <= 0}">
             {{ character.getProperty(property) }}
           </p>
         </div>

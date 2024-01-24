@@ -1,15 +1,15 @@
 <template>
-  <div v-auto-animate class="z-[200] flex flex-col">
-    <div class="flex items-center justify-between h-12">
-      <h1 class="text-2xl p-3 leading-none">
+  <div v-auto-animate class="z-[200] flex flex-col md:w-full md:max-w-4xl md:mx-auto">
+    <div class="flex items-center justify-between h-12 md:h-16 md:shrink-0">
+      <h1 class="text-2xl md:text-3xl p-3 md:p-0 leading-none">
         {{ title }}
       </h1>
-      <button class="flex p-3" @click.prevent="showMenu = true">
+      <button class="flex p-3 md:p-0" @click.prevent="showMenu = !showMenu">
         <NuxtIcon name="hamburger-menu" class="text-2xl transition-transform" :class="{ 'rotate-90' : showMenu }" />
       </button>
     </div>
-    <div v-if="showMenu" class="fixed inset-0 flex flex-col gap-3 bg-white dark:bg-black">
-      <div class="flex items-center justify-between h-12">
+    <div v-if="showMenu" class="fixed inset-0 flex flex-col gap-3 md:static md:w-full md:max-w-4xl md:mx-auto bg-white dark:bg-black">
+      <div class="flex items-center justify-between h-12 md:hidden">
         <h1 class="text-2xl p-3 leading-none">
           {{ title }}
         </h1>
@@ -17,8 +17,8 @@
           <NuxtIcon name="x-close" class="text-2xl" />
         </button>
       </div>
-      <div class="flex flex-col h-full overflow-auto">
-        <div class="flex flex-col items-end gap-3 p-3">
+      <div class="flex flex-col gap-3 h-full overflow-auto">
+        <div class="flex flex-col items-end gap-3 p-3 md:p-0">
           <NuxtLink
             v-for="link in menuLinks"
             :key="link"
@@ -30,7 +30,7 @@
             {{ $t(`components.navbar.links.${link}`) }}
           </NuxtLink>
         </div>
-        <div class="grid grid-cols-2 gap-3 mt-auto px-3 py-6">
+        <div class="grid grid-cols-2 gap-3 mt-auto px-3 py-6 md:p-0">
           <div class="flex flex-col items-start gap-3">
             <button
               v-for="theme in menuThemes"

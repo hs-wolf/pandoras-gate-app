@@ -1,16 +1,20 @@
 <template>
-  <div v-auto-animate class="flex flex-col gap-2 px-2 py-3">
+  <div v-auto-animate class="flex flex-col gap-2 md:gap-3">
     <CharacterSheetTabsInfoBase v-model="character" @save="saveExplictiChanges" />
-    <CharacterSheetTabsInfoGeneral v-model="character" @save="saveExplictiChanges" />
-    <CharacterSheetTabsInfoConditions v-model="character" @save="saveExplictiChanges" />
-    <CharacterSheetTabsInfoAttributes v-model="character" @save="saveExplictiChanges" />
-    <CharacterSheetTabsInfoProperty
-      v-model="character"
-      :properties="STATS_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.stats')"
-      :break-in-columns="true"
-    />
-    <div class="grid grid-cols-2 gap-2">
+    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
+      <CharacterSheetTabsInfoGeneral v-model="character" @save="saveExplictiChanges" />
+      <CharacterSheetTabsInfoConditions v-model="character" @save="saveExplictiChanges" />
+    </div>
+    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
+      <CharacterSheetTabsInfoAttributes v-model="character" @save="saveExplictiChanges" />
+      <CharacterSheetTabsInfoProperty
+        v-model="character"
+        :properties="STATS_PROPERTIES"
+        :title="$t('components.character-sheet.tabs.info.stats')"
+        :break-in-columns="true"
+      />
+    </div>
+    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
       <CharacterSheetTabsInfoProperty
         v-model="character"
         :properties="RANGE_PROPERTIES"
@@ -34,48 +38,54 @@
       :title="$t('components.character-sheet.tabs.info.magical-bonus')"
       :break-in-columns="true"
     />
-    <CharacterSheetTabsInfoExpertise
-      v-model="character"
-      :properties="EXPERTISE_STRENGTH_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.expertises-strength')"
-      @save="saveExplictiChanges"
-    />
-    <CharacterSheetTabsInfoExpertise
-      v-model="character"
-      :properties="EXPERTISE_AGILITY_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.expertises-agility')"
-      @save="saveExplictiChanges"
-    />
-    <CharacterSheetTabsInfoExpertise
-      v-model="character"
-      :properties="EXPERTISE_DEXTERITY_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.expertises-dexterity')"
-      @save="saveExplictiChanges"
-    />
-    <CharacterSheetTabsInfoExpertise
-      v-model="character"
-      :properties="EXPERTISE_VITALITY_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.expertises-vitality')"
-      @save="saveExplictiChanges"
-    />
-    <CharacterSheetTabsInfoExpertise
-      v-model="character"
-      :properties="EXPERTISE_SPIRIT_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.expertises-spirit')"
-      @save="saveExplictiChanges"
-    />
-    <CharacterSheetTabsInfoExpertise
-      v-model="character"
-      :properties="EXPERTISE_LUCK_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.expertises-luck')"
-      @save="saveExplictiChanges"
-    />
-    <CharacterSheetTabsInfoExpertise
-      v-model="character"
-      :properties="EXPERTISE_SPECIAL_PROPERTIES"
-      :title="$t('components.character-sheet.tabs.info.expertises-special')"
-      @save="saveExplictiChanges"
-    />
+    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
+      <div class="flex flex-col gap-2 md:gap-3">
+        <CharacterSheetTabsInfoExpertise
+          v-model="character"
+          :properties="EXPERTISE_STRENGTH_PROPERTIES"
+          :title="$t('components.character-sheet.tabs.info.expertises-strength')"
+          @save="saveExplictiChanges"
+        />
+        <CharacterSheetTabsInfoExpertise
+          v-model="character"
+          :properties="EXPERTISE_AGILITY_PROPERTIES"
+          :title="$t('components.character-sheet.tabs.info.expertises-agility')"
+          @save="saveExplictiChanges"
+        />
+        <CharacterSheetTabsInfoExpertise
+          v-model="character"
+          :properties="EXPERTISE_DEXTERITY_PROPERTIES"
+          :title="$t('components.character-sheet.tabs.info.expertises-dexterity')"
+          @save="saveExplictiChanges"
+        />
+        <CharacterSheetTabsInfoExpertise
+          v-model="character"
+          :properties="EXPERTISE_VITALITY_PROPERTIES"
+          :title="$t('components.character-sheet.tabs.info.expertises-vitality')"
+          @save="saveExplictiChanges"
+        />
+      </div>
+      <div class="flex flex-col gap-2 md:gap-3">
+        <CharacterSheetTabsInfoExpertise
+          v-model="character"
+          :properties="EXPERTISE_SPIRIT_PROPERTIES"
+          :title="$t('components.character-sheet.tabs.info.expertises-spirit')"
+          @save="saveExplictiChanges"
+        />
+        <CharacterSheetTabsInfoExpertise
+          v-model="character"
+          :properties="EXPERTISE_LUCK_PROPERTIES"
+          :title="$t('components.character-sheet.tabs.info.expertises-luck')"
+          @save="saveExplictiChanges"
+        />
+        <CharacterSheetTabsInfoExpertise
+          v-model="character"
+          :properties="EXPERTISE_SPECIAL_PROPERTIES"
+          :title="$t('components.character-sheet.tabs.info.expertises-special')"
+          @save="saveExplictiChanges"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
