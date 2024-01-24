@@ -1,6 +1,6 @@
 <template>
   <div v-auto-animate class="flex flex-col">
-    <button class="flex items-center justify-between px-3 py-2 bg-primary rounded-sm text-white" @click.prevent="showDetails = !showDetails">
+    <button class="flex items-center justify-between px-3 py-2 bg-primary text-white" :class="showDetails ? 'rounded-t-sm' : 'rounded-sm'" @click.prevent="showDetails = !showDetails">
       <p> {{ operation.description }}</p>
       <NuxtIcon name="chevron-down" class="!text-xl transition-transform" :class="{'rotate-180': showDetails }" />
     </button>
@@ -138,7 +138,7 @@
 <script setup lang="ts">
 import { type IOperation, OperationAction, ALL_PROPERTIES } from '~/types'
 
-const props = defineProps<{ showTarget?: boolean, initOpen?: boolean }>()
+const props = defineProps<{ showTarget?: boolean, initOpen?: boolean, removeable?: boolean }>()
 
 const operation = defineModel<IOperation>({ required: true })
 

@@ -222,7 +222,7 @@ components:
         title: Inventory
       formulas: 
         title: Formulas
-        new-formula: Nova Fórmula +
+        new-formula: New Formulas +
     property:
       card:
         operation:

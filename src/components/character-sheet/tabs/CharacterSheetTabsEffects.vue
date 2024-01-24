@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4 px-2 py-3">
+  <div class="flex flex-col gap-4">
     <h1 class="text-2xl font-semibold">
       {{ $t('components.character-sheet.tabs.effects.title') }}
     </h1>
@@ -23,7 +23,7 @@
         {{ $t('components.character-sheet.tabs.effects.new-effect') }}
       </button>
     </div>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2 md:items-start">
       <CharacterSheetPropertyCardOperation
         v-for="(operation) in customOperations"
         :key="operation.id"

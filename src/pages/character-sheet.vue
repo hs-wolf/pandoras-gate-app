@@ -1,6 +1,6 @@
 <template>
-  <div v-if="character" v-auto-animate class="relative flex flex-col h-full pb-12 overflow-auto">
-    <div class="z-[150] fixed bottom-0 inset-x-0 grid h-12 bg-white dark:bg-black border-t border-black/5 dark:border-white/15" :style="{ 'grid-template-columns': `repeat(${tabsList.length}, minmax(0, 1fr))` }">
+  <div v-if="character" v-auto-animate class="relative flex flex-col md:gap-6 h-full pb-12 md:py-6 overflow-auto">
+    <div class="tabs-navbar" :style="{ 'grid-template-columns': `repeat(${tabsList.length}, minmax(0, 1fr))` }">
       <button
         v-for="(tab, tabIndex) in tabsList"
         :id="`tab-change-${tabIndex}`"
@@ -13,7 +13,7 @@
         {{ $t(`components.character-sheet.tabs.${tab.name}.title`) }}
       </button>
     </div>
-    <component :is="tabsList[currentTab].component" v-if="tabsList[currentTab].component" v-model="character" />
+    <component :is="tabsList[currentTab].component" v-if="tabsList[currentTab].component" v-model="character" class="px-2 py-3 md:p-0 md:w-full md:max-w-4xl md:mx-auto" />
   </div>
 </template>
 
@@ -60,7 +60,9 @@ onBeforeMount(() => {
 </script>
 
 <style scoped>
-.asas {
-  position: static;
+.tabs-navbar {
+  @apply z-[150] fixed bottom-0 inset-x-0 grid h-12 bg-white border-t overflow-hidden border-black/10;
+  @apply md:static md:shrink-0 md:w-full md:max-w-4xl md:mx-auto md:border md:rounded-sm;
+  @apply dark:bg-black dark:border-white/15;
 }
 </style>
