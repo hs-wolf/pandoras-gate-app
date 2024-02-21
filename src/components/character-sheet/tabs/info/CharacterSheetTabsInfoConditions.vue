@@ -70,7 +70,7 @@
     </div>
   </div>
   <div v-else class="relative flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
-    <button id="edit-base" class="btn-effect col-span-2 flex items-center gap-1" @click.prevent="toggleEditFields()">
+    <button id="edit-base" class="btn-effect self-start col-span-2 flex items-center gap-1" @click.prevent="toggleEditFields()">
       <NuxtIcon name="pen" class="text-2xl text-primary" />
       <h1 class="text-xl font-semibold uppercase">
         {{ $t('components.character-sheet.tabs.info.conditions') }}

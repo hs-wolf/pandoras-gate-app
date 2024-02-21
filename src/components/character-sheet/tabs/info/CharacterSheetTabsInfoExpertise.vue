@@ -42,7 +42,7 @@
     </div>
   </div>
   <div v-else class="relative flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
-    <button id="edit-base" class="btn-effect flex items-center gap-1" @click.prevent="toggleEditFields()">
+    <button id="edit-base" class="btn-effect self-start flex items-center gap-1" @click.prevent="toggleEditFields()">
       <NuxtIcon name="pen" class="text-2xl text-primary" />
       <h1 v-if="title" class="text-xl font-semibold uppercase">
         {{ title }}
