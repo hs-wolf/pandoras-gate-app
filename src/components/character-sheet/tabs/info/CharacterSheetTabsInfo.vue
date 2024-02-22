@@ -1,11 +1,11 @@
 <template>
   <div v-auto-animate class="flex flex-col gap-2 md:gap-3">
     <CharacterSheetTabsInfoBase v-model="character" @save="saveExplictiChanges" />
-    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
+    <div v-auto-animate class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
       <CharacterSheetTabsInfoGeneral v-model="character" @save="saveExplictiChanges" />
       <CharacterSheetTabsInfoConditions v-model="character" @save="saveExplictiChanges" />
     </div>
-    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
+    <div v-auto-animate class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
       <CharacterSheetTabsInfoAttributes v-model="character" @save="saveExplictiChanges" />
       <CharacterSheetTabsInfoProperty
         v-model="character"
@@ -14,7 +14,7 @@
         :break-in-columns="true"
       />
     </div>
-    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
+    <div v-auto-animate class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
       <CharacterSheetTabsInfoProperty
         v-model="character"
         :properties="RANGE_PROPERTIES"
@@ -39,7 +39,7 @@
       :break-in-columns="true"
     />
     <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2">
-      <div class="flex flex-col gap-2 md:gap-3">
+      <div v-auto-animate class="flex flex-col gap-2 md:gap-3">
         <CharacterSheetTabsInfoExpertise
           v-model="character"
           :properties="EXPERTISE_STRENGTH_PROPERTIES"
@@ -65,7 +65,7 @@
           @save="saveExplictiChanges"
         />
       </div>
-      <div class="flex flex-col gap-2 md:gap-3">
+      <div v-auto-animate class="flex flex-col gap-2 md:gap-3">
         <CharacterSheetTabsInfoExpertise
           v-model="character"
           :properties="EXPERTISE_SPIRIT_PROPERTIES"
