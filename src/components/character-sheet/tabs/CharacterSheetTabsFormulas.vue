@@ -1,3 +1,51 @@
+<script setup lang="ts">
+import { v4 as uuidv4 } from 'uuid'
+import { Character, OperationAction, ALL_PROPERTIES, type IProperty } from '~/types'
+
+const showNewOperation = ref(false)
+const newOperationId = ref('')
+
+const character = defineModel<Character>({ required: true })
+
+const groupedOperations = computed(() => character.value.formulas.reduce((result, current) => {
+  if (current.id !== newOperationId.value) {
+    const categoryItem = result.find(item => item.type === current.target)
+    if (categoryItem) {
+      categoryItem.operations.push(current)
+    } else {
+      result.push({
+        type: current.target,
+        operations: [current]
+      })
+    }
+  }
+  return result
+}, [] as IProperty[]))
+
+function startNewOperation () {
+  const id = uuidv4()
+  newOperationId.value = id
+  character.value.formulas.push({
+    id,
+    target: ALL_PROPERTIES.ATTRIBUTES_AGILITY,
+    action: OperationAction.SUM,
+    value: 1
+  })
+  showNewOperation.value = true
+}
+
+function saveNewOperation () {
+  newOperationId.value = ''
+  showNewOperation.value = false
+}
+
+function cancelNewOperation () {
+  showNewOperation.value = false
+  character.value.formulas.pop()
+  newOperationId.value = ''
+}
+</script>
+
 <template>
   <div class="flex flex-col gap-4">
     <h1 class="text-2xl font-semibold">
@@ -6,7 +54,7 @@
     <div v-auto-animate class="flex flex-col gap-2">
       <div v-if="showNewOperation" class="flex flex-col gap-2">
         <CharacterSheetPropertyCardOperation
-          v-model="character.operations[character.operations.length-1]"
+          v-model="character.formulas[character.formulas.length-1]"
           :show-target="true"
         />
         <div class="grid grid-cols-3 gap-2">
@@ -32,55 +80,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { v4 as uuidv4 } from 'uuid'
-import { Character, OperationAction, ALL_PROPERTIES, type IProperty } from '~/types'
-
-const showNewOperation = ref(false)
-const newOperationId = ref('')
-
-const character = defineModel<Character>({ required: true })
-
-const groupedOperations = computed(() => character.value.operations.reduce((result, current) => {
-  if (current.id !== newOperationId.value && current.baseFormula) {
-    const categoryItem = result.find(item => item.type === current.target)
-    if (categoryItem) {
-      categoryItem.operations.push(current)
-    } else {
-      result.push({
-        type: current.target,
-        operations: [current]
-      })
-    }
-  }
-  return result
-}, [] as IProperty[]))
-
-function startNewOperation () {
-  const id = uuidv4()
-  newOperationId.value = id
-  character.value.operations.push({
-    id,
-    target: ALL_PROPERTIES.ATTRIBUTES_AGILITY,
-    action: OperationAction.SUM,
-    value: 1,
-    baseFormula: true
-  })
-  showNewOperation.value = true
-}
-
-function saveNewOperation () {
-  newOperationId.value = ''
-  showNewOperation.value = false
-}
-
-function cancelNewOperation () {
-  showNewOperation.value = false
-  character.value.operations.pop()
-  newOperationId.value = ''
-}
-</script>
-
-<style scoped>
+<style scoped lang="scss">
 
 </style>

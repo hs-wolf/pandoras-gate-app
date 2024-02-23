@@ -206,6 +206,30 @@ export const ALL_PROPERTIES = {
   ...EXPERTISE_PROPERTIES
 }
 
+export const PROPERTIES_SELECTIONS = {
+  PROPERTIES_SELECTION_ATTRIBUTES: 'PROPERTIES_SELECTION_ATTRIBUTES',
+  PROPERTIES_SELECTION_EXPERTISES: 'PROPERTIES_SELECTION_EXPERTISES',
+  PROPERTIES_SELECTION_EXPERTISES_STRENGTH: 'PROPERTIES_SELECTION_EXPERTISES_STRENGTH',
+  PROPERTIES_SELECTION_EXPERTISES_AGILITY: 'PROPERTIES_SELECTION_EXPERTISES_AGILITY',
+  PROPERTIES_SELECTION_EXPERTISES_DEXTERITY: 'PROPERTIES_SELECTION_EXPERTISES_DEXTERITY',
+  PROPERTIES_SELECTION_EXPERTISES_VITALITY: 'PROPERTIES_SELECTION_EXPERTISES_VITALITY',
+  PROPERTIES_SELECTION_EXPERTISES_SPIRIT: 'PROPERTIES_SELECTION_EXPERTISES_SPIRIT',
+  PROPERTIES_SELECTION_EXPERTISES_LUCK: 'PROPERTIES_SELECTION_EXPERTISES_LUCK',
+  PROPERTIES_SELECTION_EXPERTISES_SPECIAL: 'PROPERTIES_SELECTION_EXPERTISES_SPECIAL'
+}
+
+export const PROPERTIES_SELECTION_GROUPS: { [key: string]: string[] } = {
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_ATTRIBUTES]: Object.values(ATTRIBUTES_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES]: Object.values(EXPERTISE_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES_STRENGTH]: Object.values(EXPERTISE_STRENGTH_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES_AGILITY]: Object.values(EXPERTISE_AGILITY_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES_DEXTERITY]: Object.values(EXPERTISE_DEXTERITY_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES_VITALITY]: Object.values(EXPERTISE_VITALITY_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES_SPIRIT]: Object.values(EXPERTISE_SPIRIT_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES_LUCK]: Object.values(EXPERTISE_LUCK_PROPERTIES),
+  [PROPERTIES_SELECTIONS.PROPERTIES_SELECTION_EXPERTISES_SPECIAL]: Object.values(EXPERTISE_SPECIAL_PROPERTIES)
+}
+
 export type AllPropertiesTypes = typeof ALL_PROPERTIES[keyof typeof ALL_PROPERTIES];
 
 export enum OperationAction {
@@ -226,7 +250,6 @@ export interface IOperation {
   id: string
   target: AllPropertiesTypes
   action: OperationAction
-  baseFormula?: boolean
   baseValue?: boolean
   description?: string
   isBasedOnProperty?: boolean
@@ -235,6 +258,12 @@ export interface IOperation {
   value?: number
   basedOnProperty?: IBasedOnOperation
   substitutionPriority?: number
+}
+
+export interface IOperationsGroup {
+  id: string
+  label: string
+  operations: IOperation[]
 }
 
 export interface IProperty {
@@ -270,7 +299,9 @@ export class Character {
     public guild: string,
     public elements: IElement[],
     public jobs: IJob[],
-    public operations: IOperation[],
+    public formulas: IOperation[],
+    public effects: IOperation[],
+    public effectsGroups: IOperationsGroup[],
     public readonly version = Character.currentVersion
   ) {}
 
@@ -284,7 +315,9 @@ export class Character {
       map.guild as string,
       map.elements as IElement[],
       map.jobs as IJob[],
-      map.operations as IOperation[],
+      map.formulas as IOperation[],
+      map.effects as IOperation[],
+      map.effectsGroups as IOperationsGroup[],
       map.version as string
     )
   }
@@ -304,7 +337,9 @@ export class Character {
       guild: this.guild,
       elements: this.elements,
       jobs: this.jobs,
-      operations: this.operations,
+      formulas: this.formulas,
+      effects: this.effects,
+      effectsGroups: this.effectsGroups,
       version: this.version
     }
   }
@@ -313,8 +348,14 @@ export class Character {
     try {
       // Check for circular dependencies between types.
       const updatedTypesStack = this.checkForCircularDependency(propertyType, propertyTypesStack)
-      // Get the list of operations that have the given propertyType as Its target.
-      const operations = this.operations.filter(operation => operation.target === propertyType)
+      // Get the list of operations from the formulas list, that have the given propertyType as Its target.
+      const operations = this.formulas.filter(operation => operation.target === propertyType || (PROPERTIES_SELECTION_GROUPS[operation.target] && PROPERTIES_SELECTION_GROUPS[operation.target].includes(propertyType)))
+      // Also get operations from the effects and effects groups.
+      operations.push(...this.effects.filter(operation => operation.target === propertyType || (PROPERTIES_SELECTION_GROUPS[operation.target] && PROPERTIES_SELECTION_GROUPS[operation.target].includes(propertyType))))
+      this.effectsGroups.forEach((group) => {
+        const filtered = group.operations.filter(operation => operation.target === propertyType || (PROPERTIES_SELECTION_GROUPS[operation.target] && PROPERTIES_SELECTION_GROUPS[operation.target].includes(propertyType)))
+        operations.push(...filtered)
+      })
       if (operations.length) {
         // Get list of substitutions operations and sort them based on priority.
         // If no priority is present on a given operation, set It as 0.
@@ -399,7 +440,6 @@ export class Character {
   // Else, return an updated stack with the provided type included.
   checkForCircularDependency (propertyType: AllPropertiesTypes, propertyTypesStack?: AllPropertiesTypes[]) {
     if (propertyTypesStack?.length && propertyTypesStack.includes(propertyType)) {
-      alert('oof')
       throw new Error(`${propertyType} was already in the operation stack, circular operations not permitted.`)
     }
     return propertyTypesStack?.length ? [...propertyTypesStack, propertyType] : [propertyType]

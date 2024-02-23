@@ -1,3 +1,49 @@
+<script setup lang="ts">
+import { type Character, GENERAL_PROPERTIES, type AllPropertiesTypes, type IOperation } from '~/types'
+
+const character = defineModel<Character>({ required: true })
+
+const emits = defineEmits<{(e:'save'): void}>()
+
+const editFields = ref(false)
+
+const operationsToReset = ref<IOperation[]>([])
+
+function toggleEditFields (value?:boolean) {
+  editFields.value = value ?? !editFields.value
+}
+
+function getOperationIndex (type: AllPropertiesTypes) {
+  return character.value.formulas.findIndex(operation => operation.target === type && operation.baseValue)
+}
+
+function saveChanges () {
+  toggleEditFields(false)
+  saveOperationsToReset()
+  emits('save')
+}
+
+function resetChanges () {
+  toggleEditFields(false)
+  operationsToReset.value.forEach((operationToReset) => {
+    const existingIndex = character.value.formulas.findIndex(operation => operation.id === operationToReset.id)
+    if (existingIndex >= 0) {
+      character.value.formulas[existingIndex] = operationToReset
+    }
+  })
+}
+
+function saveOperationsToReset () {
+  const filteredArray = character.value.formulas.filter(operation => Object.values(GENERAL_PROPERTIES).includes(operation.target) && operation.baseValue)
+  const stringifiedArray = JSON.stringify(filteredArray)
+  operationsToReset.value = JSON.parse(stringifiedArray)
+}
+
+onBeforeMount(() => {
+  saveOperationsToReset()
+})
+</script>
+
 <template>
   <div v-if="editFields" class="flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
     <h1 class="text-xl text-primary font-semibold uppercase">
@@ -8,7 +54,7 @@
         <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GRADE}`) }}:</p>
         <input
           :id="`input-${GENERAL_PROPERTIES.GENERAL_GRADE}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GRADE)].value"
+          v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GRADE)].value"
           type="number"
           pattern="[0-9]"
           min="0"
@@ -19,7 +65,7 @@
         <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_LEVEL}`) }}:</p>
         <input
           :id="`input-${GENERAL_PROPERTIES.GENERAL_LEVEL}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_LEVEL)].value"
+          v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_LEVEL)].value"
           type="number"
           pattern="[0-9]"
           min="0"
@@ -31,7 +77,7 @@
         <div class="relative grid grid-cols-2 items-center gap-5 w-full">
           <input
             :id="`input-${GENERAL_PROPERTIES.GENERAL_EXP}`"
-            v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_EXP)].value"
+            v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_EXP)].value"
             type="number"
             pattern="[0-9]"
             min="0"
@@ -40,7 +86,7 @@
           <span class="absolute flex text-center left-1/2 -translate-x-1/2">/</span>
           <input
             :id="`input-${GENERAL_PROPERTIES.GENERAL_NEXT}`"
-            v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_NEXT)].value"
+            v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_NEXT)].value"
             type="number"
             pattern="[0-9]"
             min="0"
@@ -52,7 +98,7 @@
         <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_ENCHANCEMENTS}`) }}:</p>
         <input
           :id="`input-${GENERAL_PROPERTIES.GENERAL_ENCHANCEMENTS}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_ENCHANCEMENTS)].value"
+          v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_ENCHANCEMENTS)].value"
           type="number"
           pattern="[0-9]"
           min="0"
@@ -64,7 +110,7 @@
         <div class="relative grid grid-cols-2 items-center gap-5 w-full">
           <input
             :id="`input-${GENERAL_PROPERTIES.GENERAL_ATUAL_SKILL_REGEN}`"
-            v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_ATUAL_SKILL_REGEN)].value"
+            v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_ATUAL_SKILL_REGEN)].value"
             type="number"
             pattern="[0-9]"
             min="0"
@@ -73,7 +119,7 @@
           <span class="absolute flex text-center left-1/2 -translate-x-1/2">/</span>
           <input
             :id="`input-${GENERAL_PROPERTIES.GENERAL_MAX_SKILL_REGEN}`"
-            v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_MAX_SKILL_REGEN)].value"
+            v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_MAX_SKILL_REGEN)].value"
             type="number"
             pattern="[0-9]"
             min="0"
@@ -85,7 +131,7 @@
         <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_JP}`) }}:</p>
         <input
           :id="`input-${GENERAL_PROPERTIES.GENERAL_JP}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_JP)].value"
+          v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_JP)].value"
           type="number"
           pattern="[0-9]"
           min="0"
@@ -96,7 +142,7 @@
         <p>{{ $t(`properties.${GENERAL_PROPERTIES.GENERAL_GOLD}`) }}:</p>
         <input
           :id="`input-${GENERAL_PROPERTIES.GENERAL_GOLD}`"
-          v-model="character.operations[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GOLD)].value"
+          v-model="character.formulas[getOperationIndex(GENERAL_PROPERTIES.GENERAL_GOLD)].value"
           type="number"
           pattern="[0-9]"
           min="0"
@@ -152,52 +198,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { type Character, GENERAL_PROPERTIES, type AllPropertiesTypes, type IOperation } from '~/types'
-
-const character = defineModel<Character>({ required: true })
-
-const emits = defineEmits<{(e:'save'): void}>()
-
-const editFields = ref(false)
-
-const operationsToReset = ref<IOperation[]>([])
-
-function toggleEditFields (value?:boolean) {
-  editFields.value = value ?? !editFields.value
-}
-
-function getOperationIndex (type: AllPropertiesTypes) {
-  return character.value.operations.findIndex(operation => operation.baseValue && operation.target === type)
-}
-
-function saveChanges () {
-  toggleEditFields(false)
-  saveOperationsToReset()
-  emits('save')
-}
-
-function resetChanges () {
-  toggleEditFields(false)
-  operationsToReset.value.forEach((operationToReset) => {
-    const existingIndex = character.value.operations.findIndex(operation => operation.id === operationToReset.id)
-    if (existingIndex >= 0) {
-      character.value.operations[existingIndex] = operationToReset
-    }
-  })
-}
-
-function saveOperationsToReset () {
-  const filteredArray = character.value.operations.filter(operation => operation.baseValue && Object.values(GENERAL_PROPERTIES).includes(operation.target))
-  const stringifiedArray = JSON.stringify(filteredArray)
-  operationsToReset.value = JSON.parse(stringifiedArray)
-}
-
-onBeforeMount(() => {
-  saveOperationsToReset()
-})
-</script>
 
 <style scoped lang="scss">
 .general-property {

@@ -1,3 +1,60 @@
+<script setup lang="ts">
+import { type Character, ELEMENTS_LIST, type IElement, JOBS_LIST, type IJob } from '~/types'
+
+const character = defineModel<Character>({ required: true })
+
+const emits = defineEmits<{(e:'save'): void}>()
+
+const { t } = useI18n()
+
+const editFields = ref(false)
+const elements = ref<string[]>([])
+const jobs = ref<string[]>([])
+const dataToReset = ref<{ name: string, player: string, guild: string, elements: IElement[], jobs: IJob[] }>()
+
+const elementsLabel = computed(() => character.value.elements.map(element => t(`elements.${element.type}`)).join(', '))
+
+const jobsLabel = computed(() => character.value.jobs.map(job => t(`jobs.${job.type}`)).join(', '))
+
+function toggleEditFields (value?:boolean) {
+  editFields.value = value ?? !editFields.value
+}
+
+function saveChanges () {
+  toggleEditFields(false)
+  const elementsToSave = elements.value.map((elementToSave) => {
+    return ELEMENTS_LIST.find(element => element.type === elementToSave)
+  }).filter(element => element) as IElement []
+  const jobsToSave = jobs.value.map((jobToSave) => {
+    return JOBS_LIST.find(job => job.type === jobToSave)
+  }).filter(job => job) as IJob []
+  character.value.elements = elementsToSave
+  character.value.jobs = jobsToSave
+  emits('save')
+}
+
+function resetChanges () {
+  toggleEditFields(false)
+}
+
+function saveOperationsToReset () {
+  const data = JSON.stringify({
+    name: toRaw(character.value.name),
+    player: toRaw(character.value.player),
+    guild: toRaw(character.value.guild),
+    elements: toRaw(character.value.elements),
+    jobs: toRaw(character.value.jobs)
+  })
+  dataToReset.value = JSON.parse(data)
+}
+
+onBeforeMount(() => {
+  saveOperationsToReset()
+  elements.value = character.value.elements.map(element => element.type)
+  jobs.value = character.value.jobs.map(job => job.type)
+})
+</script>
+
 <template>
   <div v-if="editFields" class="flex flex-col gap-1">
     <div class="flex flex-col gap-1">
@@ -104,63 +161,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { type Character, ELEMENTS_LIST, type IElement, JOBS_LIST, type IJob } from '~/types'
-
-const character = defineModel<Character>({ required: true })
-
-const emits = defineEmits<{(e:'save'): void}>()
-
-const { t } = useI18n()
-
-const editFields = ref(false)
-const elements = ref<string[]>([])
-const jobs = ref<string[]>([])
-const dataToReset = ref<{ name: string, player: string, guild: string, elements: IElement[], jobs: IJob[] }>()
-
-const elementsLabel = computed(() => character.value.elements.map(element => t(`elements.${element.type}`)).join(', '))
-
-const jobsLabel = computed(() => character.value.jobs.map(job => t(`jobs.${job.type}`)).join(', '))
-
-function toggleEditFields (value?:boolean) {
-  editFields.value = value ?? !editFields.value
-}
-
-function saveChanges () {
-  toggleEditFields(false)
-  const elementsToSave = elements.value.map((elementToSave) => {
-    return ELEMENTS_LIST.find(element => element.type === elementToSave)
-  }).filter(element => element) as IElement []
-  const jobsToSave = jobs.value.map((jobToSave) => {
-    return JOBS_LIST.find(job => job.type === jobToSave)
-  }).filter(job => job) as IJob []
-  character.value.elements = elementsToSave
-  character.value.jobs = jobsToSave
-  emits('save')
-}
-
-function resetChanges () {
-  toggleEditFields(false)
-}
-
-function saveOperationsToReset () {
-  const data = JSON.stringify({
-    name: toRaw(character.value.name),
-    player: toRaw(character.value.player),
-    guild: toRaw(character.value.guild),
-    elements: toRaw(character.value.elements),
-    jobs: toRaw(character.value.jobs)
-  })
-  dataToReset.value = JSON.parse(data)
-}
-
-onBeforeMount(() => {
-  saveOperationsToReset()
-  elements.value = character.value.elements.map(element => element.type)
-  jobs.value = character.value.jobs.map(job => job.type)
-})
-</script>
 
 <style scoped lang="scss">
 .base-property {

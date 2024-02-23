@@ -24,7 +24,7 @@ input[type=number] {
 }
 
 .btn {
-  @apply flex justify-center items-center gap-2 w-full px-3 py-2 shadow rounded-sm text-sm font-semibold whitespace-nowrap transition-all;
+  @apply flex justify-center items-center gap-2 px-3 py-2 shadow rounded-sm text-sm leading-6 font-semibold whitespace-nowrap transition-all;
   @apply active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
   .nuxt-icon {
     @apply text-base;
@@ -44,7 +44,8 @@ input[type=number] {
 }
 
 .custom-input {
-  @apply min-w-0 w-full px-2 py-1 bg-black/20 dark:bg-white/40 rounded-sm outline-none text-base font-normal text-black placeholder:text-black/50 dark:text-white
+  @apply min-w-0 w-full px-3 py-2 bg-black/20 rounded-sm outline-none text-base font-normal text-black placeholder:text-black/50;
+  @apply dark:bg-white/40 dark:text-white;
 }
 
 .custom-select {

@@ -1,3 +1,29 @@
+<script setup lang="ts">
+import {
+  Character,
+  RANGE_PROPERTIES,
+  HIT_PROPERTIES,
+  PHYSICIAL_BONUS_PROPERTIES,
+  MAGICAL_BONUS_PROPERTIES,
+  EXPERTISE_STRENGTH_PROPERTIES,
+  EXPERTISE_AGILITY_PROPERTIES,
+  EXPERTISE_DEXTERITY_PROPERTIES,
+  EXPERTISE_VITALITY_PROPERTIES,
+  EXPERTISE_SPIRIT_PROPERTIES,
+  EXPERTISE_LUCK_PROPERTIES,
+  EXPERTISE_SPECIAL_PROPERTIES,
+  STATS_PROPERTIES
+} from '~/types'
+
+const character = defineModel<Character>({ required: true })
+
+const characterSheetStore = useCharacterSheetStore()
+
+const saveExplictiChanges = () => {
+  characterSheetStore.saveCharacter()
+}
+</script>
+
 <template>
   <div v-auto-animate class="flex flex-col gap-2 md:gap-3">
     <CharacterSheetTabsInfoBase v-model="character" @save="saveExplictiChanges" />
@@ -89,33 +115,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import {
-  Character,
-  RANGE_PROPERTIES,
-  HIT_PROPERTIES,
-  PHYSICIAL_BONUS_PROPERTIES,
-  MAGICAL_BONUS_PROPERTIES,
-  EXPERTISE_STRENGTH_PROPERTIES,
-  EXPERTISE_AGILITY_PROPERTIES,
-  EXPERTISE_DEXTERITY_PROPERTIES,
-  EXPERTISE_VITALITY_PROPERTIES,
-  EXPERTISE_SPIRIT_PROPERTIES,
-  EXPERTISE_LUCK_PROPERTIES,
-  EXPERTISE_SPECIAL_PROPERTIES,
-  STATS_PROPERTIES
-} from '~/types'
-
-const character = defineModel<Character>({ required: true })
-
-const characterSheetStore = useCharacterSheetStore()
-
-const saveExplictiChanges = () => {
-  characterSheetStore.saveCharacter()
-}
-</script>
-
-<style scoped>
+<style scoped lang="scss">
 .general-property {
   @apply flex items-center gap-1;
   span {
