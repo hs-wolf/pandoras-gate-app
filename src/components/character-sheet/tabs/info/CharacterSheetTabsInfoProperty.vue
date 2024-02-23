@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { type Character } from '~/types'
+
+const character = defineModel<Character>({ required: true })
+
+defineProps<{ properties: Record<string, string>, title: string, breakInColumns?: true }>()
+</script>
+
 <template>
   <div class="flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
     <h1 class="text-xl font-semibold uppercase">
@@ -13,14 +21,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { type Character } from '~/types'
-
-const character = defineModel<Character>({ required: true })
-
-defineProps<{ properties: Record<string, string>, title: string, breakInColumns?: true }>()
-</script>
 
 <style scoped lang="scss">
 

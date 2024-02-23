@@ -148,6 +148,15 @@ properties:
   EXPERTISE_MVP: Per_MVP
   EXPERTISE_PVP: Per_PVP
   EXPERTISE_SYNERGY: Per_Sinergia
+  PROPERTIES_SELECTION_ATTRIBUTES: Todos os Atributos
+  PROPERTIES_SELECTION_EXPERTISES: Todas as Perícias
+  PROPERTIES_SELECTION_EXPERTISES_STRENGTH: Todas as Perícias de Força
+  PROPERTIES_SELECTION_EXPERTISES_AGILITY: Todas as Perícias de Agilidade
+  PROPERTIES_SELECTION_EXPERTISES_DEXTERITY: Todas as Perícias de Destreza
+  PROPERTIES_SELECTION_EXPERTISES_VITALITY: Todas as Perícias de Vitalidade
+  PROPERTIES_SELECTION_EXPERTISES_SPIRIT: Todas as Perícias de Espírito
+  PROPERTIES_SELECTION_EXPERTISES_LUCK: Todas as Perícias de Sorte
+  PROPERTIES_SELECTION_EXPERTISES_SPECIAL: Todas as Perícias Especiais
 elements:
   fire: Fogo
   nature: Natureza
@@ -217,7 +226,9 @@ components:
         expertises-special: Perícias Especiais
       effects: 
         title: Efeitos
+        effects-groups: Grupos de Efeitos
         new-effect: Novo Efeito +
+        new-effects-group: Novo Grupo de Efeitos +
       inventory: 
         title: Inventário
       formulas: 
@@ -243,6 +254,7 @@ pages:
   index:
     title: Pandoras Gate App
     got-to-character-sheet: Ir para a ficha de personagem
+    reset-character: Reset Character
   character-sheet:
     title: Ficha do Personagem
     new-operation:

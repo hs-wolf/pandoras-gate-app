@@ -1,3 +1,49 @@
+<script setup lang="ts">
+import { type Character, type AllPropertiesTypes, type IOperation, CONDITIONS_PROPERTIES } from '~/types'
+
+const character = defineModel<Character>({ required: true })
+
+const emits = defineEmits<{(e:'save'): void}>()
+
+const editFields = ref(false)
+
+const operationsToReset = ref<IOperation[]>([])
+
+function toggleEditFields (value?:boolean) {
+  editFields.value = value ?? !editFields.value
+}
+
+function getOperationIndex (type: AllPropertiesTypes) {
+  return character.value.formulas.findIndex(operation => operation.target === type && operation.baseValue)
+}
+
+function saveChanges () {
+  toggleEditFields(false)
+  saveOperationsToReset()
+  emits('save')
+}
+
+function resetChanges () {
+  toggleEditFields(false)
+  operationsToReset.value.forEach((operationToReset) => {
+    const existingIndex = character.value.formulas.findIndex(operation => operation.id === operationToReset.id)
+    if (existingIndex >= 0) {
+      character.value.formulas[existingIndex] = operationToReset
+    }
+  })
+}
+
+function saveOperationsToReset () {
+  const filteredArray = character.value.formulas.filter(operation => Object.values(CONDITIONS_PROPERTIES).includes(operation.target) && operation.baseValue)
+  const stringifiedArray = JSON.stringify(filteredArray)
+  operationsToReset.value = JSON.parse(stringifiedArray)
+}
+
+onBeforeMount(() => {
+  saveOperationsToReset()
+})
+</script>
+
 <template>
   <div v-if="editFields" class="flex flex-col gap-1 p-2 border border-black/20 dark:border-white/40 rounded-sm">
     <h1 class="text-xl text-primary font-semibold uppercase">
@@ -35,7 +81,7 @@
                                   CONDITIONS_PROPERTIES.CONDITIONS_ATUAL_HUNGER]"
               :id="`input-${property}`"
               :key="property"
-              v-model="character.operations[getOperationIndex(property)].value"
+              v-model="character.formulas[getOperationIndex(property)].value"
               type="number"
               pattern="[0-9]"
               min="0"
@@ -50,7 +96,7 @@
                                   CONDITIONS_PROPERTIES.CONDITIONS_MAX_HUNGER]"
               :id="`input-${property}`"
               :key="property"
-              v-model="character.operations[getOperationIndex(property)].value"
+              v-model="character.formulas[getOperationIndex(property)].value"
               type="number"
               pattern="[0-9]"
               min="0"
@@ -94,52 +140,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { type Character, type AllPropertiesTypes, type IOperation, CONDITIONS_PROPERTIES } from '~/types'
-
-const character = defineModel<Character>({ required: true })
-
-const emits = defineEmits<{(e:'save'): void}>()
-
-const editFields = ref(false)
-
-const operationsToReset = ref<IOperation[]>([])
-
-function toggleEditFields (value?:boolean) {
-  editFields.value = value ?? !editFields.value
-}
-
-function getOperationIndex (type: AllPropertiesTypes) {
-  return character.value.operations.findIndex(operation => operation.baseValue && operation.target === type)
-}
-
-function saveChanges () {
-  toggleEditFields(false)
-  saveOperationsToReset()
-  emits('save')
-}
-
-function resetChanges () {
-  toggleEditFields(false)
-  operationsToReset.value.forEach((operationToReset) => {
-    const existingIndex = character.value.operations.findIndex(operation => operation.id === operationToReset.id)
-    if (existingIndex >= 0) {
-      character.value.operations[existingIndex] = operationToReset
-    }
-  })
-}
-
-function saveOperationsToReset () {
-  const filteredArray = character.value.operations.filter(operation => operation.baseValue && Object.values(CONDITIONS_PROPERTIES).includes(operation.target))
-  const stringifiedArray = JSON.stringify(filteredArray)
-  operationsToReset.value = JSON.parse(stringifiedArray)
-}
-
-onBeforeMount(() => {
-  saveOperationsToReset()
-})
-</script>
 
 <style scoped lang="scss">
 .condition {

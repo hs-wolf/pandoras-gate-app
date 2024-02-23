@@ -7,6 +7,9 @@
       <p>{{ $t('pages.index.got-to-character-sheet') }}</p>
       <NuxtIcon name="user" />
     </NuxtLink>
+    <button class="btn btn-danger" @click.prevent="characterSheetStore.resetCharacter">
+      {{ $t('pages.index.reset-character') }}
+    </button>
   </div>
 </template>
 
@@ -14,6 +17,7 @@
 const { t } = useI18n()
 const localePath = useLocalePath()
 const navbarStore = useNavbarStore()
+const characterSheetStore = useCharacterSheetStore()
 
 onBeforeMount(() => {
   navbarStore.setTitle(t('pages.index.title'))

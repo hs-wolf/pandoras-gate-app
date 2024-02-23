@@ -29,7 +29,6 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.ATTRIBUTES_STRENGTH_MOD,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -43,7 +42,6 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.ATTRIBUTES_AGILITY_MOD,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -57,7 +55,6 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.ATTRIBUTES_DEXTERITY_MOD,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -71,7 +68,6 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.ATTRIBUTES_VITALITY_MOD,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -85,7 +81,6 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.ATTRIBUTES_SPIRIT_MOD,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -99,7 +94,6 @@ const DEFAULT_CHARACTER_MODIFITERS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.ATTRIBUTES_LUCK_MOD,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -116,7 +110,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.STATS_INITIATIVE,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -130,7 +123,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.STATS_DODGE,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -144,7 +136,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.STATS_MOVE,
-    baseFormula: true,
     action: OperationAction.SUM,
     value: 2
   },
@@ -153,7 +144,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.STATS_CRITICAL,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -167,7 +157,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.STATS_CRITICAL,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -183,7 +172,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.STATS_PHYSICAL_DEFENSE,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -197,7 +185,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.STATS_PHYSICAL_DEFENSE,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -212,7 +199,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.STATS_PHYSICAL_DICE,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -227,7 +213,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.STATS_MAGICAL_DEFENSE,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -241,7 +226,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.STATS_MAGICAL_DEFENSE,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -256,7 +240,6 @@ const DEFAULT_CHARACTER_STATS: IOperation[] = [
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target: ALL_PROPERTIES.STATS_MAGICAL_DICE,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -274,7 +257,6 @@ const DEFAULT_CHARACTER_RANGES: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       value: 1
@@ -287,7 +269,6 @@ const DEFAULT_CHARACTER_RANGES: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -309,7 +290,6 @@ const DEFAULT_CHARACTER_HITS: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -323,7 +303,6 @@ const DEFAULT_CHARACTER_HITS: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -343,7 +322,6 @@ const DEFAULT_CHARACTER_HITS: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -357,7 +335,6 @@ const DEFAULT_CHARACTER_HITS: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -380,7 +357,6 @@ const DEFAULT_CHARACTER_PHYSICAL_BONUSES: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -394,7 +370,6 @@ const DEFAULT_CHARACTER_PHYSICAL_BONUSES: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -414,7 +389,6 @@ const DEFAULT_CHARACTER_PHYSICAL_BONUSES: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -428,7 +402,6 @@ const DEFAULT_CHARACTER_PHYSICAL_BONUSES: IOperation[] = [
         id: uuidv4(),
         description: BASE_FORMULA_DESCRIPTION,
         target,
-        baseFormula: true,
         action: OperationAction.SUM,
         isBasedOnProperty: true,
         basedOnProperty: {
@@ -449,7 +422,6 @@ const DEFAULT_CHARACTER_MAGICAL_BONUSES: IOperation[] = Object.values(MAGICAL_BO
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -466,7 +438,6 @@ const DEFAULT_CHARACTER_STRENGTH_EXPERTISES: IOperation[] = Object.values(EXPERT
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -481,7 +452,6 @@ const DEFAULT_CHARACTER_AGILITY_EXPERTISES: IOperation[] = Object.values(EXPERTI
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -496,7 +466,6 @@ const DEFAULT_CHARACTER_DEXTERITY_EXPERTISES: IOperation[] = Object.values(EXPER
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -511,7 +480,6 @@ const DEFAULT_CHARACTER_VITALITY_EXPERTISES: IOperation[] = Object.values(EXPERT
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -526,7 +494,6 @@ const DEFAULT_CHARACTER_SPIRIT_EXPERTISES: IOperation[] = Object.values(EXPERTIS
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -541,7 +508,6 @@ const DEFAULT_CHARACTER_LUCK_EXPERTISES: IOperation[] = Object.values(EXPERTISE_
     id: uuidv4(),
     description: BASE_FORMULA_DESCRIPTION,
     target,
-    baseFormula: true,
     action: OperationAction.SUM,
     isBasedOnProperty: true,
     basedOnProperty: {
@@ -557,7 +523,6 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.EXPERTISE_ACROBATICS,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -571,7 +536,6 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.EXPERTISE_ACROBATICS,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -587,7 +551,6 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.EXPERTISE_STEAL,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {
@@ -601,7 +564,6 @@ const DEFAULT_CHARACTER_SPECIAL_EXPERTISES: IOperation[] = [
       id: uuidv4(),
       description: BASE_FORMULA_DESCRIPTION,
       target: ALL_PROPERTIES.EXPERTISE_STEAL,
-      baseFormula: true,
       action: OperationAction.SUM,
       isBasedOnProperty: true,
       basedOnProperty: {

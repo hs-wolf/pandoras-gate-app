@@ -148,6 +148,15 @@ properties:
   EXPERTISE_MVP: Exp_MVP
   EXPERTISE_PVP: Exp_PVP
   EXPERTISE_SYNERGY: Exp_Synergy
+  PROPERTIES_SELECTION_ATTRIBUTES: All Attributes
+  PROPERTIES_SELECTION_EXPERTISES: All Expertises
+  PROPERTIES_SELECTION_EXPERTISES_STRENGTH: All Strength Expertises
+  PROPERTIES_SELECTION_EXPERTISES_AGILITY: All Agility Expertises
+  PROPERTIES_SELECTION_EXPERTISES_DEXTERITY: All Dexterity Expertises
+  PROPERTIES_SELECTION_EXPERTISES_VITALITY: All Vitality Expertises
+  PROPERTIES_SELECTION_EXPERTISES_SPIRIT: All Spirit Expertises
+  PROPERTIES_SELECTION_EXPERTISES_LUCK: All Luck Expertises
+  PROPERTIES_SELECTION_EXPERTISES_SPECIAL: All Special Expertises
 elements:
   fire: Fire
   nature: Nature
@@ -217,7 +226,9 @@ components:
         expertises-special: Expertises Special
       effects: 
         title: Effects
+        effects-groups: Effects Groups
         new-effect: New Effect +
+        new-effects-group: New Effects Group +
       inventory: 
         title: Inventory
       formulas: 
@@ -243,6 +254,7 @@ pages:
   index:
     title: Pandoras Gate App
     got-to-character-sheet: Go to Character Sheet
+    reset-character: Reset Character
   character-sheet:
     title: Character Sheet
     new-operation:
