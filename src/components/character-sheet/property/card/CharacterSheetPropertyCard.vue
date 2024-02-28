@@ -1,10 +1,8 @@
 <template>
-  <div v-if="property" v-auto-animate class="flex flex-col border border-black/20 dark:border-white/40 rounded-sm text-sm md:text-base">
+  <div v-if="property" v-auto-animate class="flex flex-col gap-0.5">
     <button
-      :id="`menu-${property.type}`"
       type="button"
-      class="flex items-center justify-between p-2 transition-colors"
-      :class="{ 'bg-black/20 dark:bg-white/40 text-black dark:text-white': showOperations }"
+      class="flex items-center justify-between px-3 py-2 bg-primary-dark text-white rounded-sm"
       @click.prevent="showOperations = !showOperations"
     >
       <span class="font-semibold">
@@ -12,7 +10,7 @@
       </span>
       <NuxtIcon name="chevron-down" class="text-xl transition-transform" :class="{'rotate-180': showOperations }" />
     </button>
-    <div v-if="showOperations" class="flex flex-col">
+    <div v-if="showOperations" class="flex flex-col gap-0.5">
       <CharacterSheetPropertyCardOperation
         v-for="(operation, index) in property.operations"
         :key="operation.id"
