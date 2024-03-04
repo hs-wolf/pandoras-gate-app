@@ -10,6 +10,7 @@
     <button class="btn btn-danger" @click.prevent="characterSheetStore.resetCharacter">
       {{ $t('pages.index.reset-character') }}
     </button>
+    <pre>{{ data }}</pre>
   </div>
 </template>
 
@@ -18,6 +19,8 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 const navbarStore = useNavbarStore()
 const characterSheetStore = useCharacterSheetStore()
+
+const { data } = await useFetch('/api/user', { method: 'POST' })
 
 onBeforeMount(() => {
   navbarStore.setTitle(t('pages.index.title'))
