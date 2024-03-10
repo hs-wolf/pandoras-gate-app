@@ -56,6 +56,7 @@ function cancelNewOperation () {
         <CharacterSheetPropertyCardOperation
           v-model="character.formulas[character.formulas.length-1]"
           :show-target="true"
+          :keep-open="true"
         />
         <div class="grid grid-cols-3 gap-2">
           <button id="cancel-operation" type="button" class="px-2 py-1.5 bg-danger rounded-sm text-white" @click.prevent="cancelNewOperation">
@@ -66,11 +67,11 @@ function cancelNewOperation () {
           </button>
         </div>
       </div>
-      <button v-else id="new-operation" type="button" class="btn btn-action" @click.prevent="startNewOperation">
+      <button v-else id="new-operation" type="button" class="btn btn-action self-start" @click.prevent="startNewOperation">
         {{ $t('components.character-sheet.tabs.formulas.new-formula') }}
       </button>
     </div>
-    <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2 md:items-start">
+    <div class="flex flex-col gap-1 md:grid md:grid-cols-2">
       <CharacterSheetPropertyCard
         v-for="(property, index) in groupedOperations"
         :key="property.type"

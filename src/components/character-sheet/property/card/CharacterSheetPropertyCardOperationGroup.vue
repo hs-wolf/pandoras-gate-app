@@ -14,7 +14,11 @@ const confirmDelete = ref(false)
 <template>
   <div v-auto-animate class="flex flex-col gap-0.5">
     <!-- COLLAPSE BUTTON -->
-    <button class="flex items-center justify-between px-3 py-2 bg-primary-dark text-white rounded-sm" @click.prevent="showDetails = !showDetails">
+    <button
+      type="button"
+      class="flex items-center justify-between px-3 py-2 bg-primary-dark text-white rounded-sm"
+      @click.prevent="showDetails = !showDetails"
+    >
       <p> {{ operationsGroup.label }}</p>
       <NuxtIcon name="chevron-down" class="!text-xl transition-transform" :class="{'rotate-180': showDetails }" />
     </button>

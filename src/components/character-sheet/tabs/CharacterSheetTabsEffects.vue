@@ -24,7 +24,7 @@
           {{ $t('components.character-sheet.tabs.effects.new-effect') }}
         </button>
       </div>
-      <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2 md:items-start">
+      <div v-auto-animate class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2 md:items-start">
         <CharacterSheetPropertyCardOperation
           v-for="operation in character.effects.filter((effect)=>effect.id !== newOperationId)"
           :key="operation.id"
@@ -42,7 +42,7 @@
       <button id="new-operation" type="button" class="btn btn-action self-start" @click.prevent="characterSheetStore.createEffectsGroup">
         {{ $t('components.character-sheet.tabs.effects.new-effects-group') }}
       </button>
-      <div class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2 md:items-start">
+      <div v-auto-animate class="flex flex-col gap-2 md:gap-3 md:grid md:grid-cols-2 md:items-start">
         <CharacterSheetPropertyCardOperationGroup
           v-for="group in character.effectsGroups"
           :key="group.id"
