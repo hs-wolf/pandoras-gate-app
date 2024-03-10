@@ -50,7 +50,7 @@ onBeforeMount(() => {
       {{ $t('components.character-sheet.tabs.info.conditions') }}
     </h1>
     <div class="flex gap-4">
-      <div class="flex flex-col gap-1 text-xl font-semibold leading-8">
+      <div class="flex flex-col gap-1 text-xl font-semibold leading-10">
         <p class="text-sm">
           &nbsp;
         </p>

@@ -60,7 +60,7 @@ onBeforeMount(() => {
         <p class="text-sm">
           &nbsp;
         </p>
-        <p v-for="property in ATTRIBUTES_PROPERTIES" :key="property" class="leading-8">
+        <p v-for="property in ATTRIBUTES_PROPERTIES" :key="property" class="leading-10">
           {{ $t(`properties.${property}`) }}
         </p>
       </div>
