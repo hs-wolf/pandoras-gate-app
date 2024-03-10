@@ -1,6 +1,6 @@
 // import { getAuth } from 'firebase-admin/auth'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (_event) => {
   // const auth = getAuth()
   // const headers = getHeaders(event)
   // const rawToken = headers.authorization

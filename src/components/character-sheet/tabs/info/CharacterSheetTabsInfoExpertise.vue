@@ -57,7 +57,7 @@ onBeforeMount(() => {
         <p class="text-sm">
           &nbsp;
         </p>
-        <p v-for="property in properties" :key="property" class="leading-8 truncate">
+        <p v-for="property in properties" :key="property" class="leading-10 truncate">
           {{ $t(`properties.${property}`).split('_').pop() }}
         </p>
       </div>
