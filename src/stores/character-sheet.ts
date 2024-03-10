@@ -113,6 +113,7 @@ export const useCharacterSheetStore = defineStore(CHARACTER_SHEET_STORE_ID, () =
       ]
     }
     character.value.effectsGroups.push(newEffectsGroup)
+    saveCharacter()
   }
 
   function deleteEffectsGroup (id: string) {
