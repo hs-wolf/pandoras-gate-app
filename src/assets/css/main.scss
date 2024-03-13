@@ -20,11 +20,19 @@ input[type=number] {
 }
 
 .btn-effect {
-  @apply cursor-pointer transition-transform active:scale-90;
+  @apply cursor-pointer transition-transform active:scale-95;
+}
+
+.modal {
+  @apply fixed inset-0 flex justify-center items-center bg-black/50 p-3;
+}
+
+.card {
+  @apply flex flex-col p-3 bg-white rounded-sm;
 }
 
 .btn {
-  @apply flex justify-center items-center gap-2 px-3 py-2 shadow rounded-sm text-sm leading-6 font-semibold whitespace-nowrap transition-all;
+  @apply flex justify-center items-center gap-2 px-2 py-1.5 shadow rounded-sm text-sm leading-6 font-semibold whitespace-nowrap transition-all;
   @apply active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
   .nuxt-icon {
     @apply text-base;
@@ -33,6 +41,10 @@ input[type=number] {
 
 .btn-primary {
   @apply bg-primary text-white active:bg-primary-dark dark:active:bg-primary-light;
+}
+
+.btn-secondary {
+  @apply bg-black/20 text-black active:bg-black/40 dark:active:bg-black/10;
 }
 
 .btn-action {
@@ -44,7 +56,7 @@ input[type=number] {
 }
 
 .custom-input {
-  @apply min-w-0 w-full px-3 py-2 bg-black/20 rounded-sm outline-none text-base font-normal text-black placeholder:text-black/50;
+  @apply min-w-0 w-full px-2 py-1.5 bg-black/20 rounded-sm outline-none text-base font-normal text-black placeholder:text-black/50;
   @apply dark:bg-white/40 dark:text-white;
 }
 
