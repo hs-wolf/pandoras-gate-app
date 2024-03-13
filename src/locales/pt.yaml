@@ -185,6 +185,14 @@ general:
   atual: Atual
   max: Máx.
 components:
+  auth-overlay:
+    register: Registrar
+    login: Login
+    e-mail: E-mail
+    password: Senha
+    confirm: Confirmar
+    already-have: Já tenho conta
+    dont-have: Não tenho conta ainda
   navbar:
     links:
       index: Início

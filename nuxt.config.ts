@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   devtools: {
     enabled: true
   },
@@ -17,6 +17,18 @@ export default defineNuxtConfig({
         { name: 'description', content: 'client' }
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    }
+  },
+  runtimeConfig: {
+    public: {
+      firebase: {
+        apiKey: process.env.apiKey,
+        authDomain: process.env.authDomain,
+        projectId: process.env.projectId,
+        storageBucket: process.env.storageBucket,
+        messagingSenderId: process.env.messagingSenderId,
+        appId: process.env.appId
+      }
     }
   },
   modules: [
